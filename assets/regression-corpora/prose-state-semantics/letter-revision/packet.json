@@ -1,0 +1,167 @@
+{
+  "packet_version": "1.0.0",
+  "branch": "main",
+  "changed_nodes": [
+    "CH8:seen-letter"
+  ],
+  "dependencies": {
+    "path": "dependencies.json",
+    "sha256": "9651a481e7c8c6bcb333b4f0c750da2bf052174411f7c6b529bafb77197d68b7"
+  },
+  "chapters_dir": "chapters",
+  "chapter_inventory": [
+    {
+      "path": "chapters/ch17.md",
+      "sha256": "dd30e650d9010992866f3840990a115dd75fcb5d7446ca2294465b89a60f1568"
+    },
+    {
+      "path": "chapters/ch23.md",
+      "sha256": "56d25826b59a12e6be15c987ad3348ef1a7a721bdc6926d2dcbe218541c4e5e0"
+    },
+    {
+      "path": "chapters/ch24.md",
+      "sha256": "37b2883ac46c83a28e2aa9c11340772e481a295184160198a1796043c452bac9"
+    },
+    {
+      "path": "chapters/ch8.md",
+      "sha256": "efc8f3e4fbb5eeb7fe8a9e1c005a58acbc9f10555e24fd01e6a1bcdf61336c14"
+    }
+  ],
+  "review_items": [
+    {
+      "review_id": "node:CH23:content",
+      "kind": "dependency_node",
+      "node": "CH23:content",
+      "graph_witnesses": [
+        {
+          "seed": "CH8:seen-letter",
+          "source": "CH8:seen-letter",
+          "target": "CH23:content",
+          "kind": "knowledge-source",
+          "strength": "hard",
+          "depth": 1
+        }
+      ],
+      "upstream_edges": [
+        {
+          "source": "CH8:seen-letter",
+          "target": "CH23:content",
+          "kind": "knowledge-source"
+        }
+      ]
+    },
+    {
+      "review_id": "node:CH23:gate-action",
+      "kind": "dependency_node",
+      "node": "CH23:gate-action",
+      "graph_witnesses": [
+        {
+          "seed": "CH8:seen-letter",
+          "source": "CH23:content",
+          "target": "CH23:gate-action",
+          "kind": "action-premise",
+          "strength": "hard",
+          "depth": 2
+        }
+      ],
+      "upstream_edges": [
+        {
+          "source": "CH23:content",
+          "target": "CH23:gate-action",
+          "kind": "action-premise"
+        }
+      ]
+    },
+    {
+      "review_id": "node:CH23:recognition",
+      "kind": "dependency_node",
+      "node": "CH23:recognition",
+      "graph_witnesses": [
+        {
+          "seed": "CH8:seen-letter",
+          "source": "CH8:seen-letter",
+          "target": "CH23:recognition",
+          "kind": "knowledge-source",
+          "strength": "hard",
+          "depth": 1
+        }
+      ],
+      "upstream_edges": [
+        {
+          "source": "CH8:seen-letter",
+          "target": "CH23:recognition",
+          "kind": "knowledge-source"
+        },
+        {
+          "source": "CH17:independent-sample",
+          "target": "CH23:recognition",
+          "kind": "knowledge-source"
+        }
+      ]
+    },
+    {
+      "review_id": "chapter:chapters/ch17.md",
+      "kind": "chapter_scan",
+      "evidence": [
+        {
+          "path": "chapters/ch17.md",
+          "start_line": 1,
+          "end_line": 1,
+          "sha256": "69b249b25028407918218f8192eacec76aeabd15767ba3cf7ac77d8a991645c3"
+        }
+      ],
+      "text": "师父留下的练字纸还在。陈越摊开它，将三角形的收笔照着描了一遍。"
+    },
+    {
+      "review_id": "chapter:chapters/ch23.md",
+      "kind": "chapter_scan",
+      "evidence": [
+        {
+          "path": "chapters/ch23.md",
+          "start_line": 1,
+          "end_line": 3,
+          "sha256": "3072504239eb2dd4d4c96e4b956aa404bd6ee0b652e2ff737f9fe1118df63c1a"
+        }
+      ],
+      "text": "陈越将练字纸与登记簿并排，凭相同的三角收笔认出了师父的笔迹。\n密信里明明写的是今夜子时，开东闸。他还记得在夹墙前亲眼读过的那一行字。\n因此，他撤掉西闸的人手，全部调往东闸。"
+    },
+    {
+      "review_id": "chapter:chapters/ch24.md",
+      "kind": "chapter_scan",
+      "evidence": [
+        {
+          "path": "chapters/ch24.md",
+          "start_line": 1,
+          "end_line": 1,
+          "sha256": "e048ffa6390bde55e6fbd90bd75140e985a358bb651069ad9c183500661008c5"
+        }
+      ],
+      "text": "审问时，陈越指出密信第二行缺了一个字；那是他在夹墙前读信时发现的。"
+    },
+    {
+      "review_id": "chapter:chapters/ch8.md",
+      "kind": "chapter_scan",
+      "evidence": [
+        {
+          "path": "chapters/ch8.md",
+          "start_line": 1,
+          "end_line": 3,
+          "sha256": "42a4a26a12fdc1423317e6fea1b21be15f8a3fc5fca1f769822380c2b50c84df"
+        }
+      ],
+      "text": "陈越只听门房说，夹墙里藏着一封密信。\n门房没有说信中写了什么，他也没有去看。\n他把铜钥匙交给阿宁，阿宁收进贴身口袋。"
+    }
+  ],
+  "status": "PENDING_REVIEW",
+  "note": "Reachability is a review candidate, not invalidation. Read every chapter to discover unindexed dependencies; inspect alternative supports. No semantic completeness claim.",
+  "revision_sources": [
+    {
+      "path": "before/ch8.md",
+      "sha256": "93c0538ee36f5322c2ba430df68d4c143e14094afdd587d5daa54f75407250b4"
+    },
+    {
+      "path": "chapters/ch8.md",
+      "sha256": "efc8f3e4fbb5eeb7fe8a9e1c005a58acbc9f10555e24fd01e6a1bcdf61336c14"
+    }
+  ]
+}

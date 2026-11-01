@@ -1,0 +1,254 @@
+{
+  "planning": {
+    "schema_version": "1.0.0",
+    "fixture_id": "episodic-investigative-series",
+    "language": "zh-CN",
+    "task_type": "planning",
+    "refs": {
+      "input": "planning-input.md",
+      "task": "planning-task.md",
+      "project_poetics": "project-brief.md",
+      "positive_control": "planning-control.md",
+      "wrong_poetics_mutant": "planning-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立planning资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "每案给出可回溯答案；关系累积，不发明共同幕后人。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "调查与局部严格闭合；系列熟悉感与关系累积，独立案件不必共享阴谋。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "episodic-mega-conspiracy",
+        "description": "episodic-mega-conspiracy",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "forced-case-openness",
+        "description": "forced-case-openness",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "retroactive-clue-invention",
+        "description": "retroactive-clue-invention",
+        "critical": true
+      },
+      {
+        "id": "RF59",
+        "intervention_class": "force-episodic-conspiracy",
+        "description": "不得加入：三案都是同一个幕后组织策划。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^三案都是同一个幕后组织策划。?\\s*$"
+      },
+      {
+        "id": "R59",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^三案都是同一个幕后组织策划。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "chapter": {
+    "schema_version": "1.0.0",
+    "fixture_id": "episodic-investigative-series",
+    "language": "zh-CN",
+    "task_type": "chapter",
+    "refs": {
+      "input": "chapter-input.md",
+      "task": "chapter-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "chapter-control.md",
+      "wrong_poetics_mutant": "chapter-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立chapter资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "每案给出可回溯答案；关系累积，不发明共同幕后人。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "调查与局部严格闭合；系列熟悉感与关系累积，独立案件不必共享阴谋。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "episodic-mega-conspiracy",
+        "description": "episodic-mega-conspiracy",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "forced-case-openness",
+        "description": "forced-case-openness",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "retroactive-clue-invention",
+        "description": "retroactive-clue-invention",
+        "critical": true
+      },
+      {
+        "id": "RF59",
+        "intervention_class": "force-episodic-conspiracy",
+        "description": "不得加入：三案都是同一个幕后组织策划。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^三案都是同一个幕后组织策划。?\\s*$"
+      },
+      {
+        "id": "R59",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^三案都是同一个幕后组织策划。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "drafting": {
+    "schema_version": "1.0.0",
+    "fixture_id": "episodic-investigative-series",
+    "language": "zh-CN",
+    "task_type": "drafting",
+    "refs": {
+      "input": "drafting-input.md",
+      "task": "drafting-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "drafting-control.md",
+      "wrong_poetics_mutant": "drafting-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立drafting资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "每案给出可回溯答案；关系累积，不发明共同幕后人。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "调查与局部严格闭合；系列熟悉感与关系累积，独立案件不必共享阴谋。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "episodic-mega-conspiracy",
+        "description": "episodic-mega-conspiracy",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "forced-case-openness",
+        "description": "forced-case-openness",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "retroactive-clue-invention",
+        "description": "retroactive-clue-invention",
+        "critical": true
+      },
+      {
+        "id": "RF59",
+        "intervention_class": "force-episodic-conspiracy",
+        "description": "不得加入：三案都是同一个幕后组织策划。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^三案都是同一个幕后组织策划。?\\s*$"
+      },
+      {
+        "id": "R59",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "三案都是同一个幕后组织策划"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  }
+}

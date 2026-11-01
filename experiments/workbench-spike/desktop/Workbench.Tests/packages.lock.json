@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net10.0": {
+      "workbench.infrastructure": {
+        "type": "Project",
+        "dependencies": {
+          "Workbench.Protocol": "[1.0.0, )"
+        }
+      },
+      "workbench.protocol": {
+        "type": "Project"
+      }
+    },
+    "net10.0/win-x64": {}
+  }
+}

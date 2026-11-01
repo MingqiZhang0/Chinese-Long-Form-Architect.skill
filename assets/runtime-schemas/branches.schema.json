@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/branches.schema.json",
+  "title": "Narrative Runtime Branch Registry",
+  "type": "object",
+  "required": ["schema_version", "branches"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "branches": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["parent", "fork_event", "status"],
+        "properties": {
+          "parent": {"type": ["string", "null"]},
+          "fork_event": {"type": ["string", "null"]},
+          "purpose": {"type": "string"},
+          "status": {"enum": ["active", "sandbox", "archived"]}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

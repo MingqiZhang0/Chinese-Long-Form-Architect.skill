@@ -1,0 +1,12 @@
+{
+  "capabilities": {
+    "native_subagents": false,
+    "fresh_model_contexts": false,
+    "isolated_agent_contexts": false,
+    "persistent_files": false,
+    "deterministic_tools": false,
+    "isolated_workspaces": false,
+    "filesystem_permission_enforcement": false,
+    "independent_evaluator": false
+  }
+}

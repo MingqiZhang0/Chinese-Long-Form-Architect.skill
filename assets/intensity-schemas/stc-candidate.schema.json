@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/stc-candidate.schema.json",
+  "title": "STC v0.1 Candidate Trajectory",
+  "type": "object",
+  "required": [
+    "candidate_version",
+    "challenge_id",
+    "actions"
+  ],
+  "properties": {
+    "candidate_version": {
+      "const": "0.1.1"
+    },
+    "challenge_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "surface": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 24,
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "action": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "move",
+            "transfer",
+            "wait"
+          ]
+        },
+        "actor": {
+          "type": "string"
+        },
+        "route": {
+          "type": "string"
+        },
+        "entity": {
+          "type": "string"
+        },
+        "from_holder": {
+          "type": "string"
+        },
+        "to_holder": {
+          "type": "string"
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

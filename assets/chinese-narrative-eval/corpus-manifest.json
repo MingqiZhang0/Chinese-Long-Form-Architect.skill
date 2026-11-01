@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.1.0",
+  "corpus_id": "lwa-chinese-narrative-eval-seed",
+  "corpus_version": "0.1.0",
+  "status": "seed_expert_provisional",
+  "family_count": 16,
+  "variant_count": 48,
+  "seed_sha256": "556c24120b4454bdb2fc02b87e0cd8de11100c263a00ebf6dd2935d0865a8291",
+  "rights_policy": "original-from-scratch packaged text; no copied source-fiction prose",
+  "gold_policy": "packaged dev gold is provisional executable specification; promotion-grade soft judgments require blind human annotation/adjudication",
+  "private_holdout_packaged": false,
+  "private_holdout_policy": "external only; family-level split; never ship hidden cases or keys in the Skill package",
+  "generator_visibility": "blind packet only; evaluator key remains separate",
+  "scoring_policy": "behavior profiles only; no universal Chinese literary-quality score"
+}

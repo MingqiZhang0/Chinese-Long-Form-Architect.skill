@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/runtime-manifest.schema.json",
+  "title": "Narrative Runtime Manifest",
+  "type": "object",
+  "required": ["runtime_schema_version", "schema_dialect", "project_id", "current_branch", "compatibility_policy", "paths"],
+  "properties": {
+    "runtime_schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"},
+    "schema_dialect": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "project_id": {"type": "string", "minLength": 1},
+    "current_branch": {"type": "string", "minLength": 1},
+    "compatibility_policy": {"enum": ["backward", "backward_transitive", "full", "explicit_migration"]},
+    "minimum_reader_version": {"type": "string"},
+    "paths": {
+      "type": "object",
+      "required": ["events", "branches", "dependencies"],
+      "properties": {
+        "events": {"type": "string"},
+        "branches": {"type": "string"},
+        "dependencies": {"type": "string"},
+        "invariants": {"type": "string"},
+        "narrative_debt": {"type": "string"},
+        "projections": {"type": "string"},
+        "snapshots": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "migration_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["migration_id", "from_version", "to_version", "status"],
+        "properties": {
+          "migration_id": {"type": "string"},
+          "from_version": {"type": "string"},
+          "to_version": {"type": "string"},
+          "status": {"enum": ["planned", "applied", "rolled_back"]},
+          "timestamp": {"type": ["string", "null"]},
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

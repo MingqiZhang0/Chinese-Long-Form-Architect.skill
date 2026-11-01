@@ -1,0 +1,739 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/narrative-artifact.schema.json",
+  "title": "Optional narrative carrier view of canonical object state",
+  "type": "object",
+  "properties": {
+    "narrative_artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "surface": {
+      "type": "object",
+      "properties": {
+        "sheet": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "side": {
+          "enum": [
+            "front",
+            "back"
+          ]
+        }
+      },
+      "required": [
+        "sheet",
+        "side"
+      ],
+      "additionalProperties": false
+    },
+    "extent": {
+      "type": "object",
+      "properties": {
+        "medium": {
+          "enum": [
+            "paper",
+            "audio",
+            "video",
+            "digital",
+            "other"
+          ]
+        },
+        "sheets": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000
+        },
+        "pages": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "available_surfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/surface"
+          }
+        },
+        "written_surfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/surface"
+          }
+        },
+        "blank_surfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/surface"
+          }
+        },
+        "written_surface_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duration_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/segment"
+          }
+        }
+      },
+      "required": [
+        "medium"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "medium": {
+                "const": "paper"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sheets",
+              "available_surfaces",
+              "written_surfaces"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "medium": {
+                "enum": [
+                  "audio",
+                  "video"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "duration_seconds"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "sheets"
+                  ]
+                },
+                {
+                  "required": [
+                    "available_surfaces"
+                  ]
+                },
+                {
+                  "required": [
+                    "written_surfaces"
+                  ]
+                },
+                {
+                  "required": [
+                    "blank_surfaces"
+                  ]
+                },
+                {
+                  "required": [
+                    "written_surface_count"
+                  ]
+                },
+                {
+                  "required": [
+                    "pages"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "medium": {
+                "const": "paper"
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "duration_seconds"
+                  ]
+                },
+                {
+                  "required": [
+                    "segments"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "state": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "holder": {
+          "type": "string",
+          "minLength": 1
+        },
+        "location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "condition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seal_state": {
+          "enum": [
+            "SEALED",
+            "OPEN",
+            "UNSEALED"
+          ]
+        },
+        "physical_extent": {
+          "$ref": "#/$defs/extent"
+        },
+        "content_layer_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "REOPEN",
+            "POSTSCRIPT",
+            "ANNOTATE",
+            "RECORD",
+            "EDIT",
+            "SEAL"
+          ]
+        },
+        "at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "actor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "custody_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "at",
+        "actor",
+        "custody_ref",
+        "provenance"
+      ],
+      "additionalProperties": false
+    },
+    "inscription": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "layer": {
+          "enum": [
+            "ORIGINAL_INSCRIPTION",
+            "POSTSCRIPT",
+            "REOPENED_ADDITION",
+            "SECOND_AUTHOR_ADDITION",
+            "ANNOTATION",
+            "FRAME_EXTERNAL",
+            "LATER_RECORDING",
+            "MEDIA_EDIT"
+          ]
+        },
+        "start": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "end": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "event_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "custody_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/surface"
+          }
+        },
+        "provenance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "author",
+        "layer",
+        "start",
+        "provenance"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "layer": {
+                "enum": [
+                  "POSTSCRIPT",
+                  "REOPENED_ADDITION",
+                  "SECOND_AUTHOR_ADDITION",
+                  "ANNOTATION",
+                  "LATER_RECORDING",
+                  "MEDIA_EDIT"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "event_ref",
+              "custody_ref"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "layer": {
+                "const": "ORIGINAL_INSCRIPTION"
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "event_ref"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "sealed_at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "sent_at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "mailed_at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "delivered_at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "opened_at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "finalized_at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "author_control_until": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "recording_start": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "recording_end": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "change": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "ANNOTATE",
+            "REMOVE_SHEET",
+            "OPEN",
+            "TRANSFER",
+            "CHANGE_CONDITION",
+            "MEDIA_EDIT"
+          ]
+        },
+        "at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "actor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "custody_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "before": {
+          "$ref": "#/$defs/state"
+        },
+        "after": {
+          "$ref": "#/$defs/state"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "at",
+        "actor",
+        "custody_ref",
+        "provenance",
+        "before",
+        "after"
+      ],
+      "additionalProperties": false
+    },
+    "artifact": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "medium": {
+          "enum": [
+            "paper",
+            "audio",
+            "video",
+            "digital",
+            "other"
+          ]
+        },
+        "durable": {
+          "type": "boolean"
+        },
+        "high_risk": {
+          "type": "boolean"
+        },
+        "required_for": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "inscription_timing",
+              "custody",
+              "physical_extent",
+              "sealing",
+              "sending",
+              "delivery",
+              "opening",
+              "finalization"
+            ]
+          }
+        },
+        "lifecycle": {
+          "$ref": "#/$defs/lifecycle"
+        },
+        "physical_extent": {
+          "$ref": "#/$defs/extent"
+        },
+        "inscriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/inscription"
+          }
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/event"
+          }
+        },
+        "world_state": {
+          "$ref": "#/$defs/state"
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/change"
+          }
+        },
+        "snapshots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/snapshot"
+          }
+        },
+        "source_artifact_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "segment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start": {
+          "type": "number",
+          "minimum": 0
+        },
+        "end": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "start",
+        "end"
+      ],
+      "additionalProperties": false
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chapter": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "at": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "scene_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "chapter",
+        "at",
+        "state"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

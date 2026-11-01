@@ -1,0 +1,10 @@
+{
+  "contract_version": "1.0.0",
+  "requested_intensity": "medium",
+  "project_default_intensity": null,
+  "max_escalation_ceiling": "max",
+  "escalation_policy": "priority-concentration-first",
+  "calibration_profile": "default-v0.1",
+  "trace_mode": "summary",
+  "strategy_id": null
+}

@@ -1,0 +1,27 @@
+{
+  "project_id": "PROJECT-ID",
+  "sample_id": "chapter-or-range",
+  "features": {
+    "conflict_sources": [],
+    "propulsion_modes": [],
+    "scene_exit_modes": [],
+    "climax_mechanisms": [],
+    "pov_pattern": "",
+    "secret_density": "none",
+    "institutional_causality": "none",
+    "ordinary_life_share": "medium",
+    "explanation_density": "medium",
+    "paragraph_rhythm": "mixed",
+    "project_poetics": {
+      "salience_sources": [],
+      "reader_activities": [],
+      "progression_modes": [],
+      "mind_knowability": "",
+      "form_visibility": "",
+      "licensed_recurrence": [],
+      "active_capabilities": [],
+      "do_not_optimize": []
+    }
+  },
+  "notes": "Diagnostic only. Similarity is not a quality score and difference is not automatically better."
+}

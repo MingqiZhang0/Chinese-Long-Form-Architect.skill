@@ -1,0 +1,23 @@
+{
+  "project_id": "technical-procedural-clarity",
+  "features": {
+    "organizing": "程序解释与操作清晰；必要机制必须解释，不能被含混和氛围吞没。",
+    "reader_activity": "操作顺序及必要机制清楚，不人为制造谜团。",
+    "structural_form": [
+      "交接说明规约",
+      "切断阀门",
+      "观察压差",
+      "解释等待原因",
+      "归零后打开",
+      "复述及异常边界"
+    ],
+    "mediation": "restricted",
+    "closure": "操作顺序及必要机制清楚，不人为制造谜团。",
+    "project_poetics": {
+      "active_capabilities": [
+        "forced-procedural-opacity",
+        "procedure-order-corruption"
+      ]
+    }
+  }
+}

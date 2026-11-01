@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "items": [
+    {
+      "debt_id": "ND-001",
+      "kind": "motivation",
+      "issue": "A consequential choice currently has weaker motivation than the later plot requires.",
+      "temporary_justification": "Accepted for the current draft only.",
+      "status": "open",
+      "severity": "medium",
+      "introduced_at": "CH-0010",
+      "resolve_before": "CH-0020",
+      "depends_on": ["CH-0010"],
+      "interest": "Future scenes increasingly rely on this choice, so repair cost grows with each dependent chapter.",
+      "resolution": ""
+    }
+  ]
+}

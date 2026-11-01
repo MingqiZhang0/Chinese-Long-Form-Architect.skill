@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "invariants": [
+    {
+      "id": "loop-iteration-nonnegative",
+      "kind": "always",
+      "severity": "error",
+      "condition": {
+        "path": "loop.iteration",
+        "op": "gte",
+        "value": 0
+      },
+      "message": "The committed loop iteration counter may not become negative."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "proposal_id": "WORK-001",
+  "contract_version": "1.0.0",
+  "capability_id": "example-capability",
+  "operation_id": "example-operation",
+  "epoch_id": "EPOCH-main-R1",
+  "target_refs": ["TARGET-001"],
+  "necessity_claim": "optional",
+  "semantic_scope": ["local"],
+  "cost_hint": "moderate",
+  "value_signals": ["current-task-relevant"],
+  "capability_requirements": [],
+  "authority_ceiling": "advisory",
+  "basis": {
+    "branch": "main",
+    "epoch_revision": "R1",
+    "dependency_fingerprint": "example-fingerprint",
+    "security_domain": "planner"
+  },
+  "extensions": {}
+}

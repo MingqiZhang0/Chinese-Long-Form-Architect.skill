@@ -1,0 +1,818 @@
+{
+  "corpus_version": "1.2.0",
+  "policy": {
+    "automated_cases_are_promotion_gates": true,
+    "documented_cases_are_not_counted_in_mutation_score": true,
+    "baseline_must_pass_before_mutation": true,
+    "surviving_non_equivalent_mutants_block_promotion": true,
+    "random_seed_alone_is_not_a_durable_reproducer": true
+  },
+  "cases": [
+    {
+      "id": "FC-001",
+      "title": "Default invariant pollution",
+      "source": "historical-integration",
+      "category": "runtime",
+      "severity": "high",
+      "owner": "references/narrative-invariants.md",
+      "regression_links": [
+        221
+      ],
+      "automation": "documented",
+      "mechanism": "A generic cash invariant was installed by default even when the fiction had no such resource model.",
+      "lesson": "Default invariant registries must be neutral; story-specific laws require explicit project ownership."
+    },
+    {
+      "id": "FC-002",
+      "title": "Research freshness split-brain",
+      "source": "historical-integration",
+      "category": "research",
+      "severity": "medium",
+      "owner": "references/reality-grounding-research.md",
+      "regression_links": [
+        222
+      ],
+      "automation": "documented",
+      "mechanism": "Two tools computed freshness using different logic.",
+      "lesson": "Shared semantics belong in one implementation and multiple consumers must call it."
+    },
+    {
+      "id": "FC-003",
+      "title": "Scene issue ownership lost in formatted strings",
+      "source": "historical-integration",
+      "category": "state-validation",
+      "severity": "medium",
+      "owner": "references/state-validation.md",
+      "regression_links": [
+        223
+      ],
+      "automation": "documented",
+      "mechanism": "Scene-scoped diagnostics were filtered by searching a rendered error string rather than structured scene ownership.",
+      "lesson": "Machine ownership must stay structured until presentation."
+    },
+    {
+      "id": "FC-004",
+      "title": "Checkpoint path alias duplication",
+      "source": "historical-integration",
+      "category": "orchestration",
+      "severity": "low",
+      "owner": "references/single-agent-isolation.md",
+      "regression_links": [
+        224
+      ],
+      "automation": "documented",
+      "mechanism": "Relative and absolute aliases of the same pass artifact bypassed deduplication.",
+      "lesson": "Canonicalize durable path identity before comparing pass references."
+    },
+    {
+      "id": "FC-011",
+      "title": "Fresh init immediately unverifiable",
+      "source": "whole-skill-cleanup",
+      "category": "project-operability",
+      "severity": "high",
+      "owner": "references/project-operability.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "The official init command created a manifest but omitted the minimal Story State required by its own verifier.",
+      "lesson": "Every public constructor must produce an object that passes its public verifier immediately."
+    },
+    {
+      "id": "FC-012",
+      "title": "Profile upgrade changed labels without guarantees",
+      "source": "whole-skill-cleanup",
+      "category": "project-operability",
+      "severity": "high",
+      "owner": "references/project-operability.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "A governance profile could be raised without checking that the required artifacts actually existed.",
+      "lesson": "Governance upgrades are transactional guarantee changes, not enum edits."
+    },
+    {
+      "id": "FC-013",
+      "title": "Empty directory masqueraded as enabled protection",
+      "source": "whole-skill-cleanup",
+      "category": "project-operability",
+      "severity": "medium",
+      "owner": "references/project-operability.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "Legacy migration inferred a subsystem from an empty placeholder directory.",
+      "lesson": "Capability detection requires meaningful durable evidence, not directory existence."
+    },
+    {
+      "id": "FC-014",
+      "title": "Fixture Runtime history lagged current state",
+      "source": "whole-skill-cleanup",
+      "category": "runtime",
+      "severity": "high",
+      "owner": "references/narrative-runtime.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "A regression fixture claimed a current chapter far beyond what its committed Runtime history could replay.",
+      "lesson": "A Runtime fixture must replay to the state it claims to represent."
+    },
+    {
+      "id": "FC-015",
+      "title": "Hard-coded orchestration capability",
+      "source": "whole-skill-cleanup",
+      "category": "orchestration",
+      "severity": "medium",
+      "owner": "references/single-agent-isolation.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "A template claimed a soft-serial profile and capabilities before any environment probe.",
+      "lesson": "Capability templates start from unknown/denied and observed evidence upgrades them."
+    },
+    {
+      "id": "FC-016",
+      "title": "Project profile default split",
+      "source": "whole-skill-cleanup",
+      "category": "project-operability",
+      "severity": "medium",
+      "owner": "references/project-operability.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "The manifest template defaulted to Persistent while the init command and design contract defaulted to Lean.",
+      "lesson": "One default must have one source of truth."
+    },
+    {
+      "id": "FC-017",
+      "title": "Commit-order contract split",
+      "source": "whole-skill-cleanup",
+      "category": "runtime",
+      "severity": "high",
+      "owner": "references/narrative-runtime.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "High-level lifecycle documentation disagreed with Runtime about whether events or projections commit first.",
+      "lesson": "Write-side committed history precedes regenerable projections."
+    },
+    {
+      "id": "FC-018",
+      "title": "Semantic law ID collision",
+      "source": "semantics-kernel-build",
+      "category": "semantics",
+      "severity": "high",
+      "owner": "references/narrative-semantics-kernel.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "One law ID acquired multiple meanings as the Kernel evolved.",
+      "lesson": "Stable semantic law identifiers are part of the compatibility surface."
+    },
+    {
+      "id": "FC-019",
+      "title": "Declared branch head drifts from committed history",
+      "source": "semantics-kernel-build",
+      "category": "semantics",
+      "severity": "high",
+      "owner": "references/narrative-semantics-kernel.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/time-loop-forensic",
+      "operator": "branch-head-drift",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K2"
+      },
+      "mechanism": "Project Manifest points at an event other than the active committed branch head.",
+      "lesson": "Semantic head identity must be cross-checked against replayable history."
+    },
+    {
+      "id": "FC-020",
+      "title": "Project and Runtime identity split",
+      "source": "semantics-kernel-build",
+      "category": "semantics",
+      "severity": "high",
+      "owner": "references/narrative-semantics-kernel.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/time-loop-forensic",
+      "operator": "runtime-project-id-drift",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K18"
+      },
+      "mechanism": "Runtime Manifest identifies a different project than Project Manifest.",
+      "lesson": "Stable semantic identity must survive across representation layers."
+    },
+    {
+      "id": "FC-021",
+      "title": "Prose-only revision smuggles canon delta",
+      "source": "semantics-kernel-build",
+      "category": "revision",
+      "severity": "high",
+      "owner": "references/semantic-revision.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/time-loop-forensic",
+      "operator": "prose-only-canon-delta",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K14"
+      },
+      "mechanism": "A report classifies a change as prose-only while carrying a candidate durable state delta.",
+      "lesson": "Minimal semantic disturbance requires label/approval/delta agreement."
+    },
+    {
+      "id": "FC-023",
+      "title": "Branch-local context leaks into unrelated branch",
+      "source": "semantics-kernel-build",
+      "category": "branching",
+      "severity": "high",
+      "owner": "references/narrative-semantics-kernel.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/time-loop-forensic",
+      "operator": "cross-branch-context-leak",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K6"
+      },
+      "mechanism": "A main-branch Writer artifact derives from a source that exists only on a sibling/sandbox branch.",
+      "lesson": "Branch lineage constrains context provenance."
+    },
+    {
+      "id": "FC-024",
+      "title": "Open authorial unknown silently resolved",
+      "source": "semantics-kernel-build",
+      "category": "discovery",
+      "severity": "high",
+      "owner": "references/discovery-drafting.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/relationship-lean",
+      "operator": "collapse-open-unknown",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K16"
+      },
+      "mechanism": "An item remains marked open while a selected answer has already been populated.",
+      "lesson": "Authorial possibility space must not collapse through incidental serialization."
+    },
+    {
+      "id": "FC-025",
+      "title": "Approved prose evidence becomes stale after edit",
+      "source": "semantics-kernel-build",
+      "category": "reconciliation",
+      "severity": "high",
+      "owner": "references/prose-state-reconciliation.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/time-loop-forensic",
+      "operator": "stale-reconciliation-evidence",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K13"
+      },
+      "mechanism": "Chapter prose changes after reconciliation approval while old hashes/evidence remain trusted.",
+      "lesson": "Evidence approval is content-addressed and becomes stale when source bytes change."
+    },
+    {
+      "id": "FC-026",
+      "title": "Declassification releases an unrelated secret",
+      "source": "semantics-kernel-build",
+      "category": "context",
+      "severity": "high",
+      "owner": "references/context-compilation.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/time-loop-forensic",
+      "operator": "invalid-declassification",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K11"
+      },
+      "mechanism": "An artifact claims role declassification for a secret ID it does not carry through provenance.",
+      "lesson": "Declassification can reduce visibility restrictions only for taint actually carried by that artifact."
+    },
+    {
+      "id": "FC-027",
+      "title": "Duplicate Runtime sequence",
+      "source": "mutation-foundation",
+      "category": "runtime",
+      "severity": "high",
+      "owner": "references/narrative-runtime.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/time-loop-forensic",
+      "operator": "duplicate-event-seq",
+      "detector": {
+        "kind": "semantic-law-any",
+        "laws": [
+          "K3",
+          "K5"
+        ]
+      },
+      "mechanism": "Two committed events on one branch claim the same sequence number.",
+      "lesson": "Committed branch order must remain mechanically valid before replay."
+    },
+    {
+      "id": "FC-028",
+      "title": "Branch forks from missing event",
+      "source": "mutation-foundation",
+      "category": "branching",
+      "severity": "high",
+      "owner": "references/narrative-runtime.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/time-loop-forensic",
+      "operator": "missing-fork-event",
+      "detector": {
+        "kind": "semantic-law-any",
+        "laws": [
+          "K3",
+          "K5"
+        ]
+      },
+      "mechanism": "A child branch names a fork event absent from the parent effective history.",
+      "lesson": "Counterfactual lineage requires a real shared prefix."
+    },
+    {
+      "id": "FC-029",
+      "title": "Enabled subsystem loses its canonical artifact",
+      "source": "mutation-foundation",
+      "category": "project-operability",
+      "severity": "high",
+      "owner": "references/project-operability.md",
+      "regression_links": [],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/xianxia-growth",
+      "operator": "drop-context-canonical-path",
+      "detector": {
+        "kind": "project-verify-reject"
+      },
+      "mechanism": "Context compilation remains enabled while its canonical Context Index pointer disappears.",
+      "lesson": "Declared guarantees and canonical artifacts must remain bidirectionally consistent."
+    },
+    {
+      "id": "FC-034",
+      "title": "Working hypothesis launders into authoritative constraint",
+      "source": "open-issue-semantics-build",
+      "category": "open-semantics",
+      "severity": "high",
+      "owner": "references/open-issue-semantics.md",
+      "regression_links": [
+        280
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/relationship-lean",
+      "operator": "launder-working-hypothesis",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K16"
+      },
+      "mechanism": "A viable working hypothesis is serialized again as an active compatibility constraint with a non-authoritative basis, silently shrinking authorial openness.",
+      "lesson": "Planning stance may guide conditional exploration but cannot narrow the authorial commitment envelope without an authoritative A-level basis."
+    },
+    {
+      "id": "FC-035",
+      "title": "Excluded position remains active working hypothesis",
+      "source": "open-issue-semantics-build",
+      "category": "open-semantics",
+      "severity": "high",
+      "owner": "references/open-issue-semantics.md",
+      "regression_links": [
+        282
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/relationship-lean",
+      "operator": "excluded-working-hypothesis",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K16"
+      },
+      "mechanism": "An authoritatively excluded position still carries working_hypothesis planning stance, allowing downstream planning to depend on a possibility the commitment envelope has removed.",
+      "lesson": "Position viability and planning stance are orthogonal, but a working hypothesis must remain viable; exclusion invalidates that stance and its conditional dependents."
+    },
+    {
+      "id": "FC-037",
+      "title": "Excluded hypothesis still supports active conditional planning",
+      "source": "open-issue-semantics-build",
+      "category": "dependency-graph",
+      "severity": "high",
+      "owner": "references/open-issue-semantics.md",
+      "regression_links": [
+        284
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/xianxia-growth",
+      "operator": "active-dependency-on-excluded-hypothesis",
+      "detector": {
+        "kind": "semantic-law",
+        "law": "K15"
+      },
+      "mechanism": "An authoritatively excluded OpenIssue position remains the source of an active conditional-on-hypothesis dependency edge into downstream planning.",
+      "lesson": "Conditional provenance must participate in dependency invalidation; exclusion does not merely change a label while dependent planning stays active."
+    },
+    {
+      "id": "FC-038",
+      "title": "Quiet scene forcibly given a plot delta",
+      "source": "project-poetics-research",
+      "category": "poetics-overcorrection",
+      "severity": "high",
+      "owner": "references/narrative-selection.md",
+      "regression_links": [
+        202
+      ],
+      "automation": "documented",
+      "mechanism": "A scene authorized for ordinary inhabitation, recurrence, or perceptual completion is repaired by inventing a plot/relationship delta solely to justify page time.",
+      "lesson": "Scene legitimacy follows scoped Project Poetics; durable change is one contribution mode, not the universal ontology of scene."
+    },
+    {
+      "id": "FC-039",
+      "title": "Theme coerced into polyphonic debate",
+      "source": "project-poetics-research",
+      "category": "poetics-overcorrection",
+      "severity": "high",
+      "owner": "references/thematic-polyphony.md",
+      "regression_links": [
+        203
+      ],
+      "automation": "documented",
+      "mechanism": "A perceptual, ritual, symbolic, or obsession-centered theme is forced into competing positions because polyphony was treated as the universal owner of theme.",
+      "lesson": "Thematic polyphony is a selectable capability, not a requirement for all themes."
+    },
+    {
+      "id": "FC-040",
+      "title": "Authorized formal heterogeneity normalized as voice drift",
+      "source": "project-poetics-research",
+      "category": "poetics-overcorrection",
+      "severity": "high",
+      "owner": "references/voice-architecture.md",
+      "regression_links": [
+        206
+      ],
+      "automation": "documented",
+      "mechanism": "A chapter-scoped formal override is standardized back toward the project baseline because surface invariance was mistaken for consistency.",
+      "lesson": "Consistency is not invariance; diagnostics must distinguish authorized scoped variation from accidental drift."
+    },
+    {
+      "id": "FC-041",
+      "title": "First-person self-report promoted to psychological canon",
+      "source": "project-poetics-research",
+      "category": "epistemic-poetics",
+      "severity": "high",
+      "owner": "references/focalization-narrator.md",
+      "regression_links": [
+        208
+      ],
+      "automation": "documented",
+      "mechanism": "The narrator's sincere self-explanation is stored or treated as objective psychological truth, collapsing self-model, narrator statement, world fact, and reader inference.",
+      "lesson": "First-person access is not psychological truth; preserve epistemic layer distinctions."
+    },
+    {
+      "id": "FC-042",
+      "title": "Inactive capability becomes readiness bureaucracy",
+      "source": "project-poetics-research",
+      "category": "planning-governance",
+      "severity": "high",
+      "owner": "references/prewriting-readiness.md",
+      "regression_links": [
+        210
+      ],
+      "automation": "documented",
+      "mechanism": "A project is blocked because a Hidden Network, detailed Timeline, Reader Model, or other capability artifact is absent despite never being activated by causal risk or Project Poetics.",
+      "lesson": "Base Readiness plus activated artifacts replaces the fixed universal planning bundle."
+    },
+    {
+      "id": "FC-043",
+      "title": "Declared active optional artifact missing",
+      "source": "project-poetics-implementation",
+      "category": "planning-governance",
+      "severity": "high",
+      "owner": "references/project-operability.md",
+      "regression_links": [
+        210
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/relationship-lean",
+      "operator": "missing-active-optional-artifact",
+      "detector": {
+        "kind": "project-verify-reject"
+      },
+      "mechanism": "An optional artifact is explicitly declared active in the Project Manifest but its referenced file does not exist.",
+      "lesson": "Optional means conditional, not unverified: inactive artifacts create no debt, but explicitly active obligations must be present and valid."
+    },
+    {
+      "id": "FC-044",
+      "title": "Production false readiness and self-reported maturity",
+      "source": "phase-4-user-incident-and-maintenance-audit",
+      "category": "planning-governance",
+      "severity": "high",
+      "owner": "references/prewriting-readiness.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "Claimed readiness counted files and declarations without structured chapter/Cast/Scene evidence.",
+      "lesson": "Evidence-backed first-volume/current-cone safety plus live formal permission.",
+      "integration_case": "production-readiness-structural",
+      "incident_ref": "assets/live-campaign/incidents/2026-10-04-san-shi-ri-chang-an-prewriting.json"
+    },
+    {
+      "id": "FC-045",
+      "title": "Approval drift and stale live handoff",
+      "source": "phase-4-user-incident-and-maintenance-audit",
+      "category": "planning-governance",
+      "severity": "high",
+      "owner": "references/prewriting-readiness.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "Old approval or identical Markdown concealed changed readiness or compilation metadata.",
+      "lesson": "Freeze/present/new approval and compare complete live pack manifests.",
+      "integration_case": "production-readiness-approval",
+      "incident_ref": "assets/live-campaign/incidents/2026-10-04-san-shi-ri-chang-an-prewriting.json"
+    },
+    {
+      "id": "FC-046",
+      "title": "Transitive provenance and injected taint laundering",
+      "source": "phase-4-user-incident-and-maintenance-audit",
+      "category": "planning-governance",
+      "severity": "high",
+      "owner": "references/context-compilation.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "Missing indirect ancestors, unknown secret labels or injected scoped-poetics aliases could bypass provenance/taint closure.",
+      "lesson": "Unique nodes, transitive incomplete-parent closure, registered taints and preserved injected derivation.",
+      "integration_case": "production-readiness-provenance",
+      "incident_ref": "assets/live-campaign/incidents/2026-10-04-san-shi-ri-chang-an-prewriting.json"
+    },
+    {
+      "id": "FC-047",
+      "title": "Windows neutral-template byte drift",
+      "source": "phase-4-user-incident-and-maintenance-audit",
+      "category": "planning-governance",
+      "severity": "high",
+      "owner": "references/project-operability.md",
+      "regression_links": [],
+      "automation": "documented",
+      "mechanism": "Text-mode neutral Project Poetics bootstrap changed template bytes on Windows.",
+      "lesson": "Copy exact template bytes and hash the same bytes.",
+      "integration_case": "legacy-project-poetics-bootstrap",
+      "incident_ref": "assets/live-campaign/incidents/2026-10-04-san-shi-ri-chang-an-prewriting.json"
+    },
+    {
+      "id": "FC-048",
+      "title": "force-event-escalation",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/atmospheric-relational-distance",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "忽然棚里有人拔刀，他们必须追查杀人者。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-049",
+      "title": "force-character-transformation",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/self-misreading-confession",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "这一天以后，我彻底改正缺点，成为了健全的人。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-050",
+      "title": "force-psychological-explanation",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/self-misreading-confession",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "我的所有玩笑都源于依恋障碍，因此真实动机已经确定。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-051",
+      "title": "force-polyphony",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/obsessive-interiority",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "为了平衡这个单一意识，现在插入五个旁观者的完整思想。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-052",
+      "title": "force-unique-symbol-meaning",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/obsessive-interiority",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "这件物品唯一象征自由，其他含义都是错误的。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-053",
+      "title": "force-chronology-normalization",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/memory-associative-temporality",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "按年份依次讲完这些往事。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-054",
+      "title": "force-mystery-closure",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/metaphysical-identity-contestation",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "身份延续理论已经被证明为真。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-055",
+      "title": "force-mystery-openness",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/fair-clue-detection",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "这个承诺唯一解答的案件永远不会给出答案。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-056",
+      "title": "force-pov-broadening",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/self-misreading-confession",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "此刻我准确知道周谨没有说出的每一个念头。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-057",
+      "title": "force-social-simplification",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/social-ambition-status",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "社会地位一旦升级就不会失去。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-058",
+      "title": "force-perceptual-payoff",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/atmospheric-relational-distance",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "车镜雨衣水坑都是预谋犯罪的线索。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    },
+    {
+      "id": "FC-059",
+      "title": "force-episodic-conspiracy",
+      "source": "original-multi-regime-maintenance",
+      "category": "project-poetics",
+      "severity": "high",
+      "owner": "references/chinese-narrative-behavioral-evaluation.md",
+      "regression_links": [
+        "P202",
+        "P208",
+        "P209"
+      ],
+      "automation": "automated",
+      "seed": "assets/regression-corpora/episodic-investigative-series",
+      "operator": "regime-intervention",
+      "detector": {
+        "kind": "poetics-preservation",
+        "intervention": "三案都是同一个幕后组织策划。"
+      },
+      "mechanism": "Known explicit forbidden intervention changes the declared project contract.",
+      "lesson": "Literal detection is a narrow regression boundary; independently judged paraphrase and literary behavior remain required."
+    }
+  ]
+}

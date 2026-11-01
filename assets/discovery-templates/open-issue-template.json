@@ -1,0 +1,31 @@
+{
+  "record_version": "2.0.0",
+  "mode": "OPEN_ISSUE",
+  "question_id": "OI-0001",
+  "question": "Why did she leave?",
+  "state": "open",
+  "resolution_policy": "may_resolve",
+  "resolution_criterion": "Decide the direct causal trigger only when downstream causality requires it; do not force a complete psychological explanation.",
+  "decision_authority": {
+    "owner_type": "user",
+    "delegation_ref": null
+  },
+  "decision_horizon": null,
+  "domain_semantics": "open_ended",
+  "constraints": [],
+  "positions": [
+    {
+      "position_id": "OI-0001-P1",
+      "claim_id": null,
+      "statement": "Her departure may be materially connected to her father.",
+      "viability": "viable",
+      "planning_stance": "working_hypothesis",
+      "provenance_ref": "USER-HYPOTHESIS-EXAMPLE",
+      "exclusion_basis_ref": null
+    }
+  ],
+  "clue_refs": [],
+  "resolution": null,
+  "retirement": null,
+  "planning_owner_ref": null
+}

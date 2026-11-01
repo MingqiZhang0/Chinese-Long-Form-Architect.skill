@@ -1,0 +1,16 @@
+{
+  "discovery_id": "DISC-0001",
+  "source_chapter": 1,
+  "source_scene": "SCN-0001",
+  "draft_version": "draft-1",
+  "observed_textual_claim": "",
+  "inferred_implication": "",
+  "affected_entities": [],
+  "dependencies": [],
+  "conflicts": [],
+  "status": "OBSERVED_IN_DRAFT",
+  "recommended_action": "review; never auto-promote a story fact or poetics hypothesis",
+  "discovery_kind": "story_fact_or_pattern",
+  "authority_target": "review",
+  "poetics_hypothesis": null
+}

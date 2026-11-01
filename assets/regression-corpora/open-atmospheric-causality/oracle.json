@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "open-atmospheric-causality",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复把把，不添加跨诗学优化。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "位置与操作清楚；成因保持两种文本可行路径，维护具有体验完成。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "材料经验先于分类；有界假说与体验完成；异常不是欠缺资料的借口。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "仅修复明确错字与必要指代。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "encyclopedic-closure",
+      "description": "encyclopedic-closure",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "fake-ambiguity",
+      "description": "fake-ambiguity",
+      "critical": true
+    },
+    {
+      "id": "F3",
+      "intervention_class": "pov-withholding-cheat",
+      "description": "pov-withholding-cheat",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "把把"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "晒布架",
+        "盐",
+        "湿度"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "幕后原因已经全部解释清楚|只有制造神秘才有价值|她故意忘掉自己知道的原因"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.65,
+      "max": 1.5
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

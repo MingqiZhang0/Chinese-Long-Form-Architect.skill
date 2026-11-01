@@ -1,0 +1,20 @@
+{
+  "result_id": "RESULT-001",
+  "proposal_id": "WORK-001",
+  "contract_version": "1.0.0",
+  "epoch_id": "EPOCH-main-R1",
+  "basis": {
+    "branch": "main",
+    "epoch_revision": "R1",
+    "dependency_fingerprint": "example-fingerprint",
+    "security_domain": "planner"
+  },
+  "result_kind": "analysis",
+  "authority": "advisory",
+  "status": "complete",
+  "dependency_refs": ["TARGET-001"],
+  "freshness": "fresh",
+  "artifact_ref": null,
+  "semantic_digest": null,
+  "extensions": {}
+}

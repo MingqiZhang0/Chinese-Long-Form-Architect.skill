@@ -1,0 +1,254 @@
+{
+  "planning": {
+    "schema_version": "1.0.0",
+    "fixture_id": "metaphysical-identity-contestation",
+    "language": "zh-CN",
+    "task_type": "planning",
+    "refs": {
+      "input": "planning-input.md",
+      "task": "planning-task.md",
+      "project_poetics": "project-brief.md",
+      "positive_control": "planning-control.md",
+      "wrong_poetics_mutant": "planning-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立planning资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "材料核验关闭；身份理论保留支持与反证，并有兼容边界。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "解释框架的支持与反证；身份连续性保持有界争议，不能靠巧合自动确认。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "ontology-auto-resolution",
+        "description": "ontology-auto-resolution",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "coincidence-confirmation",
+        "description": "coincidence-confirmation",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "unbounded-openness",
+        "description": "unbounded-openness",
+        "critical": true
+      },
+      {
+        "id": "RF54",
+        "intervention_class": "force-mystery-closure",
+        "description": "不得加入：身份延续理论已经被证明为真。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^身份延续理论已经被证明为真。?\\s*$"
+      },
+      {
+        "id": "R54",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^身份延续理论已经被证明为真。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "chapter": {
+    "schema_version": "1.0.0",
+    "fixture_id": "metaphysical-identity-contestation",
+    "language": "zh-CN",
+    "task_type": "chapter",
+    "refs": {
+      "input": "chapter-input.md",
+      "task": "chapter-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "chapter-control.md",
+      "wrong_poetics_mutant": "chapter-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立chapter资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "材料核验关闭；身份理论保留支持与反证，并有兼容边界。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "解释框架的支持与反证；身份连续性保持有界争议，不能靠巧合自动确认。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "ontology-auto-resolution",
+        "description": "ontology-auto-resolution",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "coincidence-confirmation",
+        "description": "coincidence-confirmation",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "unbounded-openness",
+        "description": "unbounded-openness",
+        "critical": true
+      },
+      {
+        "id": "RF54",
+        "intervention_class": "force-mystery-closure",
+        "description": "不得加入：身份延续理论已经被证明为真。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^身份延续理论已经被证明为真。?\\s*$"
+      },
+      {
+        "id": "R54",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^身份延续理论已经被证明为真。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "drafting": {
+    "schema_version": "1.0.0",
+    "fixture_id": "metaphysical-identity-contestation",
+    "language": "zh-CN",
+    "task_type": "drafting",
+    "refs": {
+      "input": "drafting-input.md",
+      "task": "drafting-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "drafting-control.md",
+      "wrong_poetics_mutant": "drafting-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立drafting资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "材料核验关闭；身份理论保留支持与反证，并有兼容边界。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "解释框架的支持与反证；身份连续性保持有界争议，不能靠巧合自动确认。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "ontology-auto-resolution",
+        "description": "ontology-auto-resolution",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "coincidence-confirmation",
+        "description": "coincidence-confirmation",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "unbounded-openness",
+        "description": "unbounded-openness",
+        "critical": true
+      },
+      {
+        "id": "RF54",
+        "intervention_class": "force-mystery-closure",
+        "description": "不得加入：身份延续理论已经被证明为真。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^身份延续理论已经被证明为真。?\\s*$"
+      },
+      {
+        "id": "R54",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "身份延续理论已经被证明为真"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "project_id": "social-ambition-status",
+  "features": {
+    "organizing": "社会策略与自我误读；见证者改变一句话的风险；地位收益可以伴随私人损失。",
+    "reader_activity": "职业身份与旧关系同时移动；社会地位收益并不消除私人损失。",
+    "structural_form": [
+      "进入编目室并学习称呼",
+      "公开介绍时隐藏母亲的职业",
+      "得到座位却失去旧同事的回应",
+      "向赞助人借阅权限并欠下人情",
+      "旧同事被拒入内而她沉默",
+      "合同获准但旧关系的称呼改变"
+    ],
+    "mediation": "restricted",
+    "closure": "职业身份与旧关系同时移动；社会地位收益并不消除私人损失。",
+    "project_poetics": {
+      "active_capabilities": [
+        "social-level-flattening",
+        "social-thesis-explanation",
+        "cast-growth-instrument"
+      ]
+    }
+  }
+}

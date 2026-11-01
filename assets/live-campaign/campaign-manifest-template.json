@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "campaign_id": "LIVE-CAMPAIGN-ID",
+  "campaign_type": "live-creative-campaign",
+  "track_id": "realist-mystery-persistent",
+  "project_id": "PROJECT-ID",
+  "target_chapters": 100,
+  "created_at": null,
+  "source_attestation": {
+    "synthetic": false,
+    "real_drafting_workflow": true,
+    "notes": "Attestation only; artifact-backed evidence and human review are still required.",
+    "session_logging_scope": "checkpoint-linked-only"
+  },
+  "canonical_checkpoints": [
+    1,
+    10,
+    25,
+    50,
+    75,
+    100
+  ],
+  "checkpoints_dir": "checkpoints",
+  "checkpoint_index": [],
+  "notes": null,
+  "registration": {
+    "registered_at_utc": "2026-10-02T01:30:00+00:00",
+    "project_chapter": 0,
+    "trace": {
+      "project_manifest": {
+        "path": "project-manifest.json",
+        "sha256": "SHA256-AT-REGISTRATION"
+      },
+      "story_state": null,
+      "skill_tooling": {
+        "skill_control_plane_sha256": "SHA256",
+        "campaign_harness_sha256": "SHA256",
+        "semantic_kernel_sha256": "SHA256",
+        "storyctl_sha256": "SHA256"
+      }
+    }
+  },
+  "sessions_dir": "sessions",
+  "session_index": []
+}

@@ -1,0 +1,77 @@
+{
+  "project_brief": {
+    "artifact_ref": "intake/project-brief.md",
+    "coverage": [],
+    "open_items": [
+      "Establish current-cone evidence before maturity."
+    ]
+  },
+  "project_poetics": {
+    "artifact_ref": "planning/project-poetics.md",
+    "coverage": [],
+    "open_items": [
+      "Establish current-cone evidence before maturity."
+    ],
+    "draft_dependencies": []
+  },
+  "narrative_strategy": {
+    "artifact_ref": "planning/08-narrative-strategy.md",
+    "coverage": [],
+    "open_items": [
+      "Establish current-cone evidence before maturity."
+    ],
+    "draft_dependencies": []
+  },
+  "author_mission": {
+    "artifact_ref": "planning/10-chapter-01-mission.md",
+    "coverage": [],
+    "open_items": [
+      "Establish current-cone evidence before maturity."
+    ]
+  },
+  "writer_mission": {
+    "artifact_ref": "context/chapter-01-writer-mission.md",
+    "coverage": [],
+    "open_items": [
+      "Establish current-cone evidence before maturity."
+    ],
+    "target_chapter": 1
+  },
+  "cast": {
+    "artifact_ref": "planning/character-roster.md",
+    "coverage": [],
+    "open_items": [
+      "Establish current-cone evidence before maturity."
+    ],
+    "narrative_centers": [],
+    "characters": [],
+    "opening_character_ids": []
+  },
+  "world_model": {
+    "artifact_ref": "planning/02-world-model.md",
+    "coverage": [],
+    "open_items": [
+      "Establish current-cone evidence before maturity."
+    ],
+    "institutions": "",
+    "ordinary_life": "",
+    "space": "",
+    "power": "",
+    "information": "",
+    "resources": "",
+    "offscreen_autonomy": "",
+    "social_countermeasures": "",
+    "cultural_constraints": ""
+  },
+  "long_horizon_architecture": {
+    "artifact_ref": "planning/06-long-horizon-architecture.md",
+    "coverage": [],
+    "open_items": [
+      "Establish current-cone evidence before maturity."
+    ],
+    "planned_volume_count": null,
+    "author_decision_ref": null,
+    "volumes": [],
+    "later_volumes": "NOT_APPLICABLE"
+  }
+}

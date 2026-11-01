@@ -1,0 +1,24 @@
+{
+  "project_id": "episodic-investigative-series",
+  "features": {
+    "organizing": "调查与局部严格闭合；系列熟悉感与关系累积，独立案件不必共享阴谋。",
+    "reader_activity": "每案给出可回溯答案；关系累积，不发明共同幕后人。",
+    "structural_form": [
+      "甲案观察编号并提出盗取或误抄",
+      "甲案排除盗取并闭合误抄",
+      "乙案比较签名和两次扣款",
+      "乙案闭合重复扣款并分配工作",
+      "丙案核对盖章与收件时间",
+      "丙案闭合且两人的桌面分工改变"
+    ],
+    "mediation": "restricted",
+    "closure": "每案给出可回溯答案；关系累积，不发明共同幕后人。",
+    "project_poetics": {
+      "active_capabilities": [
+        "episodic-mega-conspiracy",
+        "forced-case-openness",
+        "retroactive-clue-invention"
+      ]
+    }
+  }
+}

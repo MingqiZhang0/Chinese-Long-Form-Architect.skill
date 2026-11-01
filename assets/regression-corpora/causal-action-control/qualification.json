@@ -1,0 +1,197 @@
+{
+  "planning": {
+    "schema_version": "1.0.0",
+    "fixture_id": "causal-action-control",
+    "language": "zh-CN",
+    "task_type": "planning",
+    "refs": {
+      "input": "planning-input.md",
+      "task": "planning-task.md",
+      "project_poetics": "project-brief.md",
+      "positive_control": "planning-control.md",
+      "wrong_poetics_mutant": "planning-mutant.md"
+    },
+    "targeted_local_defect": "独立任务资格，不将校准控制当作模型输出。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "高因果密度、资源消耗、决定与反应。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "限定观察，进水闭合而资源后果留存。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成独立规划或起草。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "forced-action-interiority",
+        "description": "不以不相关内省删除紧迫行动。",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "action-causal-obscurity",
+        "description": "必要操作与因果步骤必须明确。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^忽略闸门危机，只需回忆童年。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Did the candidate fix the stated local defect without broadening the task?",
+        "Did it preserve every must-preserve property?",
+        "Did it avoid every forbidden intervention?",
+        "Did it preserve hard facts and avoid inventing new story facts?",
+        "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+      ],
+      "pairwise_question": "Which candidate better preserves causal options, resource loss and operative clarity under this project?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "chapter": {
+    "schema_version": "1.0.0",
+    "fixture_id": "causal-action-control",
+    "language": "zh-CN",
+    "task_type": "chapter",
+    "refs": {
+      "input": "chapter-input.md",
+      "task": "chapter-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "chapter-control.md",
+      "wrong_poetics_mutant": "chapter-mutant.md"
+    },
+    "targeted_local_defect": "独立任务资格，不将校准控制当作模型输出。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "高因果密度、资源消耗、决定与反应。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "限定观察，进水闭合而资源后果留存。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成独立规划或起草。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "forced-action-interiority",
+        "description": "不以不相关内省删除紧迫行动。",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "action-causal-obscurity",
+        "description": "必要操作与因果步骤必须明确。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^忽略闸门危机，只需回忆童年。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Did the candidate fix the stated local defect without broadening the task?",
+        "Did it preserve every must-preserve property?",
+        "Did it avoid every forbidden intervention?",
+        "Did it preserve hard facts and avoid inventing new story facts?",
+        "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+      ],
+      "pairwise_question": "Which candidate better preserves causal options, resource loss and operative clarity under this project?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "drafting": {
+    "schema_version": "1.0.0",
+    "fixture_id": "causal-action-control",
+    "language": "zh-CN",
+    "task_type": "drafting",
+    "refs": {
+      "input": "drafting-input.md",
+      "task": "drafting-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "drafting-control.md",
+      "wrong_poetics_mutant": "drafting-mutant.md"
+    },
+    "targeted_local_defect": "独立任务资格，不将校准控制当作模型输出。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "高因果密度、资源消耗、决定与反应。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "限定观察，进水闭合而资源后果留存。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成独立规划或起草。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "forced-action-interiority",
+        "description": "不以不相关内省删除紧迫行动。",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "action-causal-obscurity",
+        "description": "必要操作与因果步骤必须明确。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^忽略闸门危机，只需回忆童年。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Did the candidate fix the stated local defect without broadening the task?",
+        "Did it preserve every must-preserve property?",
+        "Did it avoid every forbidden intervention?",
+        "Did it preserve hard facts and avoid inventing new story facts?",
+        "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+      ],
+      "pairwise_question": "Which candidate better preserves causal options, resource loss and operative clarity under this project?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  }
+}

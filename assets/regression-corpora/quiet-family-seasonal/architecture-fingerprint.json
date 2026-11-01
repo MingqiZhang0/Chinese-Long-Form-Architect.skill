@@ -1,0 +1,38 @@
+{
+  "project_id": "QUIET-FAMILY-SEASONAL",
+  "sample_id": "adversarial-fixture",
+  "features": {
+    "project_poetics": {
+      "salience_sources": [
+        "routine",
+        "family relation",
+        "seasonality",
+        "material-social life",
+        "small variation"
+      ],
+      "reader_activities": [
+        "familiarize",
+        "notice microvariation",
+        "inhabit social rhythm"
+      ],
+      "progression_modes": [
+        "accumulation",
+        "relation sedimentation",
+        "seasonal drift"
+      ],
+      "active_capabilities": [
+        "ordinary-familiarity",
+        "environment-place"
+      ],
+      "do_not_optimize": [
+        "manufacture hooks",
+        "force symbolic payoff",
+        "require durable scene delta"
+      ]
+    },
+    "primary_organizing_mode": "accumulation",
+    "secret_density": "none-or-project-dependent",
+    "formal_regime": "project-specific"
+  },
+  "notes": "Diagnostic only. Preserve declared poetics; do not imitate any named author or score difference as quality."
+}

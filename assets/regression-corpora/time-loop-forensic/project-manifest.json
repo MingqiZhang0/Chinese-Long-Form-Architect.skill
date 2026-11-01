@@ -1,0 +1,40 @@
+{
+  "project_format_version": "1.0.0",
+  "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+  "project_id": "TIMELOOP-FORENSIC-001",
+  "governance_profile": "forensic",
+  "current_branch": "main",
+  "current_chapter": 8,
+  "last_committed_event": "EV-0002",
+  "context_generation": 1,
+  "enabled_subsystems": [
+    "project-state",
+    "chapter-mission",
+    "scene-state",
+    "reader-model",
+    "context-compilation",
+    "narrative-runtime",
+    "dependency-graph",
+    "observatory",
+    "semantic-revision",
+    "narrative-invariants",
+    "role-isolation",
+    "branches",
+    "prose-state-reconciliation",
+    "provenance"
+  ],
+  "canonical_paths": {
+    "project_brief": "intake/project-brief.md",
+    "story_state": "state/story-state.json",
+    "context_index": "context/context-index.json",
+    "secret_registry": "context/secret-registry.json",
+    "runtime_manifest": "runtime/runtime-manifest.json",
+    "reader_model": "planning/07-reader-model.md",
+    "chapters_dir": "chapters",
+    "revisions_dir": "revisions",
+    "reconciliations_dir": "reconciliations"
+  },
+  "user_locked_constraints_path": "intake/project-brief.md",
+  "migration_history": [],
+  "context_generation_history": []
+}

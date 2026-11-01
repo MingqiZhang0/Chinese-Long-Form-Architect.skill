@@ -1,0 +1,4 @@
+{"entries":[
+  {"id":"backend-truth","path":"context/backend-truth.md","kind":"background","roles":["director"],"visibility":"backend-hidden","tainted_by":["SECRET-LOOP-01"]},
+  {"id":"writer-summary","path":"context/writer-summary.md","kind":"mission","roles":["writer"],"visibility":"writer-visible","derived_from":["backend-truth"],"required":true,"chapter":8,"available_from_chapter":8,"available_to_chapter":8,"branch":"main"}
+]}

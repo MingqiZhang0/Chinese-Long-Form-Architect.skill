@@ -1,0 +1,254 @@
+{
+  "planning": {
+    "schema_version": "1.0.0",
+    "fixture_id": "memory-associative-temporality",
+    "language": "zh-CN",
+    "task_type": "planning",
+    "refs": {
+      "input": "planning-input.md",
+      "task": "planning-task.md",
+      "project_poetics": "project-brief.md",
+      "positive_control": "planning-control.md",
+      "wrong_poetics_mutant": "planning-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立planning资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "组织过去而非补齐年表；当下经过记忆返回后改变。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "关联记忆、主观时间与社会观察；同一事实因讲述年龄而重新加权。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "chronology-normalization",
+        "description": "chronology-normalization",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "memory-deletion",
+        "description": "memory-deletion",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "compulsory-memory-payoff",
+        "description": "compulsory-memory-payoff",
+        "critical": true
+      },
+      {
+        "id": "RF53",
+        "intervention_class": "force-chronology-normalization",
+        "description": "不得加入：按年份依次讲完这些往事。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^按年份依次讲完这些往事。?\\s*$"
+      },
+      {
+        "id": "R53",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^按年份依次讲完这些往事。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "chapter": {
+    "schema_version": "1.0.0",
+    "fixture_id": "memory-associative-temporality",
+    "language": "zh-CN",
+    "task_type": "chapter",
+    "refs": {
+      "input": "chapter-input.md",
+      "task": "chapter-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "chapter-control.md",
+      "wrong_poetics_mutant": "chapter-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立chapter资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "组织过去而非补齐年表；当下经过记忆返回后改变。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "关联记忆、主观时间与社会观察；同一事实因讲述年龄而重新加权。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "chronology-normalization",
+        "description": "chronology-normalization",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "memory-deletion",
+        "description": "memory-deletion",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "compulsory-memory-payoff",
+        "description": "compulsory-memory-payoff",
+        "critical": true
+      },
+      {
+        "id": "RF53",
+        "intervention_class": "force-chronology-normalization",
+        "description": "不得加入：按年份依次讲完这些往事。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^按年份依次讲完这些往事。?\\s*$"
+      },
+      {
+        "id": "R53",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^按年份依次讲完这些往事。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "drafting": {
+    "schema_version": "1.0.0",
+    "fixture_id": "memory-associative-temporality",
+    "language": "zh-CN",
+    "task_type": "drafting",
+    "refs": {
+      "input": "drafting-input.md",
+      "task": "drafting-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "drafting-control.md",
+      "wrong_poetics_mutant": "drafting-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立drafting资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "组织过去而非补齐年表；当下经过记忆返回后改变。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "关联记忆、主观时间与社会观察；同一事实因讲述年龄而重新加权。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "chronology-normalization",
+        "description": "chronology-normalization",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "memory-deletion",
+        "description": "memory-deletion",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "compulsory-memory-payoff",
+        "description": "compulsory-memory-payoff",
+        "critical": true
+      },
+      {
+        "id": "RF53",
+        "intervention_class": "force-chronology-normalization",
+        "description": "不得加入：按年份依次讲完这些往事。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^按年份依次讲完这些往事。?\\s*$"
+      },
+      {
+        "id": "R53",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "按年份依次讲完这些往事"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  }
+}

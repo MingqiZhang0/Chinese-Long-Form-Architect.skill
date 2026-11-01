@@ -1,0 +1,15 @@
+{
+  "project_id": "causal-action-control",
+  "features": {
+    "organizing": "causal-action-social-strategy",
+    "reader_activity": "track options resources decisions",
+    "structural_form": "continuous urgent action",
+    "closure": "local threat closed, resource loss inherited",
+    "project_poetics": {
+      "active_capabilities": [
+        "action",
+        "resource-continuity"
+      ]
+    }
+  }
+}

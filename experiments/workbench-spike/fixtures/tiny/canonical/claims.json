@@ -1,0 +1,14 @@
+{
+  "C1": {
+    "fact_id": "F1",
+    "evidence_refs": [
+      "EV1"
+    ]
+  },
+  "C2": {
+    "fact_id": "F1",
+    "evidence_refs": [
+      "EV1"
+    ]
+  }
+}

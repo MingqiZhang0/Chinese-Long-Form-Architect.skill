@@ -1,0 +1,862 @@
+{
+  "schema_version": "1.0.0",
+  "tier_order": [
+    "fast",
+    "core",
+    "full",
+    "soak"
+  ],
+  "tiers": {
+    "fast": {
+      "purpose": "Routine edit feedback before handoff or before escalating to a promotion run.",
+      "target_runtime_seconds": 45,
+      "automatic_default": true,
+      "proves": [
+        "startup dependencies and core maintenance capabilities are available",
+        "Skill structure, frozen Phase 0 reference ownership surface, numbered reference headings, and evaluation-corpus case IDs remain internally consistent and collision-free",
+        "registered mutation/metamorphic/Chinese-eval assets remain structurally valid",
+        "trigger-precision activation corpus remains structurally valid, including clear-positive/clear-negative/boundary/near-miss coverage",
+        "Reasoning Intensity and STC v0.1 semantic-conformance selftests still pass, including independent Validator, arbitrary-candidate, containment, continuation/probe, and assurance smoke",
+        "Multi-Poetics Behavioural Oracle fixture contracts remain structurally valid",
+        "public Chinese-language product identity and legacy compatibility slug remain synchronized"
+      ],
+      "does_not_prove": [
+        "cross-module integration behavior",
+        "mutation or metamorphic execution adequacy",
+        "long-horizon continuity",
+        "runtime fuzz stability",
+        "literary quality"
+      ],
+      "steps": [
+        {
+          "id": "capability-maintenance",
+          "runner": "command",
+          "argv": [
+            "scripts/capability_probe.py",
+            "check",
+            "maintenance",
+            "--json"
+          ],
+          "timeout_seconds": 20
+        },
+        {
+          "id": "structure-audit",
+          "runner": "command",
+          "argv": [
+            "scripts/audit_skill_structure.py",
+            "."
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "research-ledger",
+          "runner": "command",
+          "argv": [
+            "scripts/research_ledger.py",
+            "validate",
+            "--json"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "mutation-registry",
+          "runner": "command",
+          "argv": [
+            "scripts/mutation_test.py",
+            "validate",
+            "--json"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "metamorphic-registry",
+          "runner": "command",
+          "argv": [
+            "scripts/metamorphic_benchmark.py",
+            "validate",
+            "--json"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "chinese-eval-registry",
+          "runner": "command",
+          "argv": [
+            "scripts/chinese_narrative_eval.py",
+            "validate"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "activation-eval-registry",
+          "runner": "command",
+          "argv": [
+            "scripts/activation_eval.py",
+            "validate",
+            "--json"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "multi-poetics-oracle-registry",
+          "runner": "command",
+          "argv": [
+            "scripts/multi_poetics_oracle.py",
+            "validate",
+            "--json"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "intensity-selftest",
+          "runner": "command",
+          "argv": [
+            "scripts/intensity_runtime.py",
+            "selftest"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "stc-selftest",
+          "runner": "command",
+          "argv": [
+            "scripts/stc_benchmark.py",
+            "selftest",
+            "--seeds",
+            "20"
+          ],
+          "timeout_seconds": 45
+        },
+        {
+          "id": "auditability-core-smoke",
+          "runner": "command",
+          "argv": [
+            "scripts/auditability_core_test.py",
+            "--smoke"
+          ],
+          "timeout_seconds": 60
+        },
+        {
+          "id": "fast-narrative-regime-contracts",
+          "runner": "command",
+          "argv": [
+            "scripts/narrative_regime_qualification.py",
+            "validate",
+            "--json"
+          ],
+          "timeout_seconds": 30
+        }
+      ]
+    },
+    "core": {
+      "purpose": "Normal promotion gate after a substantive Skill change.",
+      "target_runtime_seconds": 600,
+      "automatic_default": false,
+      "proves": [
+        "Fast guarantees",
+        "representative cross-module contracts still compose",
+        "Project Poetics manifest/scoped-provenance/context contracts, provenance-backed authorized formal variation, and multi-poetics adversarial fixtures and the executable behavioural oracle selftest pass",
+        "trigger activation precision harness catches false-positive/false-negative sentinels and protects local-polish non-activation",
+        "registered non-equivalent failure mutants are killed or contained",
+        "registered metamorphic relations execute successfully",
+        "seeded Runtime fuzzing passes a bounded promotion sample",
+        "Chinese Long-Form product scope, non-multilingual-parity boundary, and deferred controlled slug-migration policy remain explicit and internally consistent",
+        "Phase 0 architecture-freeze negative control rejects unapproved reference owners and accepts only complete approved owner-gap exceptions",
+        "real-project prewriting readiness distinguishes REVIEW_READY from DRAFT_READY and rejects omitted risk activation, unresolved opening anchors, missing volume/chapter convergence, unwired required Scene Packets, and stale/unproven Writer handoffs",
+        "production readiness verifies structured maturity, author-bound snapshots, whole first-volume chapter evidence, live pack identity, two-message override and prospective campaign handoff without fixed protagonist/volume counts"
+      ],
+      "does_not_prove": [
+        "complete integration coverage",
+        "60-100 chapter continuity",
+        "long-duration or high-volume fuzz stability",
+        "real longitudinal campaign evidence",
+        "literary quality"
+      ],
+      "steps": [
+        {
+          "id": "fast-capability",
+          "runner": "command",
+          "argv": [
+            "scripts/capability_probe.py",
+            "check",
+            "maintenance",
+            "--json"
+          ],
+          "timeout_seconds": 20
+        },
+        {
+          "id": "fast-structure",
+          "runner": "command",
+          "argv": [
+            "scripts/audit_skill_structure.py",
+            "."
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "fast-research-ledger",
+          "runner": "command",
+          "argv": [
+            "scripts/research_ledger.py",
+            "validate",
+            "--json"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "core-machine-templates",
+          "runner": "integration_case",
+          "case": "machine-template-contracts",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-semantic-delegation",
+          "runner": "integration_case",
+          "case": "semantic-delegation-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-commit-before-dependency",
+          "runner": "integration_case",
+          "case": "commit-before-dependency",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-claim-action-consistency",
+          "runner": "integration_case",
+          "case": "claim-action-consistency",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-temporal-epistemic-coverage",
+          "runner": "integration_case",
+          "case": "temporal-epistemic-coverage",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-causal-sufficiency",
+          "runner": "integration_case",
+          "case": "causal-sufficiency",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-narrative-artifact-lifecycle",
+          "runner": "integration_case",
+          "case": "narrative-artifact-lifecycle",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-governance-template-sync",
+          "runner": "integration_case",
+          "case": "governance-template-sync",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-skill-mode-router",
+          "runner": "integration_case",
+          "case": "skill-mode-router-contract",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-skill-scope-identity",
+          "runner": "integration_case",
+          "case": "skill-scope-identity-contract",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-trigger-activation-precision",
+          "runner": "integration_case",
+          "case": "trigger-activation-precision",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-architecture-freeze",
+          "runner": "integration_case",
+          "case": "architecture-freeze-contract",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-orchestration-contract",
+          "runner": "integration_case",
+          "case": "orchestration-contract-single-source",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-revision-poetics-routing",
+          "runner": "integration_case",
+          "case": "revision-poetics-only-routing",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-runtime-dependency",
+          "runner": "integration_case",
+          "case": "runtime-dependency-precedence",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-project-resume",
+          "runner": "integration_case",
+          "case": "project-manifest-resume-migration",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-legacy-project-poetics-bootstrap",
+          "runner": "integration_case",
+          "case": "legacy-project-poetics-bootstrap",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-project-poetics-manifest",
+          "runner": "integration_case",
+          "case": "project-poetics-manifest-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-prewriting-readiness-real-campaign",
+          "runner": "integration_case",
+          "case": "prewriting-readiness-real-campaign-regression",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-scoped-project-poetics-context",
+          "runner": "integration_case",
+          "case": "scoped-project-poetics-context",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-authorized-voice-variation",
+          "runner": "integration_case",
+          "case": "authorized-voice-variation",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-scoped-project-poetics-task-validator",
+          "runner": "integration_case",
+          "case": "scoped-project-poetics-task-validator",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-documentation-heading-lint",
+          "runner": "integration_case",
+          "case": "documentation-heading-number-lint",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-evaluation-corpus-id-uniqueness",
+          "runner": "integration_case",
+          "case": "evaluation-corpus-id-uniqueness",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-multi-poetics-fixtures",
+          "runner": "integration_case",
+          "case": "multi-poetics-adversarial-fixtures",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-multi-poetics-behavioral-oracle",
+          "runner": "integration_case",
+          "case": "multi-poetics-behavioral-oracle",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-secret-taint",
+          "runner": "integration_case",
+          "case": "semantic-taint-paraphrase-guard",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-reconciliation",
+          "runner": "integration_case",
+          "case": "prose-state-reconciliation-staleness",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-governance-downgrade",
+          "runner": "integration_case",
+          "case": "governance-downgrade-consent",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-capability-contract",
+          "runner": "integration_case",
+          "case": "capability-dependency-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-intensity-stc",
+          "runner": "integration_case",
+          "case": "reasoning-intensity-stc-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-test-tier-contract",
+          "runner": "integration_case",
+          "case": "test-tier-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-research-ledger-contract",
+          "runner": "integration_case",
+          "case": "external-research-ledger-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-storyctl",
+          "runner": "integration_case",
+          "case": "unified-storyctl-surface",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-benchmark-safety",
+          "runner": "integration_case",
+          "case": "long-horizon-keep-project-safety",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-formalization",
+          "runner": "integration_case",
+          "case": "formalization-boundary-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-open-issue",
+          "runner": "integration_case",
+          "case": "open-issue-semantics-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-semantic-kernel",
+          "runner": "integration_case",
+          "case": "semantic-kernel-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-semantic-migration",
+          "runner": "integration_case",
+          "case": "semantic-migration-preservation",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-live-registry",
+          "runner": "integration_case",
+          "case": "live-campaign-registry-contract",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-production-readiness-structural",
+          "runner": "integration_case",
+          "case": "production-readiness-structural",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-production-readiness-volumes",
+          "runner": "integration_case",
+          "case": "production-readiness-volumes",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-production-readiness-approval",
+          "runner": "integration_case",
+          "case": "production-readiness-approval",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-production-readiness-live-pack",
+          "runner": "integration_case",
+          "case": "production-readiness-live-pack",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-production-readiness-override",
+          "runner": "integration_case",
+          "case": "production-readiness-override",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-production-readiness-provenance",
+          "runner": "integration_case",
+          "case": "production-readiness-provenance",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-production-readiness-campaign-scaffold",
+          "runner": "integration_case",
+          "case": "production-readiness-campaign-scaffold",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-mutation-run",
+          "runner": "command",
+          "argv": [
+            "scripts/mutation_test.py",
+            "run",
+            "--json"
+          ],
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-metamorphic-run",
+          "runner": "command",
+          "argv": [
+            "scripts/metamorphic_benchmark.py",
+            "run",
+            "--json"
+          ],
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-fuzz",
+          "runner": "command",
+          "argv": [
+            "scripts/narrative_fuzz.py",
+            "--iterations",
+            "50",
+            "--steps",
+            "50",
+            "--seed",
+            "17",
+            "--json"
+          ],
+          "timeout_seconds": 120
+        },
+        {
+          "id": "core-prose-semantic-coverage",
+          "runner": "integration_case",
+          "case": "prose-semantic-coverage",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-revision-dependency-discovery",
+          "runner": "integration_case",
+          "case": "revision-dependency-discovery",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-prose-semantic-blind-evaluation",
+          "runner": "integration_case",
+          "case": "prose-semantic-blind-evaluation",
+          "timeout_seconds": 60
+        },
+        {
+          "id": "auditability-core",
+          "runner": "command",
+          "argv": [
+            "scripts/auditability_core_test.py"
+          ],
+          "timeout_seconds": 60
+        },
+        {
+          "id": "auditability-core-mutations",
+          "runner": "command",
+          "argv": [
+            "scripts/auditability_core_test.py",
+            "--mutations"
+          ],
+          "timeout_seconds": 60
+        },
+        {
+          "id": "core-narrative-regime-qualification",
+          "runner": "command",
+          "argv": [
+            "scripts/narrative_regime_qualification.py",
+            "selftest",
+            "--json"
+          ],
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-production-readiness-poetics-dependencies",
+          "runner": "integration_case",
+          "case": "production-readiness-poetics-dependencies",
+          "timeout_seconds": 180
+        },
+        {
+          "id": "core-chapter-rollover-freshness",
+          "runner": "integration_case",
+          "case": "chapter-rollover-freshness",
+          "timeout_seconds": 180
+        }
+      ]
+    },
+    "full": {
+      "purpose": "Release or major-architecture gate using all deterministic integration regressions plus long-horizon stress.",
+      "target_runtime_seconds": 1800,
+      "automatic_default": false,
+      "proves": [
+        "all registered deterministic integration regressions pass",
+        "mutation and metamorphic promotion gates pass",
+        "a 60-chapter deterministic long-horizon project remains operational",
+        "a larger seeded Runtime fuzz sample passes",
+        "Fast structural and registry contracts remain intact"
+      ],
+      "does_not_prove": [
+        "100-chapter soak stability",
+        "multi-seed high-volume fuzz stability",
+        "real longitudinal campaign evidence",
+        "human literary preference or quality"
+      ],
+      "steps": [
+        {
+          "id": "full-capability",
+          "runner": "command",
+          "argv": [
+            "scripts/capability_probe.py",
+            "check",
+            "maintenance",
+            "--json"
+          ],
+          "timeout_seconds": 20
+        },
+        {
+          "id": "full-structure",
+          "runner": "command",
+          "argv": [
+            "scripts/audit_skill_structure.py",
+            "."
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "full-research-ledger",
+          "runner": "command",
+          "argv": [
+            "scripts/research_ledger.py",
+            "validate",
+            "--json"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "full-integration",
+          "runner": "command",
+          "argv": [
+            "scripts/integration_selftest.py"
+          ],
+          "timeout_seconds": 1200
+        },
+        {
+          "id": "full-mutation",
+          "runner": "command",
+          "argv": [
+            "scripts/mutation_test.py",
+            "run",
+            "--json"
+          ],
+          "timeout_seconds": 300
+        },
+        {
+          "id": "full-metamorphic",
+          "runner": "command",
+          "argv": [
+            "scripts/metamorphic_benchmark.py",
+            "run",
+            "--json"
+          ],
+          "timeout_seconds": 300
+        },
+        {
+          "id": "full-stc",
+          "runner": "command",
+          "argv": [
+            "scripts/stc_benchmark.py",
+            "selftest",
+            "--seeds",
+            "50"
+          ],
+          "timeout_seconds": 180
+        },
+        {
+          "id": "full-fuzz",
+          "runner": "command",
+          "argv": [
+            "scripts/narrative_fuzz.py",
+            "--iterations",
+            "250",
+            "--steps",
+            "100",
+            "--seed",
+            "17",
+            "--json"
+          ],
+          "timeout_seconds": 300
+        },
+        {
+          "id": "full-long-horizon",
+          "runner": "command",
+          "argv": [
+            "scripts/long_horizon_benchmark.py",
+            "run",
+            "--chapters",
+            "60"
+          ],
+          "timeout_seconds": 1200
+        },
+        {
+          "id": "full-narrative-regime-qualification",
+          "runner": "command",
+          "argv": [
+            "scripts/narrative_regime_qualification.py",
+            "selftest",
+            "--json"
+          ],
+          "timeout_seconds": 180
+        }
+      ]
+    },
+    "soak": {
+      "purpose": "Explicit high-cost reliability campaign for major releases, runtime changes, or longitudinal-risk work.",
+      "target_runtime_seconds": 7200,
+      "automatic_default": false,
+      "proves": [
+        "Full deterministic gates remain stable under heavier longitudinal and multi-seed stress",
+        "100-chapter deterministic continuity survives",
+        "STC semantic-conformance invariants survive a broad deterministic seed sweep",
+        "Runtime fuzz properties survive several large independent seed runs"
+      ],
+      "does_not_prove": [
+        "real 100-chapter evidence",
+        "human literary quality",
+        "future model/runtime versions",
+        "absence of unknown failure modes"
+      ],
+      "steps": [
+        {
+          "id": "soak-capability",
+          "runner": "command",
+          "argv": [
+            "scripts/capability_probe.py",
+            "check",
+            "maintenance",
+            "--json"
+          ],
+          "timeout_seconds": 20
+        },
+        {
+          "id": "soak-structure",
+          "runner": "command",
+          "argv": [
+            "scripts/audit_skill_structure.py",
+            "."
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "soak-research-ledger",
+          "runner": "command",
+          "argv": [
+            "scripts/research_ledger.py",
+            "validate",
+            "--json"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "id": "soak-integration",
+          "runner": "command",
+          "argv": [
+            "scripts/integration_selftest.py"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "id": "soak-mutation",
+          "runner": "command",
+          "argv": [
+            "scripts/mutation_test.py",
+            "run",
+            "--json"
+          ],
+          "timeout_seconds": 300
+        },
+        {
+          "id": "soak-metamorphic",
+          "runner": "command",
+          "argv": [
+            "scripts/metamorphic_benchmark.py",
+            "run",
+            "--json"
+          ],
+          "timeout_seconds": 300
+        },
+        {
+          "id": "soak-stc",
+          "runner": "command",
+          "argv": [
+            "scripts/stc_benchmark.py",
+            "selftest",
+            "--seeds",
+            "200"
+          ],
+          "timeout_seconds": 600
+        },
+        {
+          "id": "soak-long-horizon",
+          "runner": "command",
+          "argv": [
+            "scripts/long_horizon_benchmark.py",
+            "run",
+            "--chapters",
+            "100"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "id": "soak-fuzz-17",
+          "runner": "command",
+          "argv": [
+            "scripts/narrative_fuzz.py",
+            "--iterations",
+            "1000",
+            "--steps",
+            "100",
+            "--seed",
+            "17",
+            "--json"
+          ],
+          "timeout_seconds": 900
+        },
+        {
+          "id": "soak-fuzz-2718",
+          "runner": "command",
+          "argv": [
+            "scripts/narrative_fuzz.py",
+            "--iterations",
+            "1000",
+            "--steps",
+            "100",
+            "--seed",
+            "2718",
+            "--json"
+          ],
+          "timeout_seconds": 900
+        },
+        {
+          "id": "soak-fuzz-314159",
+          "runner": "command",
+          "argv": [
+            "scripts/narrative_fuzz.py",
+            "--iterations",
+            "1000",
+            "--steps",
+            "100",
+            "--seed",
+            "314159",
+            "--json"
+          ],
+          "timeout_seconds": 900
+        },
+        {
+          "id": "soak-narrative-regime-qualification",
+          "runner": "command",
+          "argv": [
+            "scripts/narrative_regime_qualification.py",
+            "selftest",
+            "--json"
+          ],
+          "timeout_seconds": 180
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/transaction.schema.json",
+  "title": "Narrative Runtime Transaction Proposal",
+  "type": "object",
+  "required": ["schema_version", "transaction_id", "branch", "expected_head_event", "proposed_events", "status"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "transaction_id": {"type": "string", "minLength": 1},
+    "branch": {"type": "string", "minLength": 1},
+    "expected_head_event": {"type": ["string", "null"]},
+    "expected_effective_revision": {"type": ["integer", "null"], "minimum": 0},
+    "purpose": {"type": "string"},
+    "read_set": {"type": "array", "items": {"type": "string"}},
+    "proposed_events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "object"}
+    },
+    "blocking_objections": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["proposed", "validated", "committed", "rejected", "conflicted"]}
+  },
+  "additionalProperties": true
+}

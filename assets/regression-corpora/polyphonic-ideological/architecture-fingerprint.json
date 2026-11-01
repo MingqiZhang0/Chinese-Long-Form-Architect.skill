@@ -1,0 +1,31 @@
+{
+  "project_id": "POLYPHONIC-IDEOLOGICAL",
+  "sample_id": "adversarial-fixture",
+  "features": {
+    "project_poetics": {
+      "salience_sources": [
+        "competing consciousness",
+        "consequence",
+        "institutional position"
+      ],
+      "reader_activities": [
+        "compare positions",
+        "revise judgment"
+      ],
+      "progression_modes": [
+        "argument-through-life",
+        "consequence"
+      ],
+      "active_capabilities": [
+        "thematic-polyphony"
+      ],
+      "do_not_optimize": [
+        "collapse voices into narrator thesis"
+      ]
+    },
+    "primary_organizing_mode": "argument-through-life",
+    "secret_density": "none-or-project-dependent",
+    "formal_regime": "project-specific"
+  },
+  "notes": "Diagnostic only. Preserve declared poetics; do not imitate any named author or score difference as quality."
+}

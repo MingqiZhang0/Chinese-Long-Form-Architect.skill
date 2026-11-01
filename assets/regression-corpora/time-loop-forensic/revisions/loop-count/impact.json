@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "chapter_id": "CH-0008",
+  "branch": "main",
+  "before_hash": "2159df70b0f05027a5321cd0c2f9928a1844b3860d4dbd02af9ccbfc2b250530",
+  "after_hash": "c19a482d3d4f8f987adec2409635b69269877bf38e02eba51b01e422606e0449",
+  "changes": [
+    {
+      "change_id": "REV-LOOP-008-001",
+      "alignment_id": "A-0001",
+      "impact_labels": [
+        "STATE_AFFECTING",
+        "TIMELINE_AFFECTING"
+      ],
+      "confidence": "high",
+      "textual_anchor": "第七次 -> 第八次",
+      "candidate_deltas": [
+        {
+          "target": "loop_iteration",
+          "before": 7,
+          "after": 8
+        }
+      ],
+      "affected_nodes": [
+        "CH-0008",
+        "loop_iteration"
+      ],
+      "notes": "Regression fixture: a tiny textual edit changes durable loop state."
+    }
+  ],
+  "approval_status": "APPROVED_FOR_COMMIT"
+}

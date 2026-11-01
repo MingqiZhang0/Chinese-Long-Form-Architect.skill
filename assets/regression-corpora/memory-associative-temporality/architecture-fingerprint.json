@@ -1,0 +1,24 @@
+{
+  "project_id": "memory-associative-temporality",
+  "features": {
+    "organizing": "关联记忆、主观时间与社会观察；同一事实因讲述年龄而重新加权。",
+    "reader_activity": "组织过去而非补齐年表；当下经过记忆返回后改变。",
+    "structural_form": [
+      "现在门轴声触发剪刀记忆",
+      "从剪刀借还连到邻家称呼",
+      "青年抄账记忆改变赠送的理解",
+      "旧社交圈的沉默获得新的重量",
+      "同一剪刀事实再次回来而解释不同",
+      "回到三分钟后的排练室递纸"
+    ],
+    "mediation": "restricted",
+    "closure": "组织过去而非补齐年表；当下经过记忆返回后改变。",
+    "project_poetics": {
+      "active_capabilities": [
+        "chronology-normalization",
+        "memory-deletion",
+        "compulsory-memory-payoff"
+      ]
+    }
+  }
+}

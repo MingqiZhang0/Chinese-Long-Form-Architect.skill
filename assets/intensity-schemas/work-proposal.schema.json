@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/work-proposal.schema.json",
+  "title": "Semantic Work Proposal",
+  "type": "object",
+  "required": ["proposal_id", "contract_version", "capability_id", "operation_id", "epoch_id", "target_refs", "necessity_claim", "semantic_scope", "cost_hint", "value_signals", "capability_requirements", "authority_ceiling", "basis", "extensions"],
+  "properties": {
+    "proposal_id": {"type": "string", "minLength": 1},
+    "contract_version": {"const": "1.0.0"},
+    "capability_id": {"type": "string", "minLength": 1},
+    "operation_id": {"type": "string", "minLength": 1},
+    "epoch_id": {"type": "string", "minLength": 1},
+    "target_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+    "necessity_claim": {"enum": ["optional", "claims-hard-invariant", "claims-canonical-law", "claims-governance-requirement", "claims-primary-task-prerequisite"]},
+    "semantic_scope": {"type": "array", "items": {"enum": ["local", "persistence", "cross_layer", "interaction", "alternative", "verification"]}, "minItems": 1, "uniqueItems": true},
+    "cost_hint": {"enum": ["cheap", "moderate", "expensive", "unknown"]},
+    "value_signals": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "capability_requirements": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "authority_ceiling": {"enum": ["noncanonical", "advisory", "validation", "delta_proposal"]},
+    "basis": {
+      "type": "object",
+      "required": ["branch", "epoch_revision", "dependency_fingerprint", "security_domain"],
+      "properties": {
+        "branch": {"type": "string", "minLength": 1},
+        "epoch_revision": {"type": "string", "minLength": 1},
+        "dependency_fingerprint": {"type": "string", "minLength": 1},
+        "security_domain": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {"pattern": "^[A-Za-z0-9_.:-]+$"},
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

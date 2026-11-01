@@ -1,0 +1,236 @@
+{
+  "planning": {
+    "schema_version": "1.0.0",
+    "fixture_id": "fair-clue-detection",
+    "language": "zh-CN",
+    "task_type": "planning",
+    "refs": {
+      "input": "planning-input.md",
+      "task": "planning-task.md",
+      "project_poetics": "project-brief.md",
+      "positive_control": "planning-control.md",
+      "wrong_poetics_mutant": "planning-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立planning资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "门框三道新鲜划痕、最低划痕约七十厘米、无撬痕、黑色橡胶屑等 solution-relevant evidence 对读者保持可访问。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "可以暂不解释证据意义，但不能靠删减/模糊关键事实制造惊讶。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "clue-obscuring",
+        "description": "删去、泛化或延迟已应公开的 solution-critical clue。",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "atmosphere-dilution",
+        "description": "用气氛细节替代精确 clue，使读者无法进行同等推理。",
+        "critical": true
+      },
+      {
+        "id": "RF55",
+        "intervention_class": "force-mystery-openness",
+        "description": "不得加入：这个承诺唯一解答的案件永远不会给出答案。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^案件不必解决而且永远无法知道答案。?\\s*$"
+      },
+      {
+        "id": "R55",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^这个承诺唯一解答的案件永远不会给出答案。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "chapter": {
+    "schema_version": "1.0.0",
+    "fixture_id": "fair-clue-detection",
+    "language": "zh-CN",
+    "task_type": "chapter",
+    "refs": {
+      "input": "chapter-input.md",
+      "task": "chapter-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "chapter-control.md",
+      "wrong_poetics_mutant": "chapter-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立chapter资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "门框三道新鲜划痕、最低划痕约七十厘米、无撬痕、黑色橡胶屑等 solution-relevant evidence 对读者保持可访问。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "可以暂不解释证据意义，但不能靠删减/模糊关键事实制造惊讶。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "clue-obscuring",
+        "description": "删去、泛化或延迟已应公开的 solution-critical clue。",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "atmosphere-dilution",
+        "description": "用气氛细节替代精确 clue，使读者无法进行同等推理。",
+        "critical": true
+      },
+      {
+        "id": "RF55",
+        "intervention_class": "force-mystery-openness",
+        "description": "不得加入：这个承诺唯一解答的案件永远不会给出答案。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^案件不必解决而且永远无法知道答案。?\\s*$"
+      },
+      {
+        "id": "R55",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^这个承诺唯一解答的案件永远不会给出答案。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "drafting": {
+    "schema_version": "1.0.0",
+    "fixture_id": "fair-clue-detection",
+    "language": "zh-CN",
+    "task_type": "drafting",
+    "refs": {
+      "input": "drafting-input.md",
+      "task": "drafting-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "drafting-control.md",
+      "wrong_poetics_mutant": "drafting-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立drafting资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "门框三道新鲜划痕、最低划痕约七十厘米、无撬痕、黑色橡胶屑等 solution-relevant evidence 对读者保持可访问。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "可以暂不解释证据意义，但不能靠删减/模糊关键事实制造惊讶。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "clue-obscuring",
+        "description": "删去、泛化或延迟已应公开的 solution-critical clue。",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "atmosphere-dilution",
+        "description": "用气氛细节替代精确 clue，使读者无法进行同等推理。",
+        "critical": true
+      },
+      {
+        "id": "RF55",
+        "intervention_class": "force-mystery-openness",
+        "description": "不得加入：这个承诺唯一解答的案件永远不会给出答案。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^案件不必解决而且永远无法知道答案。?\\s*$"
+      },
+      {
+        "id": "R55",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "这个承诺唯一解答的案件永远不会给出答案"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  }
+}

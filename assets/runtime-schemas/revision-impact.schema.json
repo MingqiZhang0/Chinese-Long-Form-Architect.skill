@@ -1,0 +1,337 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/revision-impact.schema.json",
+  "title": "Semantic Revision Impact Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "chapter_id",
+    "branch",
+    "before_hash",
+    "after_hash",
+    "changes",
+    "approval_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "chapter_id": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "before_hash": {
+      "type": "string"
+    },
+    "after_hash": {
+      "type": "string"
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "change_id",
+          "alignment_id",
+          "impact_labels",
+          "confidence"
+        ],
+        "properties": {
+          "change_id": {
+            "type": "string"
+          },
+          "alignment_id": {
+            "type": "string"
+          },
+          "impact_labels": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "PROSE_ONLY",
+                "FOCALIZATION_AFFECTING",
+                "STATE_AFFECTING",
+                "KNOWLEDGE_AFFECTING",
+                "CAUSAL_AFFECTING",
+                "TIMELINE_AFFECTING",
+                "RESEARCH_AFFECTING",
+                "PROMISE_AFFECTING",
+                "THEME_INTERPRETATION_AFFECTING",
+                "PROJECT_POETICS_AFFECTING",
+                "CANON_CORRECTION",
+                "OPEN_ISSUE_AFFECTING"
+              ]
+            },
+            "minItems": 1
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "textual_anchor": {
+            "type": "string"
+          },
+          "candidate_deltas": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "affected_nodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "approval_status": {
+      "enum": [
+        "PENDING_REVIEW",
+        "PROSE_ONLY_CONFIRMED",
+        "APPROVED_FOR_COMMIT",
+        "REQUIRES_CHANGE_CONTROL",
+        "REJECTED"
+      ]
+    },
+    "project_poetics_impact": {
+      "type": "object",
+      "required": [
+        "change_declared",
+        "classification_status",
+        "scope",
+        "invalidation_review_required",
+        "affected_artifact_classes",
+        "affected_nodes"
+      ],
+      "properties": {
+        "change_declared": {
+          "type": "boolean"
+        },
+        "classification_status": {
+          "enum": [
+            "NOT_APPLICABLE",
+            "PENDING_REVIEW",
+            "CONFIRMED",
+            "REJECTED"
+          ]
+        },
+        "scope": {
+          "enum": [
+            "project",
+            "arc",
+            "chapter",
+            "scene",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "authority_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "change_summary": {
+          "type": "string"
+        },
+        "invalidation_review_required": {
+          "type": "boolean"
+        },
+        "affected_artifact_classes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "narrative_strategy",
+              "chapter_and_writer_missions",
+              "compiled_context_packs",
+              "style_and_voice_diagnostics",
+              "other"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "affected_nodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "dependency_review": {
+      "type": "object",
+      "required": [
+        "packet_path",
+        "packet_sha256",
+        "decisions"
+      ],
+      "properties": {
+        "packet_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packet_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "decisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "review_id",
+              "status",
+              "rationale",
+              "evidence",
+              "repairs"
+            ],
+            "properties": {
+              "review_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "enum": [
+                  "affected",
+                  "independent",
+                  "unresolved"
+                ]
+              },
+              "rationale": {
+                "type": "string"
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/evidence"
+                }
+              },
+              "repairs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "description",
+                    "tradeoff"
+                  ],
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "tradeoff": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "project_poetics_impact"
+        ],
+        "properties": {
+          "project_poetics_impact": {
+            "properties": {
+              "change_declared": {
+                "const": true
+              }
+            },
+            "required": [
+              "change_declared"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "project_poetics_impact": {
+            "properties": {
+              "classification_status": {
+                "enum": [
+                  "PENDING_REVIEW",
+                  "CONFIRMED",
+                  "REJECTED"
+                ]
+              },
+              "invalidation_review_required": {
+                "const": true
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "project_poetics_impact": {
+            "properties": {
+              "classification_status": {
+                "const": "NOT_APPLICABLE"
+              },
+              "invalidation_review_required": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": [
+        "path",
+        "start_line",
+        "end_line",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "end_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/open-issue.schema.json",
+  "title": "OpenIssue v2",
+  "type": "object",
+  "required": [
+    "record_version",
+    "mode",
+    "question_id",
+    "question",
+    "state",
+    "resolution_policy",
+    "resolution_criterion",
+    "decision_authority",
+    "domain_semantics",
+    "constraints",
+    "positions",
+    "resolution",
+    "retirement"
+  ],
+  "properties": {
+    "record_version": {
+      "const": "2.0.0"
+    },
+    "mode": {
+      "const": "OPEN_ISSUE"
+    },
+    "question_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "enum": [
+        "open",
+        "resolved",
+        "retired"
+      ]
+    },
+    "resolution_policy": {
+      "enum": [
+        "must_resolve",
+        "may_resolve",
+        "preserve_open"
+      ]
+    },
+    "resolution_criterion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_authority": {
+      "type": "object",
+      "required": [
+        "owner_type"
+      ],
+      "properties": {
+        "owner_type": {
+          "enum": [
+            "user",
+            "delegated_agent"
+          ]
+        },
+        "delegation_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "owner_type": {
+                "const": "delegated_agent"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "delegation_ref"
+            ],
+            "properties": {
+              "delegation_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "decision_horizon": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "domain_semantics": {
+      "enum": [
+        "open_ended",
+        "constraint_defined",
+        "declared_exhaustive"
+      ]
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "constraint_id",
+          "statement",
+          "status",
+          "basis_kind",
+          "basis_ref"
+        ],
+        "properties": {
+          "constraint_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "active",
+              "relaxed",
+              "superseded"
+            ]
+          },
+          "basis_kind": {
+            "enum": [
+              "authorial_decision",
+              "committed_canon",
+              "world_rule",
+              "legacy_constraint"
+            ]
+          },
+          "basis_ref": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "positions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "position_id",
+          "statement",
+          "viability",
+          "planning_stance"
+        ],
+        "properties": {
+          "position_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "viability": {
+            "enum": [
+              "viable",
+              "excluded"
+            ]
+          },
+          "planning_stance": {
+            "enum": [
+              "candidate",
+              "working_hypothesis",
+              "parked"
+            ]
+          },
+          "provenance_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exclusion_basis_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "viability": {
+                  "const": "excluded"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "exclusion_basis_ref"
+              ],
+              "properties": {
+                "exclusion_basis_ref": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "planning_stance": {
+                  "const": "working_hypothesis"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "viability": {
+                  "const": "viable"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "clue_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "resolution": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "statement",
+            "basis_ref",
+            "authority_ref"
+          ],
+          "properties": {
+            "statement": {
+              "type": "string",
+              "minLength": 1
+            },
+            "position_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "basis_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "authority_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "retirement": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "reason",
+            "basis_ref"
+          ],
+          "properties": {
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "basis_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "planning_owner_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "description": "Legacy optional planning-routing pointer retained for backward compatibility. It does not own the OpenIssue, grant authorial decision authority, or change the authorial commitment boundary. New records should normally leave it null unless a specific planning artifact needs an operational routing reference.",
+      "default": null,
+      "deprecated": true
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "open"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "resolution": {
+            "type": "null"
+          },
+          "retirement": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "resolved"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "resolution": {
+            "type": "object"
+          },
+          "retirement": {
+            "type": "null"
+          },
+          "resolution_policy": {
+            "enum": [
+              "must_resolve",
+              "may_resolve"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "retired"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "resolution": {
+            "type": "null"
+          },
+          "retirement": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ]
+}

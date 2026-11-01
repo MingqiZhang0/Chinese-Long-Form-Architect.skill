@@ -1,0 +1,19 @@
+{
+  "release_stage": "public-source-candidate",
+  "excluded_archives": [
+    "raw model transcripts",
+    "private creative-writing fixtures",
+    "post-R4 diagnostic artifacts",
+    "Workbench generated artifacts"
+  ],
+  "note": "Historical full development materials are retained in their original private archives; this is not a Git history restoration.",
+  "source_history": "Private October 2026 development snapshot curated for public distribution; original archives not included.",
+  "third_audit_exception": {
+    "restored_synthetic_workbench_contracts": [
+      "workbench-wire.schema.json",
+      "golden-wire.json",
+      "spike-golden-wire.json"
+    ],
+    "withheld_machine_specific_maintenance_validation": true
+  }
+}

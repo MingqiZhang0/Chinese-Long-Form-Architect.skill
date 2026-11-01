@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/narrative-debt.schema.json",
+  "title": "Narrative Debt Register",
+  "type": "object",
+  "required": ["schema_version", "items"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["debt_id", "kind", "issue", "status", "severity"],
+        "properties": {
+          "debt_id": {"type": "string"},
+          "kind": {"enum": ["continuity", "motivation", "research", "worldbuilding", "exposition", "logistics", "reader-fairness", "voice", "structure", "other"]},
+          "issue": {"type": "string"},
+          "temporary_justification": {"type": "string"},
+          "status": {"enum": ["open", "scheduled", "resolved", "accepted", "retired"]},
+          "severity": {"enum": ["low", "medium", "high", "blocking"]},
+          "introduced_at": {},
+          "resolve_before": {},
+          "depends_on": {"type": "array", "items": {"type": "string"}},
+          "interest": {"type": "string"},
+          "resolution": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "RUN-0001",
+  "execution_profile": null,
+  "branch": "main",
+  "runtime_head": null,
+  "last_completed_pass": null,
+  "active_pass": null,
+  "pending_passes": [],
+  "pass_envelopes": [],
+  "status": "PENDING",
+  "operational_version": "1.0.0",
+  "operations": {},
+  "blockers": []
+}

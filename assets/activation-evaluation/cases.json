@@ -1,0 +1,268 @@
+{
+  "schema_version": "1.0.0",
+  "evaluation_id": "chinese-long-form-trigger-precision-v1",
+  "purpose": "Measure false-positive and false-negative activation decisions for the Chinese Long-Form Architect without conflating project origin with task risk.",
+  "decision_rule": "Activate only when the current request materially requires Chinese long-form project architecture, persistent multi-chapter state, durable canon, long-horizon continuity, downstream revision propagation, knowledge/reader-state tracking, or project-specific long-range poetics. Local prose work stays out when it can be completed without those persistent constraints, even if the excerpt comes from a long novel.",
+  "categories": ["clear_positive", "clear_negative", "boundary", "near_miss"],
+  "cases": [
+    {
+      "id": "AP01",
+      "category": "clear_positive",
+      "prompt": "这是一个已经写到第180章的中文长篇项目。请继续写第181章，并维护三条秘密传播链：顾岚知道A不知道B，沈确只知道其中一半，同时不能破坏第63章埋下的伏笔。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "Established continuation explicitly depends on durable canon, knowledge boundaries, and long-range clue state."
+    },
+    {
+      "id": "AP02",
+      "category": "clear_positive",
+      "prompt": "我决定把第62章的关键设定改掉。请检查第63到140章哪些既有规划、人物知识和伏笔因此失效，并给出最小修订传播范围。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "Revision requires dependency-aware downstream invalidation across a long project."
+    },
+    {
+      "id": "AP03",
+      "category": "clear_positive",
+      "prompt": "帮我从零架构一部预计八卷、一百五十万字的中文长篇小说，需要持续维护阵营、制度、人物关系和跨卷因果，但不要替我强行规定统一审美。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "New foundational long-form architecture with persistent project state is a primary use case."
+    },
+    {
+      "id": "AP04",
+      "category": "clear_positive",
+      "prompt": "这个中文长篇项目停了半年。请根据现有 project manifest、Story State 和最近章节冷启动恢复，然后继续下一章，不要重新询问已经定下来的设定。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "Cold resume of an existing persistent project requires canonical state recovery."
+    },
+    {
+      "id": "AP05",
+      "category": "clear_positive",
+      "prompt": "一个角色已经四十章没出场，现在第95章重新出现。请先推断他离场期间可合法发生的状态变化、知识变化和关系变化，再设计回归场景与读者记忆重激活。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "Long-gap actor return depends on offscreen state and reader-memory continuity."
+    },
+    {
+      "id": "AP06",
+      "category": "clear_positive",
+      "prompt": "我在做一部长篇时间循环小说，同一个幕后组织在主角不同选择下会暴露不同结果。请维护各分支隐藏因果、角色知识边界和回收条件。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "Counterfactual long-range structure and hidden causal state are explicit triggers."
+    },
+    {
+      "id": "AP07",
+      "category": "clear_positive",
+      "prompt": "把第24章重写得更克制，但这个项目的 scoped Project Poetics 明确禁止提高解释密度，也不能改变第31章以后依赖本章的事实状态。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "Revision is local in text span but materially constrained by project poetics and downstream canon."
+    },
+    {
+      "id": "AP08",
+      "category": "clear_positive",
+      "prompt": "请审计这部120章中文悬疑小说的线索公平性：哪些信息世界中已发生、哪些人物知道、哪些读者实际可回忆，以及哪些后续揭示存在知识作弊。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "Project-wide knowledge/reader-state auditing is core long-form work."
+    },
+
+    {
+      "id": "AN01",
+      "category": "clear_negative",
+      "prompt": "帮我把这句话润色得自然一点：‘他站在那里，不知道应该说什么。’",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "Isolated sentence polishing does not require persistent project state."
+    },
+    {
+      "id": "AN02",
+      "category": "clear_negative",
+      "prompt": "把这段中文翻译成英文，保持意思准确。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "Ordinary translation is outside the long-form project trigger."
+    },
+    {
+      "id": "AN03",
+      "category": "clear_negative",
+      "prompt": "‘月光像一层旧盐’这个比喻是什么意思？",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "A literary explanation question is not a persistent fiction workflow."
+    },
+    {
+      "id": "AN04",
+      "category": "clear_negative",
+      "prompt": "写一个800字的独立恐怖小故事，结尾反转一次就行。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "Standalone short fiction without persistent project state is explicitly out of scope."
+    },
+    {
+      "id": "AN05",
+      "category": "clear_negative",
+      "prompt": "给我想20个适合现代都市小说的女性名字。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "Simple naming ideation does not require the heavy long-form workflow."
+    },
+    {
+      "id": "AN06",
+      "category": "clear_negative",
+      "prompt": "检查下面这一段有没有病句和标点错误，只做语法修正。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "Local grammar correction is a lightweight prose task."
+    },
+    {
+      "id": "AN07",
+      "category": "clear_negative",
+      "prompt": "写一个可以独立阅读的两千字雨夜争吵场景，不属于任何现有小说。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "A standalone scene without persistent canon does not need long-form infrastructure."
+    },
+    {
+      "id": "AN08",
+      "category": "clear_negative",
+      "prompt": "把我贴的这篇文章总结成五点。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "Generic summarization is unrelated to the Skill's fiction project scope."
+    },
+
+    {
+      "id": "AB01",
+      "category": "boundary",
+      "prompt": "只改这一句话的措辞，但它是第42章唯一的关键线索，不能改变读者后来在第97章能够公平推出的含义。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "The text span is tiny, but the request explicitly depends on long-range clue semantics."
+    },
+    {
+      "id": "AB02",
+      "category": "boundary",
+      "prompt": "重写第30章，让冲突更自然；如果改动会影响后面已经写好的章节，请先指出需要 invalidation 的状态和计划。",
+      "expected_activate": true,
+      "critical": true,
+      "rationale": "A chapter rewrite becomes long-form work because downstream propagation is requested."
+    },
+    {
+      "id": "AB03",
+      "category": "boundary",
+      "prompt": "我要开始写一部长篇中文小说。现在只有一个核心设定，请先帮我确定最小必要架构，然后写第一章。",
+      "expected_activate": true,
+      "critical": false,
+      "rationale": "A new long-form project with explicit architecture intent belongs to New/foundational mode."
+    },
+    {
+      "id": "AB04",
+      "category": "boundary",
+      "prompt": "写一个独立短篇，但如果效果好以后也许会扩成长篇。现在不用考虑后续。",
+      "expected_activate": false,
+      "critical": false,
+      "rationale": "Possible future expansion does not create present persistent-project requirements."
+    },
+    {
+      "id": "AB05",
+      "category": "boundary",
+      "prompt": "基于这个故事前提，帮我设计一部100章中文连载的大体节奏和跨章悬念分布。",
+      "expected_activate": true,
+      "critical": false,
+      "rationale": "Long-horizon architecture is explicitly requested even before a full project state exists."
+    },
+    {
+      "id": "AB06",
+      "category": "boundary",
+      "prompt": "修改这个已有长篇项目的主角设定卡；这张卡是当前 canonical planning artifact，后续章节会继续依赖它。",
+      "expected_activate": true,
+      "critical": false,
+      "rationale": "Editing a canonical project artifact has persistent downstream consequences."
+    },
+    {
+      "id": "AB07",
+      "category": "boundary",
+      "prompt": "把这部中文小说第80章完整翻成英文，只要求忠实翻译，不需要更新中文项目状态。",
+      "expected_activate": false,
+      "critical": false,
+      "rationale": "The requested operation is translation, not Chinese long-form project maintenance."
+    },
+    {
+      "id": "AB08",
+      "category": "boundary",
+      "prompt": "这是我已经连载180章的中文小说，请从当前结尾继续写下一段；人物关系和已知秘密都必须接得上。",
+      "expected_activate": true,
+      "critical": false,
+      "rationale": "Even a short continuation is state-sensitive when established project continuity is explicit."
+    },
+
+    {
+      "id": "AM01",
+      "category": "near_miss",
+      "prompt": "这句话来自我180章的长篇小说，但你只需要把它润色顺一点，不用考虑剧情、设定、人物历史或后续影响。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "Project origin alone must not activate the heavy Skill when the user explicitly scopes the task to local polish."
+    },
+    {
+      "id": "AM02",
+      "category": "near_miss",
+      "prompt": "我的小说有两百多章。帮我给下一卷想10个章节标题就行，不需要读取任何现有设定。",
+      "expected_activate": false,
+      "critical": false,
+      "rationale": "A trivial naming request does not need persistent state despite long-project context."
+    },
+    {
+      "id": "AM03",
+      "category": "near_miss",
+      "prompt": "给我写一段通用的两千字打斗场面，我准备以后塞进某部长篇里，现在没有既有 canon 需要维护。",
+      "expected_activate": false,
+      "critical": false,
+      "rationale": "Generic reusable prose without current project constraints is not a long-form state task."
+    },
+    {
+      "id": "AM04",
+      "category": "near_miss",
+      "prompt": "这是长篇中的一段景物描写。把它写得更有画面感即可，人物、世界状态和上下文都不用管。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "Explicitly context-free paragraph polishing should remain lightweight."
+    },
+    {
+      "id": "AM05",
+      "category": "near_miss",
+      "prompt": "这段对话属于一个长期角色，但我现在只想让中文口语更自然，不需要参考角色过去的声音或关系历史。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "User explicitly removes persistent character-history constraints from the local edit."
+    },
+    {
+      "id": "AM06",
+      "category": "near_miss",
+      "prompt": "我在写300章的小说，先给我列20个普通姓氏，别分析故事。",
+      "expected_activate": false,
+      "critical": false,
+      "rationale": "Long-form context is incidental to a simple list-generation task."
+    },
+    {
+      "id": "AM07",
+      "category": "near_miss",
+      "prompt": "帮我把这个一万字章节里的标点和错别字修掉，除此之外不要改任何内容，也不用读取其他章节。",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "Large input size alone does not justify the long-form architecture workflow."
+    },
+    {
+      "id": "AM08",
+      "category": "near_miss",
+      "prompt": "Continue chapter 181 of my English-language fantasy novel and maintain all prior canon and character knowledge.",
+      "expected_activate": false,
+      "critical": true,
+      "rationale": "The project is genuinely long-form, but the current product scope does not claim non-Chinese target-language prose parity."
+    }
+  ]
+}

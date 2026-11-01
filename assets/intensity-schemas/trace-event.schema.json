@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/trace-event.schema.json",
+  "title": "Reasoning Intensity Trace Event",
+  "type": "object",
+  "required": ["run_id", "seq", "contract_version", "core_type", "epoch_id", "reason_tags", "extensions"],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "seq": {"type": "integer", "minimum": 0},
+    "contract_version": {"const": "1.0.0"},
+    "core_type": {"enum": ["proposal", "decision", "dependency", "execution", "result", "staleness", "stop", "degradation"]},
+    "epoch_id": {"type": "string", "minLength": 1},
+    "work_id": {"type": ["string", "null"]},
+    "disposition": {"type": ["string", "null"], "enum": ["mandatory", "selected", "deferred", "pruned", "unsupported", null]},
+    "admission_basis": {"type": ["string", "null"], "enum": ["hard-invariant", "canonical-law", "governance-requirement", "primary-task-prerequisite", null]},
+    "dependency_kind": {"type": ["string", "null"], "enum": ["requires", "informs", "refines", null]},
+    "reason_tags": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "observed_cost": {
+      "type": ["object", "null"],
+      "properties": {
+        "input_tokens": {"type": "integer", "minimum": 0},
+        "output_tokens": {"type": "integer", "minimum": 0},
+        "model_passes": {"type": "integer", "minimum": 0},
+        "tool_calls": {"type": "integer", "minimum": 0},
+        "subagent_calls": {"type": "integer", "minimum": 0},
+        "walltime_ms": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "stop_reason": {"type": ["string", "null"], "enum": ["solved", "economic", "plurality", "nonconvergent", "liveness-ceiling", "unsupported", null]},
+    "extensions": {
+      "type": "object",
+      "propertyNames": {"pattern": "^[A-Za-z0-9_.:-]+$"},
+      "additionalProperties": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"disposition": {"const": "mandatory"}}, "required": ["disposition"]},
+      "then": {"required": ["admission_basis"], "properties": {"admission_basis": {"type": "string"}}}
+    }
+  ],
+  "additionalProperties": false
+}

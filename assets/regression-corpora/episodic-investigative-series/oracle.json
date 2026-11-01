@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "episodic-investigative-series",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复把把，不添加跨诗学优化。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "每案给出可回溯答案；关系累积，不发明共同幕后人。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "调查与局部严格闭合；系列熟悉感与关系累积，独立案件不必共享阴谋。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "仅修复明确错字与必要指代。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "episodic-mega-conspiracy",
+      "description": "episodic-mega-conspiracy",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "forced-case-openness",
+      "description": "forced-case-openness",
+      "critical": true
+    },
+    {
+      "id": "F3",
+      "intervention_class": "retroactive-clue-invention",
+      "description": "retroactive-clue-invention",
+      "critical": true
+    },
+    {
+      "id": "RF59",
+      "intervention_class": "force-episodic-conspiracy",
+      "description": "不得加入：三案都是同一个幕后组织策划。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "把把"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "甲案",
+        "乙案",
+        "丙案",
+        "顾环"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "三案都是同一个幕后组织策划|所有案件永远没有答案|最后才凭空出现决定性证据"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.65,
+      "max": 1.5
+    },
+    {
+      "id": "R59",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "三案都是同一个幕后组织策划"
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

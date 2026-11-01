@@ -1,0 +1,5 @@
+{
+  "project_id":"TIMELOOP-FORENSIC-001","sample_id":"chapter-8",
+  "features":{"conflict_sources":["counterfactual uncertainty","knowledge asymmetry"],"propulsion_modes":["repeat intervention","branch comparison"],"scene_exit_modes":["hypothesis update"],"climax_mechanisms":["counterfactual contrast"],"pov_pattern":"single looping protagonist","secret_density":"high","institutional_causality":"low","ordinary_life_share":"medium","explanation_density":"medium","paragraph_rhythm":"compressed repeat with diagnostic variation"},
+  "notes":"Time-loop branch fixture."
+}

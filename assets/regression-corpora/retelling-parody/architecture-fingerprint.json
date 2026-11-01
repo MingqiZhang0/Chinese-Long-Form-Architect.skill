@@ -1,0 +1,34 @@
+{
+  "project_id": "RETELLING-PARODY",
+  "sample_id": "adversarial-fixture",
+  "features": {
+    "project_poetics": {
+      "salience_sources": [
+        "intertextual contrast",
+        "retelling move",
+        "narrator play",
+        "genre memory"
+      ],
+      "reader_activities": [
+        "recognize",
+        "compare",
+        "reframe"
+      ],
+      "progression_modes": [
+        "transformation of inherited pattern"
+      ],
+      "active_capabilities": [
+        "retelling-parody",
+        "fairy-tale-logic"
+      ],
+      "do_not_optimize": [
+        "treat inherited plot as originality failure",
+        "force encyclopedic worldbuilding"
+      ]
+    },
+    "primary_organizing_mode": "transformation of inherited pattern",
+    "secret_density": "none-or-project-dependent",
+    "formal_regime": "project-specific"
+  },
+  "notes": "Diagnostic only. Preserve declared poetics; do not imitate any named author or score difference as quality."
+}

@@ -1,0 +1,22 @@
+{
+  "current_chapter": 8,
+  "threads": [
+    {
+      "id": "LOOP-01",
+      "status": "active",
+      "summary": "The protagonist knows the station closes early in one failed branch but not why."
+    }
+  ],
+  "scene_packets": [],
+  "reader_state": {
+    "chapter": 8,
+    "foreground_questions": [
+      "Which observed differences are causal and which are branch-local noise?"
+    ]
+  },
+  "research_dependencies": [],
+  "authorial_unknowns": [],
+  "loop": {
+    "iteration": 8
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0.0",
+  "profiles": {
+    "binge": {
+      "description": "Strong recent-chapter activation; catches near-range repetition and over-signaling.",
+      "stress": ["recent clue obviousness", "repeated exposition", "rapid causal coherence"]
+    },
+    "weekly": {
+      "description": "Moderate between-installment decay; stresses natural reactivation before distant payoff.",
+      "stress": ["name/faction recall", "cold clue recovery", "return orientation"]
+    },
+    "casual": {
+      "description": "Retains major outcomes and relationships better than labels, minor clues, or procedural detail.",
+      "stress": ["core orientation", "relationship continuity", "excess bookkeeping"]
+    },
+    "puzzle": {
+      "description": "Actively tracks clues, wording anomalies, and competing hypotheses.",
+      "stress": ["fair-play evidence", "contradiction", "too-obvious setup"]
+    },
+    "rereader": {
+      "description": "Knows later reader-facing outcomes and tests retrospective fairness without hidden author-only material.",
+      "stress": ["reread reinterpretation", "false narration", "setup/payoff honesty"]
+    }
+  },
+  "blind_reader_output_fields": [
+    "reconstructed_time",
+    "reconstructed_space",
+    "active_people_and_goals",
+    "inferred_causes",
+    "active_questions",
+    "current_hypotheses",
+    "remembered_clues",
+    "confusions",
+    "fairness_concerns"
+  ],
+  "forbidden_backend_context": [
+    "hidden canon",
+    "future architecture",
+    "villain plans",
+    "authorial-unknown answers",
+    "dependency graph",
+    "intended interpretation"
+  ]
+}

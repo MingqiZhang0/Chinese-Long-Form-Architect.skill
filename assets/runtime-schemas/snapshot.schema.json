@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/snapshot.schema.json",
+  "title": "Narrative Runtime Snapshot",
+  "type": "object",
+  "required": ["schema_version", "branch", "through_event", "state"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "branch": {"type": "string", "minLength": 1},
+    "through_event": {"type": ["string", "null"]},
+    "state": {"type": "object"}
+  },
+  "additionalProperties": true
+}

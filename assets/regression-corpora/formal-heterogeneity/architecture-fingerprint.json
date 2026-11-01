@@ -1,0 +1,31 @@
+{
+  "project_id": "FORMAL-HETEROGENEITY",
+  "sample_id": "adversarial-fixture",
+  "features": {
+    "project_poetics": {
+      "salience_sources": [
+        "form as event",
+        "language attention",
+        "chapter-specific procedure"
+      ],
+      "reader_activities": [
+        "learn form",
+        "reorient across chapters"
+      ],
+      "progression_modes": [
+        "formal transformation",
+        "contrast among regimes"
+      ],
+      "active_capabilities": [
+        "formal-heterogeneity"
+      ],
+      "do_not_optimize": [
+        "standardize voice across authorized overrides"
+      ]
+    },
+    "primary_organizing_mode": "formal transformation",
+    "secret_density": "none-or-project-dependent",
+    "formal_regime": "scoped-heterogeneous"
+  },
+  "notes": "Diagnostic only. Preserve declared poetics; do not imitate any named author or score difference as quality."
+}

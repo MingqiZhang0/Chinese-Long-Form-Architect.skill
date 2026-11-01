@@ -1,0 +1,38 @@
+{
+  "reconciliation_version": "1.0.0",
+  "chapter_id": "CH-0008",
+  "branch": "main",
+  "prose_path": "chapters/chapter-0008.md",
+  "prose_sha256": "44f420b3c131b6b69bafeb053b2649c0ea99f6b871b298132c1c3f1fdb618730",
+  "status": "APPROVED",
+  "prose_candidates": [
+    {
+      "candidate_id": "PC-LOOP-008",
+      "description": "The current iteration is the eighth loop.",
+      "disposition": "committed",
+      "delta_ids": [
+        "DELTA-LOOP-008"
+      ],
+      "notes": "Small regression fixture for prose-state evidence."
+    }
+  ],
+  "state_deltas": [
+    {
+      "delta_id": "DELTA-LOOP-008",
+      "description": "Loop iteration advances to eight.",
+      "target": "loop.iteration",
+      "before": 7,
+      "after": 8,
+      "basis": "prose",
+      "basis_note": "Explicitly stated by the chapter opening.",
+      "evidence": [
+        {
+          "path": "chapters/chapter-0008.md",
+          "start_line": 1,
+          "end_line": 1,
+          "sha256": "e4f9e9e2da88860b65def1e541d1ac2696294f1131a96bcb354df871bc727402"
+        }
+      ]
+    }
+  ]
+}

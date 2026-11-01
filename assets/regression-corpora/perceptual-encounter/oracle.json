@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "perceptual-encounter",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“玻玻璃”错字，保留这次对玻璃浮子的感知遭遇，不把物件强制改造成线索或象征。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "允许物件遭遇、身体感知与注意力重组本身构成叙事完成。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "玻璃浮子不需要被证明是 clue、symbol 或未来 payoff。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "修复“玻玻璃”错字。"
+    },
+    {
+      "id": "A2",
+      "description": "微调感知句的节奏、空间关系或指代。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "clueification",
+      "description": "把物件强制升级成后文必须回收的线索。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "symbolic-closure",
+      "description": "给物件指定单一明确象征并以此证明描写价值。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "玻玻璃"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "气泡",
+        "汽水瓶",
+        "绿色玻璃"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "显然象征|关键线索|真正的叙事价值"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.72,
+      "max": 1.45
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

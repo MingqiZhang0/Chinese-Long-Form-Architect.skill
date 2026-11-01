@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "formal-heterogeneity",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“17：42：03”时间戳格式错误，但保留本章的记录体/碎片体，不统一改写成常规第三人称叙事。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "保留记录体、转写、便签扫描等 chapter-scoped formal regime。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "形式差异本身是授权结构，不应被 voice/style normalization 消除。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "把中文全角冒号时间戳修成与其他记录一致的半角格式。"
+    },
+    {
+      "id": "A2",
+      "description": "修复明确的记录格式错误而不改写媒介形态。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "voice-standardization",
+      "description": "把授权的记录体/碎片体统一改写成普通连续叙事。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "form-normalization",
+      "description": "以“更像正常小说”为理由抹平媒介和章节形式差异。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "17：42：03"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "【17:41】",
+        "语音转写",
+        "[停顿 4.1 秒]",
+        "手写便签扫描"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "统一改写|更像正常小说"
+    },
+    {
+      "id": "D4",
+      "kind": "paragraph_count",
+      "critical": true,
+      "min": 4,
+      "max": 7
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

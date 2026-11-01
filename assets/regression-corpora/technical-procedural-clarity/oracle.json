@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "technical-procedural-clarity",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复把把，不添加跨诗学优化。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "操作顺序及必要机制清楚，不人为制造谜团。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "程序解释与操作清晰；必要机制必须解释，不能被含混和氛围吞没。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "仅修复明确错字与必要指代。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "forced-procedural-opacity",
+      "description": "forced-procedural-opacity",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "procedure-order-corruption",
+      "description": "procedure-order-corruption",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "把把"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "进气阀",
+        "压差表",
+        "归零",
+        "清扫口"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "机制不能解释必须保持神秘|先开清扫口再切断进气阀"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.65,
+      "max": 1.5
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "clearance": {
+    "reader-simulator": 0,
+    "writer": 1,
+    "humanities-analyst": 1,
+    "planner": 2,
+    "revision-analyst": 2,
+    "auditor": 2,
+    "research-grounder": 2,
+    "director": 3,
+    "world-simulator": 3,
+    "causal-architect": 3,
+    "committer": 3
+  }
+}

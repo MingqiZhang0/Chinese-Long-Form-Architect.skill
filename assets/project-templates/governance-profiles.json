@@ -1,0 +1,103 @@
+{
+  "profiles": {
+    "lean": {
+      "required_subsystems": [
+        "project-state",
+        "chapter-mission",
+        "scene-state"
+      ],
+      "optional_subsystems": [
+        "reader-model",
+        "research-grounding",
+        "semantic-revision"
+      ],
+      "intent": "Low-friction continuity for mostly linear or relationship-driven long fiction. Literary poetics are resolved separately from this governance profile."
+    },
+    "persistent": {
+      "required_subsystems": [
+        "project-state",
+        "chapter-mission",
+        "scene-state",
+        "reader-model",
+        "context-compilation",
+        "narrative-runtime",
+        "dependency-graph"
+      ],
+      "optional_subsystems": [
+        "research-grounding",
+        "research-freshness",
+        "observatory",
+        "semantic-revision",
+        "narrative-invariants",
+        "role-isolation",
+        "branches"
+      ],
+      "intent": "Durable long-form continuity with resumable context, runtime history, and dependency-aware planning. Literary poetics are resolved separately from this governance profile."
+    },
+    "forensic": {
+      "required_subsystems": [
+        "project-state",
+        "chapter-mission",
+        "scene-state",
+        "reader-model",
+        "context-compilation",
+        "narrative-runtime",
+        "dependency-graph",
+        "observatory",
+        "semantic-revision",
+        "narrative-invariants",
+        "role-isolation",
+        "branches",
+        "prose-state-reconciliation",
+        "provenance"
+      ],
+      "optional_subsystems": [
+        "research-grounding",
+        "research-freshness",
+        "humanities-sidecar",
+        "counterfactual-sandboxes"
+      ],
+      "intent": "High-assurance governance for branch-heavy, mystery-heavy, counterfactual, time-loop, or audit-sensitive projects. Literary poetics are resolved separately from this governance profile."
+    }
+  },
+  "subsystem_dependencies": {
+    "research-freshness": [
+      "research-grounding"
+    ],
+    "dependency-graph": [
+      "narrative-runtime"
+    ],
+    "branches": [
+      "narrative-runtime"
+    ],
+    "narrative-invariants": [
+      "narrative-runtime"
+    ],
+    "provenance": [
+      "narrative-runtime"
+    ]
+  },
+  "subsystem_path_requirements": {
+    "reader-model": [
+      "reader_model"
+    ],
+    "context-compilation": [
+      "context_index"
+    ],
+    "narrative-runtime": [
+      "runtime_manifest"
+    ],
+    "research-grounding": [
+      "research_index"
+    ],
+    "research-freshness": [
+      "research_index"
+    ],
+    "semantic-revision": [
+      "revisions_dir"
+    ],
+    "prose-state-reconciliation": [
+      "reconciliations_dir"
+    ]
+  }
+}

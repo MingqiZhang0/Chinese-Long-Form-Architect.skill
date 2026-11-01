@@ -1,0 +1,15 @@
+{
+  "EV1": {
+    "anchor_id": "A1",
+    "block_id": "proof",
+    "source_revision": "sha256:64791f9fcad67467ef2ab4e5cdc833e2fdcb462fbdf2747f63ecbbd6c5767b3d",
+    "content_fingerprint": "sha256:cc6255cedee93d24659928237d88d1c2db95af426e36e89e46e438d88d7ba910",
+    "context_fingerprint": "sha256:999ed75b4436dc1834a1e9030f583a097263dd1297a666d0abfba4d2b087c969",
+    "span": {
+      "start": 13,
+      "end": 19,
+      "offset_unit": "unicode_scalar"
+    },
+    "display_text": "钥匙是蓝色的"
+  }
+}

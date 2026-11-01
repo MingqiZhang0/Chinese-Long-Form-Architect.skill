@@ -1,0 +1,104 @@
+{
+  "schema_version": "0.1.0",
+  "phenomenon_tags": [
+    "referential-economy",
+    "zero-anaphora",
+    "referent-competition",
+    "topic-chain",
+    "event-negation",
+    "aspect-event-packaging",
+    "result-directional-complement",
+    "function-word-construction",
+    "de-di-de",
+    "ba-bei-construction",
+    "idiom-construction-fit",
+    "information-structure",
+    "discourse-linking",
+    "sentence-final-particle",
+    "native-idiomaticity",
+    "translationese",
+    "sentence-rhythm",
+    "paragraph-architecture",
+    "figurative-language",
+    "dialogue-voice",
+    "register-fit",
+    "focalization",
+    "explanation-density",
+    "formulaic-llm-prose",
+    "scene-kinetics",
+    "longitudinal-voice-drift"
+  ],
+  "scopes": [
+    "token",
+    "phrase",
+    "clause",
+    "sentence",
+    "micro_context",
+    "paragraph",
+    "multi_paragraph",
+    "multi_speaker",
+    "scene_window",
+    "longitudinal"
+  ],
+  "judgment_dimensions": [
+    "grammaticality",
+    "idiomaticity",
+    "clarity",
+    "narrative_naturalness",
+    "register_fit",
+    "character_fit",
+    "focalization_legality",
+    "rhythm",
+    "information_structure",
+    "preservation",
+    "distributional_restraint",
+    "longitudinal_coherence"
+  ],
+  "evidence_classes": [
+    "hard_constraint",
+    "strong_preference",
+    "context_conditioned",
+    "genuine_disagreement",
+    "seed_expert_provisional"
+  ],
+  "variant_roles": [
+    "anchor",
+    "reversal",
+    "boundary",
+    "interference",
+    "distributional",
+    "longitudinal"
+  ],
+  "preferences": [
+    "A",
+    "B",
+    "tie",
+    "context_dependent"
+  ],
+  "strengths": [
+    "weak",
+    "moderate",
+    "strong",
+    "na"
+  ],
+  "provenance_classes": [
+    "handcrafted",
+    "failure_derived",
+    "dynamic_challenge",
+    "research_inspired_original"
+  ],
+  "splits": [
+    "example",
+    "dev",
+    "challenge",
+    "private_holdout"
+  ],
+  "family_statuses": [
+    "seed_expert_provisional",
+    "annotating",
+    "annotated",
+    "adjudicated",
+    "genuine_disagreement",
+    "retired"
+  ]
+}

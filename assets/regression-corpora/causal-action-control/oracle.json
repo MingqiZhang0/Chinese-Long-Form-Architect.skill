@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "causal-action-control",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复把把，保留因果推进和反应链。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "高因果密度、资源消耗、决定与反应。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "限定观察，进水闭合而资源后果留存。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "仅修复明确错字与必要指代。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "forced-action-interiority",
+      "description": "不以不相关内省删除紧迫行动。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "action-causal-obscurity",
+      "description": "必要操作与因果步骤必须明确。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "把把"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "许峤",
+        "电池",
+        "支渠",
+        "南渠"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "忽略闸门危机，只需回忆童年"
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

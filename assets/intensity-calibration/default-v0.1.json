@@ -1,0 +1,38 @@
+{
+  "contract_version": "1.0.0",
+  "scheduler_version": "0.1.0",
+  "calibration_version": "0.1.0",
+  "note": "Transparent behavioral calibration. This is not a token-budget contract.",
+  "profiles": {
+    "low": {
+      "proactive_scopes": ["local"],
+      "alternative_posture": "single-main-route",
+      "verification_posture": "assurance-first",
+      "stop_posture": "early-when-sufficient"
+    },
+    "medium": {
+      "proactive_scopes": ["local", "persistence"],
+      "alternative_posture": "limited-check",
+      "verification_posture": "assurance-plus-targeted",
+      "stop_posture": "after-near-horizon-residue"
+    },
+    "high": {
+      "proactive_scopes": ["local", "persistence", "cross_layer"],
+      "alternative_posture": "material-cross-check",
+      "verification_posture": "targeted-independent-checks",
+      "stop_posture": "after-material-cross-layer-frontier"
+    },
+    "xhigh": {
+      "proactive_scopes": ["local", "persistence", "cross_layer", "interaction", "alternative"],
+      "alternative_posture": "multiple-materially-distinct",
+      "verification_posture": "interaction-and-counterfactual-checks",
+      "stop_posture": "after-material-interaction-frontier"
+    },
+    "max": {
+      "proactive_scopes": ["local", "persistence", "cross_layer", "interaction", "alternative", "verification"],
+      "alternative_posture": "adaptive-compare-prune",
+      "verification_posture": "substantial-independent-verification",
+      "stop_posture": "lowest-justified-marginal-value-threshold"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "3.0.0",
+  "branches": {
+    "main": {
+      "parent": null,
+      "fork_event": null,
+      "status": "active"
+    },
+    "loop-b": {
+      "parent": "main",
+      "fork_event": "EV-0001",
+      "status": "sandbox"
+    }
+  }
+}

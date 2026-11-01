@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "metaphysical-identity-contestation",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复把把，不添加跨诗学优化。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "材料核验关闭；身份理论保留支持与反证，并有兼容边界。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "解释框架的支持与反证；身份连续性保持有界争议，不能靠巧合自动确认。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "仅修复明确错字与必要指代。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "ontology-auto-resolution",
+      "description": "ontology-auto-resolution",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "coincidence-confirmation",
+      "description": "coincidence-confirmation",
+      "critical": true
+    },
+    {
+      "id": "F3",
+      "intervention_class": "unbounded-openness",
+      "description": "unbounded-openness",
+      "critical": true
+    },
+    {
+      "id": "RF54",
+      "intervention_class": "force-mystery-closure",
+      "description": "不得加入：身份延续理论已经被证明为真。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "把把"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "卢澄",
+        "磁带",
+        "转录纸"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "身份延续理论已经被证明为真|所有巧合都证实了她的理论|任何矛盾都可以随意解释"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.65,
+      "max": 1.5
+    },
+    {
+      "id": "R54",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "身份延续理论已经被证明为真"
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

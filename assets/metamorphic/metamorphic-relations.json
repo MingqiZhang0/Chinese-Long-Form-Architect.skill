@@ -1,0 +1,456 @@
+{
+  "registry_version": "1.3.0",
+  "policy": {
+    "all_automated_relations_are_promotion_gates": true,
+    "source_and_followup_must_be_distinct": true,
+    "relation_oracle_must_be_canonical_owner": true,
+    "whole_output_byte_equality_is_not_required_unless_the_relation_says_so": true,
+    "documented_relations_are_not_counted_as_automated_coverage": true,
+    "minimum_automated_relation_types": 5,
+    "minimum_covered_semantic_strata": 6,
+    "minimum_automated_project_poetics_relations": 5
+  },
+  "relations": [
+    {
+      "id": "MR-001",
+      "title": "Context index permutation invariance",
+      "relation_type": "INV",
+      "category": "context",
+      "automation": "automated",
+      "operator": "context_index_permutation",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S5",
+        "S6"
+      ],
+      "transform": "Permute Context Index entry order without changing entries.",
+      "expected_relation": "Compiled semantic pack membership, source digests, and protected ordering are unchanged."
+    },
+    {
+      "id": "MR-002",
+      "title": "Request set permutation invariance",
+      "relation_type": "INV",
+      "category": "context",
+      "automation": "automated",
+      "operator": "request_set_permutation",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S5"
+      ],
+      "transform": "Permute set-valued request fields such as required IDs, characters, threads, and locations.",
+      "expected_relation": "Context selection remains semantically identical."
+    },
+    {
+      "id": "MR-003",
+      "title": "Secret paraphrase remains tainted",
+      "relation_type": "INV",
+      "category": "information-flow",
+      "automation": "automated",
+      "operator": "secret_paraphrase_taint_invariance",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S5",
+        "S6"
+      ],
+      "transform": "Rewrite a secret-derived Writer artifact so no protected literal survives while keeping provenance unchanged.",
+      "expected_relation": "Semantic taint still blocks the artifact with the same secret identity."
+    },
+    {
+      "id": "MR-004",
+      "title": "Irrelevant context expansion preserves protected core",
+      "relation_type": "MONO",
+      "category": "context",
+      "automation": "automated",
+      "operator": "irrelevant_context_expansion",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S5",
+        "S6"
+      ],
+      "transform": "Add a low-priority unrelated visible artifact under spare budget.",
+      "expected_relation": "Previously selected required/core artifacts remain selected with unchanged source identity; the follow-up may only add irrelevant material."
+    },
+    {
+      "id": "MR-005",
+      "title": "Chapter availability boundary has directional effect",
+      "relation_type": "DIR",
+      "category": "context",
+      "automation": "automated",
+      "operator": "chapter_window_direction",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S4",
+        "S5"
+      ],
+      "transform": "Move the target chapter from the last eligible chapter to the first expired chapter.",
+      "expected_relation": "The chapter-local artifact changes from included to expired, while unrelated entries remain stable."
+    },
+    {
+      "id": "MR-006",
+      "title": "Declassification changes permission, not truth",
+      "relation_type": "DIR",
+      "category": "information-flow",
+      "automation": "automated",
+      "operator": "declassification_locality",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S1",
+        "S5",
+        "S6"
+      ],
+      "transform": "Approve Writer declassification for one tainted artifact without changing its provenance or story facts.",
+      "expected_relation": "Only Writer visibility changes from blocked to admitted; taint/provenance identity remains intact."
+    },
+    {
+      "id": "MR-007",
+      "title": "Event serialization invariance",
+      "relation_type": "INV",
+      "category": "runtime",
+      "automation": "automated",
+      "operator": "event_serialization_invariance",
+      "owner": "references/narrative-runtime.md",
+      "strata": [
+        "S1",
+        "S2"
+      ],
+      "transform": "Reorder JSON object keys and change JSONL whitespace without changing event values or order.",
+      "expected_relation": "Runtime validation and replay projection are unchanged."
+    },
+    {
+      "id": "MR-008",
+      "title": "Dependency edge permutation invariance",
+      "relation_type": "INV",
+      "category": "dependency",
+      "automation": "automated",
+      "operator": "dependency_permutation_invariance",
+      "owner": "references/narrative-runtime.md",
+      "strata": [
+        "S6"
+      ],
+      "transform": "Permute dependency edge serialization order.",
+      "expected_relation": "Reachable impact semantics are unchanged modulo presentation order."
+    },
+    {
+      "id": "MR-009",
+      "title": "Disconnected dependency noise isolation",
+      "relation_type": "ISO",
+      "category": "dependency",
+      "automation": "automated",
+      "operator": "dependency_noise_isolation",
+      "owner": "references/narrative-runtime.md",
+      "strata": [
+        "S6"
+      ],
+      "transform": "Add a disconnected dependency component unrelated to the queried node.",
+      "expected_relation": "Impact and Why-Trace semantics for the original component remain unchanged."
+    },
+    {
+      "id": "MR-010",
+      "title": "Sibling branch perturbation isolation",
+      "relation_type": "ISO",
+      "category": "branch",
+      "automation": "automated",
+      "operator": "sibling_branch_isolation",
+      "owner": "references/narrative-runtime.md",
+      "strata": [
+        "S1",
+        "S2",
+        "S6"
+      ],
+      "transform": "Append a committed event only to one sibling branch after the fork.",
+      "expected_relation": "That branch changes; main and the other sibling replay identically."
+    },
+    {
+      "id": "MR-011",
+      "title": "Stable entity label rename is local",
+      "relation_type": "CON",
+      "category": "identity",
+      "automation": "automated",
+      "operator": "stable_label_locality",
+      "owner": "references/narrative-semantics-kernel.md",
+      "strata": [
+        "S1",
+        "S2"
+      ],
+      "transform": "Change a display label while keeping the stable entity ID and all other event semantics fixed.",
+      "expected_relation": "Replay changes only the display-label path; knowledge, custody, and entity identity remain unchanged."
+    },
+    {
+      "id": "MR-012",
+      "title": "Prose rewrite invalidates evidence until refreshed",
+      "relation_type": "ROUNDTRIP",
+      "category": "reconciliation",
+      "automation": "automated",
+      "operator": "prose_rewrite_evidence_roundtrip",
+      "owner": "references/prose-state-reconciliation.md",
+      "strata": [
+        "S1",
+        "S6"
+      ],
+      "transform": "Rewrite the prose wording while preserving the reviewed durable delta, then refresh evidence hashes.",
+      "expected_relation": "Old evidence becomes stale; refreshed evidence validates; the reviewed state delta remains semantically identical."
+    },
+    {
+      "id": "MR-013",
+      "title": "Project JSON representation invariance",
+      "relation_type": "INV",
+      "category": "kernel",
+      "automation": "automated",
+      "operator": "project_json_representation_invariance",
+      "owner": "references/narrative-semantics-kernel.md",
+      "strata": [
+        "S0",
+        "S1",
+        "S2",
+        "S7"
+      ],
+      "transform": "Reserialize machine-readable project JSON with different key order and whitespace only.",
+      "expected_relation": "Kernel law statuses and semantic hashes remain unchanged."
+    },
+    {
+      "id": "MR-014",
+      "title": "High-priority sibling-branch context noise is isolated",
+      "relation_type": "ISO",
+      "category": "context",
+      "automation": "automated",
+      "operator": "branch_context_noise_isolation",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S5",
+        "S6"
+      ],
+      "transform": "Add a much higher-priority Writer artifact scoped only to a sibling branch.",
+      "expected_relation": "The requested main-branch Writer Pack is unchanged."
+    },
+    {
+      "id": "MR-015",
+      "title": "Secret registry permutation invariance",
+      "relation_type": "INV",
+      "category": "information-flow",
+      "automation": "automated",
+      "operator": "secret_registry_permutation",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S5",
+        "S6"
+      ],
+      "transform": "Permute active Secret Registry records without changing any record.",
+      "expected_relation": "Blocked secret identities and compiled pack semantics are unchanged."
+    },
+    {
+      "id": "MR-016",
+      "title": "Local event contrast changes only its addressed semantic path",
+      "relation_type": "CON",
+      "category": "runtime",
+      "automation": "automated",
+      "operator": "local_event_contrast",
+      "owner": "references/narrative-runtime.md",
+      "strata": [
+        "S1",
+        "S2"
+      ],
+      "transform": "Change one valid event effect value while holding event structure and unrelated effects constant in an independent follow-up history.",
+      "expected_relation": "Replay differs exactly at the addressed path and preserves unrelated state."
+    },
+    {
+      "id": "MR-017",
+      "title": "Actor-knowledge record permutation invariance",
+      "relation_type": "INV",
+      "category": "epistemic",
+      "automation": "automated",
+      "operator": "knowledge_record_permutation",
+      "owner": "references/knowledge-topology.md",
+      "strata": [
+        "S3"
+      ],
+      "transform": "Permute independent knowledge records for the same actor without changing their contents or acquisition times.",
+      "expected_relation": "The actor knowledge set at a queried time remains equivalent modulo presentation order."
+    },
+    {
+      "id": "MR-018",
+      "title": "Scene paraphrase with identical durable meaning",
+      "relation_type": "INV",
+      "category": "prose-semantics",
+      "automation": "documented",
+      "owner": "references/prose-state-reconciliation.md",
+      "strata": [
+        "S1",
+        "S6"
+      ],
+      "transform": "Paraphrase a scene without changing any reviewed durable fact.",
+      "expected_relation": "After evidence refresh, the durable delta set remains equivalent even though prose hashes differ."
+    },
+    {
+      "id": "MR-019",
+      "title": "Chapter split or merge preserves world-event semantics",
+      "relation_type": "INV",
+      "category": "discourse",
+      "automation": "documented",
+      "owner": "references/narrative-semantics-kernel.md",
+      "strata": [
+        "S1",
+        "S4",
+        "S6"
+      ],
+      "transform": "Split one chapter into two or merge two adjacent chapters without changing world events or exposure order.",
+      "expected_relation": "World-event semantics stay equivalent; discourse coordinates change in a controlled, explicit way."
+    },
+    {
+      "id": "MR-020",
+      "title": "Global display-name substitution preserves stable semantic graph",
+      "relation_type": "INV",
+      "category": "identity",
+      "automation": "documented",
+      "owner": "references/narrative-semantics-kernel.md",
+      "strata": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "transform": "Replace character display names everywhere while preserving stable IDs and relationships.",
+      "expected_relation": "ID-addressed world, epistemic, reader, and dependency graphs remain isomorphic."
+    },
+    {
+      "id": "MR-021",
+      "title": "Revelation channel substitution preserves exposure meaning",
+      "relation_type": "CON",
+      "category": "reader-model",
+      "automation": "documented",
+      "owner": "references/reader-model.md",
+      "strata": [
+        "S3",
+        "S4",
+        "S6"
+      ],
+      "transform": "Move the same discoverable fact from dialogue into observable action or physical evidence without changing what an attentive reader can infer.",
+      "expected_relation": "Reader exposure content remains equivalent while discourse channel metadata changes."
+    },
+    {
+      "id": "MR-022",
+      "title": "Inactive optional capability does not become universal readiness debt",
+      "relation_type": "INV",
+      "category": "project-poetics",
+      "automation": "automated",
+      "operator": "inactive_optional_artifact_invariance",
+      "owner": "references/prewriting-readiness.md",
+      "strata": [
+        "S0"
+      ],
+      "transform": "Add a valid Project Manifest optional_artifacts record with status=inactive for a capability whose file is absent.",
+      "expected_relation": "Project Doctor remains successful; inactive capability declaration may warn but must not become a missing-required error."
+    },
+    {
+      "id": "MR-023",
+      "title": "Scoped Project Poetics override is local and inherits without parent mutation",
+      "relation_type": "ISO",
+      "category": "project-poetics",
+      "automation": "automated",
+      "operator": "poetics_scope_override_locality",
+      "owner": "references/project-poetics.md",
+      "strata": [
+        "S0",
+        "S5",
+        "S6"
+      ],
+      "transform": "Register one valid chapter-scoped Project Poetics override and its active provenance envelope while leaving the canonical parent unchanged.",
+      "expected_relation": "The override appears in the target chapter context, the parent hash is unchanged, the next chapter without the override compiles identically to baseline, and direct out-of-scope reuse is rejected."
+    },
+    {
+      "id": "MR-024",
+      "title": "Authorized heterogeneity changes classification, not measured drift",
+      "relation_type": "CON",
+      "category": "project-poetics",
+      "automation": "automated",
+      "operator": "authorized_heterogeneity_contrast",
+      "owner": "references/project-poetics.md",
+      "strata": [
+        "S0",
+        "S4",
+        "S6"
+      ],
+      "transform": "Keep the dialogue corpus fixed, then add a valid scoped Project Poetics authorization for the measured character-voice shift.",
+      "expected_relation": "The drift indicator and feature measurements stay identical; the same shift changes from review to authorized-variation only when provenance-backed authorization is supplied."
+    },
+    {
+      "id": "MR-025",
+      "title": "Poetics-preserving surface variation leaves poetics projection invariant",
+      "relation_type": "INV",
+      "category": "project-poetics",
+      "automation": "automated",
+      "operator": "poetics_preserving_surface_variation",
+      "owner": "references/project-poetics.md",
+      "strata": [
+        "S0",
+        "S5"
+      ],
+      "transform": "Change only task-surface character and setting names while keeping the same scoped Project Poetics artifact, envelope, scope, and active capability declaration.",
+      "expected_relation": "The task pack changes non-vacuously, but scoped-poetics provenance, authority/scope/hash identity, and active capability projection remain unchanged."
+    },
+    {
+      "id": "MR-026",
+      "title": "Hard Core is invariant across conflicting valid Project Poetics",
+      "relation_type": "INV",
+      "category": "project-poetics",
+      "automation": "automated",
+      "operator": "hard_core_invariance_across_poetics",
+      "owner": "references/project-poetics.md",
+      "strata": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "transform": "Hold world/runtime/knowledge/evidence state fixed while replacing the Project Poetics artifact with a deliberately conflicting valid literary contract; repeat after injecting the same hard semantic fault into both variants.",
+      "expected_relation": "Narrative Semantics Kernel verdicts are identical across poetics, and the same injected hard fault remains a hard failure under both rather than being masked or relaxed by literary preferences."
+    },
+    {
+      "id": "MR-027",
+      "title": "Witness-sensitive social context",
+      "relation_type": "DIR",
+      "category": "project-poetics",
+      "automation": "automated",
+      "operator": "regime_witness_context",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S5",
+        "S6"
+      ],
+      "transform": "Change the witness from colleague to patron, preserving the public statement.",
+      "expected_relation": "Writer pack changes only the authorized scoped commitment; invariant fact bytes remain unchanged; inactive capability references remain excluded. This does not prove generated literary effects."
+    },
+    {
+      "id": "MR-028",
+      "title": "Narrating age and factual memory",
+      "relation_type": "DIR",
+      "category": "project-poetics",
+      "automation": "automated",
+      "operator": "regime_narrating_age_context",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S5",
+        "S6"
+      ],
+      "transform": "Change narrating age and interpretation, preserving the loan fact.",
+      "expected_relation": "Writer pack changes only the authorized scoped commitment; invariant fact bytes remain unchanged; inactive capability references remain excluded. This does not prove generated literary effects."
+    },
+    {
+      "id": "MR-029",
+      "title": "Material object and changed relation",
+      "relation_type": "DIR",
+      "category": "project-poetics",
+      "automation": "automated",
+      "operator": "regime_object_relation_context",
+      "owner": "references/context-compilation.md",
+      "strata": [
+        "S5",
+        "S6"
+      ],
+      "transform": "Change admiration to shame, preserving the dented plate fact.",
+      "expected_relation": "Writer pack changes only the authorized scoped commitment; invariant fact bytes remain unchanged; inactive capability references remain excluded. This does not prove generated literary effects."
+    }
+  ]
+}

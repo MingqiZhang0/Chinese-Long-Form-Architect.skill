@@ -1,0 +1,34 @@
+{
+  "project_id": "PERCEPTUAL-ENCOUNTER",
+  "sample_id": "adversarial-fixture",
+  "features": {
+    "project_poetics": {
+      "salience_sources": [
+        "perception",
+        "object encounter",
+        "bodily affect",
+        "attention shift"
+      ],
+      "reader_activities": [
+        "perceive",
+        "reconfigure attention"
+      ],
+      "progression_modes": [
+        "perceptual reconfiguration",
+        "experiential completion"
+      ],
+      "active_capabilities": [
+        "perceptual-concentration"
+      ],
+      "do_not_optimize": [
+        "turn object into clue",
+        "force later payoff",
+        "force symbol explanation"
+      ]
+    },
+    "primary_organizing_mode": "perceptual reconfiguration",
+    "secret_density": "none-or-project-dependent",
+    "formal_regime": "project-specific"
+  },
+  "notes": "Diagnostic only. Preserve declared poetics; do not imitate any named author or score difference as quality."
+}

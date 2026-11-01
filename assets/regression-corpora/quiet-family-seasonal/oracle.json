@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "quiet-family-seasonal",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“又重新”造成的局部重复，并保持这顿饭的低事件、季节性与日常熟悉感。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "保留饭桌日常、季节与家庭礼数作为主要叙事价值；不要求场景产生 durable plot delta。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "保留父亲扣手机这一动作的可多解性，不把它升级成确定的隐藏秘密。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "修复“又重新再铺”一类局部重复。"
+    },
+    {
+      "id": "A2",
+      "description": "轻微调整句序、标点或指代，使中文更自然。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "plot-hook-manufacture",
+      "description": "把日常动作包装成即将爆发的秘密、危机或强制悬念。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "symbolic-closure",
+      "description": "强迫桂花、衣架声等普通感知承担明确象征/预示。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "又重新再铺"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "搪瓷盆",
+        "桂花",
+        "水表",
+        "丝瓜"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "暗钉|尚未爆发的家庭秘密|提前敲响什么"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.72,
+      "max": 1.45
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

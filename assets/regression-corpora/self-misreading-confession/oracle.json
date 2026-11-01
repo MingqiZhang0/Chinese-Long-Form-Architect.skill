@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "self-misreading-confession",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“我我”错字；保留第一人称自我解释与行动证据之间的张力，不把自述直接认证成心理真相。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "第一人称“不是因为嫉妒”只能作为 narrator self-report，不自动升级成事实；其反面“其实就是嫉妒”也不能被编辑者擅自认证。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "保留自述、记忆限定语和杯子动作之间的可推断张力。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "修复“我我”错字。"
+    },
+    {
+      "id": "A2",
+      "description": "改善指代或时态，使 confession 更自然，但不消灭认识论含混。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "self-report-canonization",
+      "description": "把叙述者对自己的解释或编辑者的反解释升级成客观心理 canon。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "diagnostic-closure",
+      "description": "为了清楚而直接诊断真实动机，关闭读者重建空间。",
+      "critical": true
+    },
+    {
+      "id": "RF49",
+      "intervention_class": "force-character-transformation",
+      "description": "不得加入：这一天以后，我彻底改正缺点，成为了健全的人。",
+      "critical": true
+    },
+    {
+      "id": "RF50",
+      "intervention_class": "force-psychological-explanation",
+      "description": "不得加入：我的所有玩笑都源于依恋障碍，因此真实动机已经确定。",
+      "critical": true
+    },
+    {
+      "id": "RF56",
+      "intervention_class": "force-pov-broadening",
+      "description": "不得加入：此刻我准确知道周谨没有说出的每一个念头。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "我我"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "房租合同",
+        "周谨",
+        "杯子"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "其实我就是嫉妒|已经证明了|把真实心理说清楚"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.7,
+      "max": 1.42
+    },
+    {
+      "id": "R49",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "这一天以后，我彻底改正缺点，成为了健全的人"
+    },
+    {
+      "id": "R50",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "我的所有玩笑都源于依恋障碍，因此真实动机已经确定"
+    },
+    {
+      "id": "R56",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "此刻我准确知道周谨没有说出的每一个念头"
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

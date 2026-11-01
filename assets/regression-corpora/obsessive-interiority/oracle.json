@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "obsessive-interiority",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“它它”这一局部错字，同时保持单一意识对旧钥匙的执着，不为“世界平衡”扩展他人视角。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "保持高度受限于陈默的意识与感知；他的自我解释可以成立为自我报告，但不自动成为心理真相。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "旧钥匙继续是注意力组织中心。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "修复“它它”错字。"
+    },
+    {
+      "id": "A2",
+      "description": "在陈默可感知范围内微调重复或节奏。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "viewpoint-broadening",
+      "description": "为了世界平衡进入其他人物内心或补充外部全知解释。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "polyphony-forcing",
+      "description": "为了主题完整主动增加多视角争辩或“不同观点共同构成真相”。",
+      "critical": true
+    },
+    {
+      "id": "RF51",
+      "intervention_class": "force-polyphony",
+      "description": "不得加入：为了平衡这个单一意识，现在插入五个旁观者的完整思想。",
+      "critical": true
+    },
+    {
+      "id": "RF52",
+      "intervention_class": "force-unique-symbol-meaning",
+      "description": "不得加入：这件物品唯一象征自由，其他含义都是错误的。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "它它"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "第三个缺口",
+        "预算数字",
+        "门锁"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "林岚其实早就看出了|不同视角共同构成了更完整的真相"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.7,
+      "max": 1.45
+    },
+    {
+      "id": "R51",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "为了平衡这个单一意识，现在插入五个旁观者的完整思想"
+    },
+    {
+      "id": "R52",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "这件物品唯一象征自由，其他含义都是错误的"
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

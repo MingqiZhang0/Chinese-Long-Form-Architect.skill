@@ -1,0 +1,34 @@
+{
+  "task_id": "TASK-0001",
+  "stage": "draft",
+  "role": "writer",
+  "status": "PENDING",
+  "goal": "Draft Chapter 1 from the compiled context pack.",
+  "authoritative_inputs": [],
+  "allowed_reads": [],
+  "allowed_writes": [
+    "chapters/chapter-0001.md"
+  ],
+  "forbidden_mutations": [
+    "state/",
+    "research/",
+    "planning/long-horizon/"
+  ],
+  "required_outputs": [
+    "chapters/chapter-0001.md"
+  ],
+  "acceptance_criteria": [],
+  "blockers": [],
+  "findings_for_next_role": [],
+  "branch": "main",
+  "objections": [],
+  "overrides": [],
+  "execution_profile": null,
+  "isolation_requirements": {
+    "fresh_context": true,
+    "blindness_required": true,
+    "independent_review_required": false
+  },
+  "scoped_project_poetics_ref": null,
+  "scoped_project_poetics_envelope_ref": null
+}

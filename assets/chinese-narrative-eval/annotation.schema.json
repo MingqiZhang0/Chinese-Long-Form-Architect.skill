@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/lwa/chinese-narrative-eval/annotation.schema.json",
+  "title": "Chinese Narrative Blind Annotation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "annotation_id",
+    "item_id",
+    "annotator_id",
+    "choice",
+    "strength",
+    "dimensions",
+    "blind"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "annotation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "annotator_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "choice": {
+      "enum": [
+        "A",
+        "B",
+        "tie",
+        "context_dependent"
+      ]
+    },
+    "strength": {
+      "enum": [
+        "weak",
+        "moderate",
+        "strong",
+        "na"
+      ]
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "flags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "unclear_context",
+          "both_good",
+          "both_bad",
+          "suspected_confound",
+          "register_sensitive",
+          "dialect_sensitive",
+          "era_sensitive"
+        ]
+      }
+    },
+    "blind": {
+      "type": "boolean"
+    }
+  }
+}

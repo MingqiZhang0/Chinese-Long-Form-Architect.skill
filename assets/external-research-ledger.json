@@ -1,0 +1,914 @@
+{
+  "schema_version": "1.0.0",
+  "ledger_id": "lwa-external-research",
+  "purpose": "Canonical Skill-wide registry of external research used to design, justify, or evaluate Literary Webnovel Architect. Project-specific reality-grounding sources remain in each project's separate source ledger.",
+  "sources": [
+    {
+      "id": "ama-bench-2026",
+      "title": "AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications",
+      "authors": [
+        "Yujie Zhao",
+        "Boqin Yuan",
+        "Junbo Huang",
+        "Haocheng Yuan",
+        "Zhongming Yu",
+        "Haozhou Xu",
+        "Lanxiang Hu",
+        "Abhilash Shankarampeta",
+        "Zimeng Huang",
+        "Wentao Ni",
+        "Yuandong Tian",
+        "Jishen Zhao"
+      ],
+      "venue": "Proceedings of the 43rd International Conference on Machine Learning",
+      "year": 2026,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": null,
+      "arxiv": "2602.22769",
+      "canonical_identifier": "PMLR 306:zhao26bs",
+      "canonical_url": "https://proceedings.mlr.press/v306/zhao26bs.html",
+      "verification_date": "2026-10-03",
+      "verification_basis": "PMLR",
+      "claims_used_for": [
+        "long-horizon agent-memory evaluation on real and scalable synthetic trajectories",
+        "separation of live trajectories from controlled stress evidence"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "booth-critical-understanding-1979",
+      "title": "Critical Understanding: The Powers and Limits of Pluralism",
+      "authors": [
+        "Wayne C. Booth"
+      ],
+      "venue": "University of Chicago Press",
+      "year": 1979,
+      "source_type": "other",
+      "publication_status": "other",
+      "doi": null,
+      "arxiv": null,
+      "canonical_identifier": "University of Chicago Press bo5970849",
+      "canonical_url": "https://press.uchicago.edu/ucp/books/book/chicago/C/bo5970849.html",
+      "verification_date": "2026-10-03",
+      "verification_basis": "University of Chicago Press",
+      "claims_used_for": [
+        "reasoned pluralism as a guard against both monism and unconstrained relativism in literary judgment",
+        "different works and critical purposes may require different modes of understanding"
+      ],
+      "used_by": [
+        "references/literary-meta-core.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "checkeval-2025",
+      "title": "CheckEval: A reliable LLM-as-a-Judge framework for evaluating text generation using checklists",
+      "authors": [
+        "Yukyung Lee",
+        "JoongHoon Kim",
+        "Jaehee Kim",
+        "Hyowon Cho",
+        "Jaewook Kang",
+        "Pilsung Kang",
+        "Najoung Kim"
+      ],
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "year": 2025,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2025.emnlp-main.796",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2025.emnlp-main.796",
+      "canonical_url": "https://aclanthology.org/2025.emnlp-main.796/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "decomposed checklist-style LLM evaluation improves traceability and cross-judge agreement relative to undifferentiated subjective ratings",
+        "binary/criterion-level judgments are preferable to one opaque literary-quality score for behavioural oracle maintenance"
+      ],
+      "used_by": [
+        "references/evaluation-benchmark.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "checklist-2020",
+      "title": "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList",
+      "authors": [
+        "Marco Tulio Ribeiro",
+        "Tongshuang Wu",
+        "Carlos Guestrin",
+        "Sameer Singh"
+      ],
+      "venue": "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+      "year": 2020,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2020.acl-main.442",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2020.acl-main.442",
+      "canonical_url": "https://aclanthology.org/2020.acl-main.442/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "capability-by-test-type behavioral evaluation",
+        "diagnostic rather than single-score testing"
+      ],
+      "used_by": [
+        "references/chinese-narrative-behavioral-evaluation.md",
+        "references/metamorphic-adversarial-benchmark.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "comparative-trap-2025",
+      "title": "The Comparative Trap: Pairwise Comparisons Amplifies Biased Preferences of LLM Evaluators",
+      "authors": [
+        "Hawon Jeong",
+        "ChaeHun Park",
+        "Jimin Hong",
+        "Hojoon Lee",
+        "Jaegul Choo"
+      ],
+      "venue": "Proceedings of the 8th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP",
+      "year": 2025,
+      "source_type": "workshop-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2025.blackboxnlp-1.5",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2025.blackboxnlp-1.5",
+      "canonical_url": "https://aclanthology.org/2025.blackboxnlp-1.5/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "direct pairwise comparison can amplify superficial evaluator preferences such as verbosity and authoritative tone",
+        "independent pointwise reasoning before pairwise comparison is a useful design guard against comparative bias"
+      ],
+      "used_by": [
+        "references/evaluation-benchmark.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "contrast-sets-2020",
+      "title": "Evaluating Models' Local Decision Boundaries via Contrast Sets",
+      "authors": [
+        "Matt Gardner",
+        "Yoav Artzi",
+        "Victoria Basmov",
+        "Jonathan Berant",
+        "Ben Bogin",
+        "Sihao Chen",
+        "Pradeep Dasigi",
+        "Dheeru Dua",
+        "Yanai Elazar",
+        "Ananth Gottumukkala",
+        "Nitish Gupta",
+        "Hannaneh Hajishirzi",
+        "Gabriel Ilharco",
+        "Daniel Khashabi",
+        "Kevin Lin",
+        "Jiangming Liu",
+        "Nelson F. Liu",
+        "Phoebe Mulcaire",
+        "Qiang Ning",
+        "Sameer Singh",
+        "Noah A. Smith",
+        "Sanjay Subramanian",
+        "Reut Tsarfaty",
+        "Eric Wallace",
+        "Ally Zhang",
+        "Ben Zhou"
+      ],
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2020",
+      "year": 2020,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2020.findings-emnlp.117",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2020.findings-emnlp.117",
+      "canonical_url": "https://aclanthology.org/2020.findings-emnlp.117/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "contrast-set methodology",
+        "local semantic perturbation and decision-boundary testing"
+      ],
+      "used_by": [
+        "references/chinese-narrative-behavioral-evaluation.md",
+        "references/metamorphic-adversarial-benchmark.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "good-mr-selection-2006",
+      "title": "An Empirical Study on the Selection of Good Metamorphic Relations",
+      "authors": [
+        "Johannes Mayer",
+        "Ralph Guderlei"
+      ],
+      "venue": "30th Annual International Computer Software and Applications Conference (COMPSAC'06)",
+      "year": 2006,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.1109/COMPSAC.2006.24",
+      "arxiv": null,
+      "canonical_identifier": "IEEE Xplore 4020110",
+      "canonical_url": "https://doi.org/10.1109/COMPSAC.2006.24",
+      "verification_date": "2026-10-03",
+      "verification_basis": "IEEE Xplore",
+      "claims_used_for": [
+        "metamorphic relations differ in fault-detection usefulness",
+        "relation selection should be evaluated rather than counted"
+      ],
+      "used_by": [
+        "references/metamorphic-adversarial-benchmark.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "infiagent-2026",
+      "title": "InfiAgent: An Infinite-Horizon Framework for General-Purpose Autonomous Agents",
+      "authors": [
+        "Chenglin Yu",
+        "Yuchen Wang",
+        "Songmiao Wang",
+        "Hongxia Yang",
+        "Li Ming"
+      ],
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+      "year": 2026,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2026.findings-acl.1787",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2026.findings-acl.1787",
+      "canonical_url": "https://aclanthology.org/2026.findings-acl.1787/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "explicit external persistent state with bounded active context",
+        "long-running agent context reconstruction"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "judge-position-bias-2025",
+      "title": "Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge",
+      "authors": [
+        "Lin Shi",
+        "Chiyu Ma",
+        "Wenhua Liang",
+        "Xingjian Diao",
+        "Weicheng Ma",
+        "Soroush Vosoughi"
+      ],
+      "venue": "Proceedings of the 14th International Joint Conference on Natural Language Processing and the 4th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics",
+      "year": 2025,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2025.ijcnlp-long.18",
+      "arxiv": "2406.07791",
+      "canonical_identifier": "ACL Anthology 2025.ijcnlp-long.18",
+      "canonical_url": "https://aclanthology.org/2025.ijcnlp-long.18/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "pairwise LLM judges exhibit non-random position bias that varies by judge, candidate, and task",
+        "swapped-order consistency and uncertainty handling are necessary controls for model-based pairwise evaluation"
+      ],
+      "used_by": [
+        "references/evaluation-benchmark.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "litbench-2026",
+      "title": "LitBench: A Benchmark and Dataset for Reliable Evaluation of Creative Writing",
+      "authors": [
+        "Daniel Fein",
+        "Sebastian Russo",
+        "Violet Xiang",
+        "Kabir Jolly",
+        "Rafael Rafailov",
+        "Nick Haber"
+      ],
+      "venue": "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "year": 2026,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2026.eacl-long.362",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2026.eacl-long.362",
+      "canonical_url": "https://aclanthology.org/2026.eacl-long.362/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "caution about off-the-shelf LLM judges for creative-writing preference",
+        "human calibration for literary evaluation"
+      ],
+      "used_by": [
+        "references/chinese-narrative-behavioral-evaluation.md",
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "locomo-2024",
+      "title": "Evaluating Very Long-Term Conversational Memory of LLM Agents",
+      "authors": [
+        "Adyasha Maharana",
+        "Dong-Ho Lee",
+        "Sergey Tulyakov",
+        "Mohit Bansal",
+        "Francesco Barbieri",
+        "Yuwei Fang"
+      ],
+      "venue": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "year": 2024,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2024.acl-long.747",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2024.acl-long.747",
+      "canonical_url": "https://aclanthology.org/2024.acl-long.747/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "very-long multi-session conversational memory evaluation",
+        "long-range temporal and causal dialogue evidence"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "locomo-conv-2026",
+      "title": "When Users Don't Ask: Benchmarking Context-Driven Memory Retrieval in Conversational Agents",
+      "authors": [
+        "Wen-Yu Chang",
+        "Yun-Nung Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "source_type": "preprint",
+      "publication_status": "preprint",
+      "doi": null,
+      "arxiv": "2609.03467",
+      "canonical_identifier": "arXiv:2609.03467",
+      "canonical_url": "https://arxiv.org/abs/2609.03467",
+      "verification_date": "2026-10-03",
+      "verification_basis": "arXiv",
+      "claims_used_for": [
+        "implicit and composed conversational memory retrieval",
+        "difference between retrieval recall and grounded response use"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null,
+      "notes": "Repository metadata mentions Findings of EMNLP 2026, but this ledger remains preprint until a canonical proceedings record is verified."
+    },
+    {
+      "id": "locomo-plus-2026",
+      "title": "Locomo-Plus: Beyond-Factual Cognitive Memory Evaluation Framework for LLM Agents",
+      "authors": [
+        "Yifei Li",
+        "Weidong Guo",
+        "Lingling Zhang",
+        "Rongman Xu",
+        "Muye Huang",
+        "Hui Liu",
+        "Lijiao Xu",
+        "Yu Xu",
+        "Jun Liu"
+      ],
+      "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "year": 2026,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2026.acl-long.1150",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2026.acl-long.1150",
+      "canonical_url": "https://aclanthology.org/2026.acl-long.1150/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "latent constraint consistency across long conversational contexts",
+        "memory evaluation beyond explicit factual recall"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "longmemeval-2025",
+      "title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+      "authors": [
+        "Di Wu",
+        "Hongwei Wang",
+        "Wenhao Yu",
+        "Yuwei Zhang",
+        "Kai-Wei Chang",
+        "Dong Yu"
+      ],
+      "venue": "International Conference on Learning Representations 2025",
+      "year": 2025,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": null,
+      "arxiv": "2410.10813",
+      "canonical_identifier": "ICLR 2025 d813d324dbf0598bbdc9c8e79740ed01",
+      "canonical_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ICLR Proceedings",
+      "claims_used_for": [
+        "separate long-term memory dimensions including temporal reasoning knowledge updates and abstention",
+        "probe design beyond raw recall"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "mem2actbench-2026",
+      "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory Utilization in Task-Oriented Autonomous Agents",
+      "authors": [
+        "Yiting Shen",
+        "Kun Li",
+        "Wei Zhou",
+        "Songlin Hu"
+      ],
+      "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "year": 2026,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2026.acl-long.370",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2026.acl-long.370",
+      "canonical_url": "https://aclanthology.org/2026.acl-long.370/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "memory-to-action evaluation rather than passive recall",
+        "tool/action parameter grounding from long-term memory"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "membench-2025",
+      "title": "MemBench: Towards More Comprehensive Evaluation on the Memory of LLM-based Agents",
+      "authors": [
+        "Haoran Tan",
+        "Zeyu Zhang",
+        "Chen Ma",
+        "Xu Chen",
+        "Quanyu Dai",
+        "Zhenhua Dong"
+      ],
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2025",
+      "year": 2025,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2025.findings-acl.989",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2025.findings-acl.989",
+      "canonical_url": "https://aclanthology.org/2025.findings-acl.989/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "multi-level and multi-scenario memory evaluation",
+        "separate memory effectiveness efficiency and capacity"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "metamorphic-survey-2016",
+      "title": "A Survey on Metamorphic Testing",
+      "authors": [
+        "Sergio Segura",
+        "Gordon Fraser",
+        "Ana B. Sánchez",
+        "Antonio Ruiz-Cortés"
+      ],
+      "venue": "IEEE Transactions on Software Engineering",
+      "year": 2016,
+      "source_type": "journal-article",
+      "publication_status": "peer-reviewed",
+      "doi": "10.1109/TSE.2016.2532875",
+      "arxiv": null,
+      "canonical_identifier": "DOI 10.1109/TSE.2016.2532875",
+      "canonical_url": "https://doi.org/10.1109/TSE.2016.2532875",
+      "verification_date": "2026-10-03",
+      "verification_basis": "IEEE DOI metadata / White Rose Research Online",
+      "claims_used_for": [
+        "metamorphic-testing taxonomy and application evidence",
+        "importance of metamorphic-relation identification and selection"
+      ],
+      "used_by": [
+        "references/metamorphic-adversarial-benchmark.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "metamorphic-testing-1998",
+      "title": "Metamorphic Testing: A New Approach for Generating Next Test Cases",
+      "authors": [
+        "T. Y. Chen",
+        "S. C. Cheung",
+        "S. M. Yiu"
+      ],
+      "venue": "Technical Report HKUST-CS98-01, Department of Computer Science, Hong Kong University of Science and Technology",
+      "year": 1998,
+      "source_type": "technical-report",
+      "publication_status": "other",
+      "doi": null,
+      "arxiv": "2002.12543",
+      "canonical_identifier": "HKUST-CS98-01",
+      "canonical_url": "https://www.cse.ust.hk/~scc/publ/CS98-01-metamorphictesting.pdf",
+      "verification_date": "2026-10-03",
+      "verification_basis": "HKUST technical report",
+      "claims_used_for": [
+        "metamorphic testing as an oracle-problem strategy",
+        "source/follow-up test relations"
+      ],
+      "used_by": [
+        "references/metamorphic-adversarial-benchmark.md"
+      ],
+      "superseded_by": null,
+      "notes": "The 2020 arXiv identifier is a later archival upload of the 1998 technical report; year/status follow the original report."
+    },
+    {
+      "id": "native-cgec-2022",
+      "title": "Linguistic Rules-Based Corpus Generation for Native Chinese Grammatical Error Correction",
+      "authors": [
+        "Shirong Ma",
+        "Yinghui Li",
+        "Rongyi Sun",
+        "Qingyu Zhou",
+        "Shulin Huang",
+        "Ding Zhang",
+        "Li Yangning",
+        "Ruiyang Liu",
+        "Zhongli Li",
+        "Yunbo Cao",
+        "Haitao Zheng",
+        "Ying Shen"
+      ],
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2022",
+      "year": 2022,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2022.findings-emnlp.40",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2022.findings-emnlp.40",
+      "canonical_url": "https://aclanthology.org/2022.findings-emnlp.40/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "native-speaker Chinese error distributions",
+        "ecological-validity motivation for Chinese evaluation"
+      ],
+      "used_by": [
+        "references/chinese-narrative-behavioral-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "odysseys-2026",
+      "title": "Odysseys: Benchmarking Web Agents on Realistic Long Horizon Tasks",
+      "authors": [
+        "Lawrence Keunho Jang",
+        "Jing Yu Koh",
+        "Daniel Fried",
+        "Ruslan Salakhutdinov"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "source_type": "preprint",
+      "publication_status": "preprint",
+      "doi": null,
+      "arxiv": "2604.24964",
+      "canonical_identifier": "arXiv:2604.24964",
+      "canonical_url": "https://arxiv.org/abs/2604.24964",
+      "verification_date": "2026-10-03",
+      "verification_basis": "arXiv",
+      "claims_used_for": [
+        "graded rubrics for long-horizon web-agent tasks",
+        "separate task success from trajectory efficiency"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "pbt-metamorphic-2022",
+      "title": "Application of Property-based Testing Tools for Metamorphic Testing",
+      "authors": [
+        "Nasser Alzahrani",
+        "Maria Spichkova",
+        "James Harland"
+      ],
+      "venue": "Proceedings of the 17th International Conference on Evaluation of Novel Approaches to Software Engineering (ENASE 2022)",
+      "year": 2022,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.5220/0011101700003176",
+      "arxiv": "2211.12003",
+      "canonical_identifier": "SciTePress 111017",
+      "canonical_url": "https://www.scitepress.org/PublishedPapers/2022/111017/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "SciTePress",
+      "claims_used_for": [
+        "property-based generation for metamorphic testing",
+        "automated source/follow-up verification under a governing relation"
+      ],
+      "used_by": [
+        "references/metamorphic-adversarial-benchmark.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "phelan-narrative-rhetoric-1996",
+      "title": "Narrative as Rhetoric: Technique, Audiences, Ethics, Ideology",
+      "authors": [
+        "James Phelan"
+      ],
+      "venue": "The Ohio State University Press",
+      "year": 1996,
+      "source_type": "other",
+      "publication_status": "other",
+      "doi": null,
+      "arxiv": null,
+      "canonical_identifier": "Ohio State University Press PhelanNarrative",
+      "canonical_url": "https://ohiostatepress.org/books/BookPages/PhelanNarrative.htm",
+      "verification_date": "2026-10-03",
+      "verification_basis": "The Ohio State University Press",
+      "claims_used_for": [
+        "narrative resources are selected in relation to teller, audience, situation, and purpose",
+        "narrative reading can involve multiple dimensions rather than a single universal response target"
+      ],
+      "used_by": [
+        "references/project-poetics.md",
+        "references/literary-meta-core.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "saito-familiar-2017",
+      "title": "Aesthetics of the Familiar: Everyday Life and World-Making",
+      "authors": [
+        "Yuriko Saito"
+      ],
+      "venue": "Oxford University Press",
+      "year": 2017,
+      "source_type": "other",
+      "publication_status": "other",
+      "doi": "10.1093/oso/9780199672103.001.0001",
+      "arxiv": null,
+      "canonical_identifier": "ISBN 9780199672103",
+      "canonical_url": "https://academic.oup.com/book/11785",
+      "verification_date": "2026-10-03",
+      "verification_basis": "Oxford Academic",
+      "claims_used_for": [
+        "ordinary and familiar experience can be aesthetically significant without requiring defamiliarization",
+        "everyday aesthetics includes heterogeneous positive and negative modes rather than a single stylistic prescription"
+      ],
+      "used_by": [
+        "references/literary-meta-core.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "sentinelbench-2026",
+      "title": "SentinelBench: A Benchmark for Long-Running Monitoring Agents",
+      "authors": [
+        "Matheus Kunzler Maldaner",
+        "Adam Fourney",
+        "Amanda Swearngin",
+        "Hussein Mozannar",
+        "Gagan Bansal",
+        "Maya Murad",
+        "Rafah Hosn",
+        "Saleema Amershi"
+      ],
+      "venue": "arXiv / Microsoft Research",
+      "year": 2026,
+      "source_type": "preprint",
+      "publication_status": "preprint",
+      "doi": null,
+      "arxiv": "2606.05342",
+      "canonical_identifier": "arXiv:2606.05342",
+      "canonical_url": "https://arxiv.org/abs/2606.05342",
+      "verification_date": "2026-10-03",
+      "verification_basis": "arXiv and Microsoft Research",
+      "claims_used_for": [
+        "time-evolving long-running monitoring tasks",
+        "reaction-time and resource-use tradeoffs while waiting for external state change"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "temporal-flattening-2026",
+      "title": "Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories",
+      "authors": [
+        "Zhanwei Cao",
+        "YeoJin Go",
+        "Yifan Hu",
+        "Shanu Sushmita"
+      ],
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+      "year": 2026,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": "10.18653/v1/2026.findings-acl.682",
+      "arxiv": "2604.12097",
+      "canonical_identifier": "ACL Anthology 2026.findings-acl.682",
+      "canonical_url": "https://aclanthology.org/2026.findings-acl.682/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "longitudinal style and semantic drift evaluation",
+        "temporal-flattening motivation for long-form evaluation"
+      ],
+      "used_by": [
+        "references/chinese-narrative-behavioral-evaluation.md",
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "ultrahorizon-2026",
+      "title": "UltraHorizon: Benchmarking Agent Capabilities in Ultra Long-Horizon Scenarios",
+      "authors": [
+        "Haotian Luo",
+        "Huaisong Zhang",
+        "Xuelin Zhang",
+        "Haoyu Wang",
+        "Zeyu Qin",
+        "Wenjie Lu",
+        "Guozheng Ma",
+        "Haiying He",
+        "Yingsha Xie",
+        "Qiyang Zhou",
+        "Zixuan Hu",
+        "Hongze Mi",
+        "Yibo Wang",
+        "Naiqiang Tan",
+        "Hong Chen",
+        "Yi R. Fung",
+        "Chun Yuan",
+        "Li Shen"
+      ],
+      "venue": "Proceedings of the 43rd International Conference on Machine Learning",
+      "year": 2026,
+      "source_type": "conference-paper",
+      "publication_status": "peer-reviewed",
+      "doi": null,
+      "arxiv": "2509.21766",
+      "canonical_identifier": "PMLR 306:luo26ai",
+      "canonical_url": "https://proceedings.mlr.press/v306/luo26ai.html",
+      "verification_date": "2026-10-03",
+      "verification_basis": "PMLR",
+      "claims_used_for": [
+        "ultra-long-horizon agent evaluation",
+        "sustained reasoning planning memory tool-use and partial-observability stress"
+      ],
+      "used_by": [
+        "references/live-campaign-longitudinal-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "walton-categories-art-1970",
+      "title": "Categories of Art",
+      "authors": [
+        "Kendall L. Walton"
+      ],
+      "venue": "The Philosophical Review",
+      "year": 1970,
+      "source_type": "journal-article",
+      "publication_status": "peer-reviewed",
+      "doi": "10.2307/2183933",
+      "arxiv": null,
+      "canonical_identifier": "JSTOR 2183933",
+      "canonical_url": "https://www.jstor.org/stable/2183933",
+      "verification_date": "2026-10-03",
+      "verification_basis": "JSTOR / The Philosophical Review issue record",
+      "claims_used_for": [
+        "the salience and aesthetic character of properties can depend on the artistic category under which a work is perceived",
+        "a formal property should not be assigned a context-free positive or negative literary value"
+      ],
+      "used_by": [
+        "references/literary-meta-core.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "zholimp-2026",
+      "title": "A Systematic Assessment of Language Models with Linguistic Minimal Pairs in Chinese",
+      "authors": [
+        "Yikang Liu",
+        "Yeting Shen",
+        "Hongao Zhu",
+        "Lilong Xu",
+        "Zhiheng Qian",
+        "Siyuan Song",
+        "Kejia Zhang",
+        "Jialong Tang",
+        "Pei Zhang",
+        "Baosong Yang",
+        "Rui Wang",
+        "Hai Hu"
+      ],
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "year": 2026,
+      "source_type": "journal-article",
+      "publication_status": "peer-reviewed",
+      "doi": "10.1162/tacl.a.648",
+      "arxiv": null,
+      "canonical_identifier": "ACL Anthology 2026.tacl-1.34",
+      "canonical_url": "https://aclanthology.org/2026.tacl-1.34/",
+      "verification_date": "2026-10-03",
+      "verification_basis": "ACL Anthology",
+      "claims_used_for": [
+        "controlled Chinese linguistic minimal-pair evaluation",
+        "contrast-family design for Chinese narrative behavior"
+      ],
+      "used_by": [
+        "references/chinese-narrative-behavioral-evaluation.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "lhn-time-2014",
+      "title": "Time",
+      "authors": [
+        "Michael Scheffel",
+        "Antonius Weixler",
+        "Lukas Werner"
+      ],
+      "venue": "The living handbook of narratology, Hamburg University",
+      "year": 2014,
+      "source_type": "other",
+      "publication_status": "other",
+      "doi": null,
+      "arxiv": null,
+      "canonical_identifier": "LHN node 106",
+      "canonical_url": "https://www-archiv.fdm.uni-hamburg.de/lhn/node/106.html",
+      "verification_date": "2026-10-05",
+      "verification_basis": "University of Hamburg archived author entry; checked title, authors and revision date against canonical page.",
+      "claims_used_for": [
+        "Distinguish story, discourse and narrating time; order, duration and frequency are analytic categories, not a chronology mandate."
+      ],
+      "used_by": [
+        "references/narrative-time-duration.md"
+      ],
+      "superseded_by": null
+    },
+    {
+      "id": "lhn-unreliability-2013",
+      "title": "Unreliability",
+      "authors": [
+        "Dan Shen"
+      ],
+      "venue": "The living handbook of narratology, Hamburg University",
+      "year": 2013,
+      "source_type": "other",
+      "publication_status": "other",
+      "doi": null,
+      "arxiv": null,
+      "canonical_identifier": "LHN node 66",
+      "canonical_url": "https://www-archiv.fdm.uni-hamburg.de/lhn/node/66.html",
+      "verification_date": "2026-10-05",
+      "verification_basis": "University of Hamburg archived author entry; checked title, authors and revision date against canonical page.",
+      "claims_used_for": [
+        "Reporting, interpretation and evaluation can differ in reliability; unreliability is not equivalent to deliberate lying."
+      ],
+      "used_by": [
+        "references/focalization-narrator.md"
+      ],
+      "superseded_by": null
+    }
+  ]
+}

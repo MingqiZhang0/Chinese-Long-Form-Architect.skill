@@ -1,0 +1,255 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/lwa/chinese-narrative-eval/contrast-family.schema.json",
+  "title": "Chinese Narrative Contrast Family",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "family_id",
+    "title",
+    "phenomenon_tags",
+    "scope",
+    "judgment_dimensions",
+    "split",
+    "family_status",
+    "conditions",
+    "invariant_semantics",
+    "provenance",
+    "rights",
+    "variants"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "family_id": {
+      "type": "string",
+      "pattern": "^CNE-[A-Z0-9-]+-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "phenomenon_tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "scope": {
+      "type": "string"
+    },
+    "judgment_dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "split": {
+      "enum": [
+        "example",
+        "dev",
+        "challenge",
+        "private_holdout"
+      ]
+    },
+    "family_status": {
+      "enum": [
+        "seed_expert_provisional",
+        "annotating",
+        "annotated",
+        "adjudicated",
+        "genuine_disagreement",
+        "retired"
+      ]
+    },
+    "conditions": {
+      "type": "object"
+    },
+    "invariant_semantics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "production_prompt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "preservation_prompt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "class",
+        "created_for",
+        "source_text_included"
+      ],
+      "properties": {
+        "class": {
+          "enum": [
+            "handcrafted",
+            "failure_derived",
+            "dynamic_challenge",
+            "research_inspired_original"
+          ]
+        },
+        "created_for": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_text_included": {
+          "type": "boolean"
+        },
+        "linked_failure_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text_origin",
+        "copied_source_text",
+        "distribution_status"
+      ],
+      "properties": {
+        "text_origin": {
+          "enum": [
+            "original",
+            "licensed"
+          ]
+        },
+        "copied_source_text": {
+          "type": "boolean"
+        },
+        "distribution_status": {
+          "enum": [
+            "packaged",
+            "external_private"
+          ]
+        },
+        "source_license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "variant_id",
+          "role",
+          "context",
+          "candidate_a",
+          "candidate_b",
+          "intended_delta",
+          "gold"
+        ],
+        "properties": {
+          "variant_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "role": {
+            "enum": [
+              "anchor",
+              "reversal",
+              "boundary",
+              "interference",
+              "distributional",
+              "longitudinal"
+            ]
+          },
+          "context": {
+            "type": "string"
+          },
+          "candidate_a": {
+            "type": "string",
+            "minLength": 1
+          },
+          "candidate_b": {
+            "type": "string",
+            "minLength": 1
+          },
+          "intended_delta": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gold": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "preference",
+              "strength",
+              "evidence_class",
+              "rationale"
+            ],
+            "properties": {
+              "preference": {
+                "enum": [
+                  "A",
+                  "B",
+                  "tie",
+                  "context_dependent"
+                ]
+              },
+              "strength": {
+                "enum": [
+                  "weak",
+                  "moderate",
+                  "strong",
+                  "na"
+                ]
+              },
+              "evidence_class": {
+                "enum": [
+                  "hard_constraint",
+                  "strong_preference",
+                  "context_conditioned",
+                  "genuine_disagreement",
+                  "seed_expert_provisional"
+                ]
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

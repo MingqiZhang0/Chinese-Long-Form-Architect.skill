@@ -1,0 +1,308 @@
+{
+  "planning": {
+    "schema_version": "1.0.0",
+    "fixture_id": "atmospheric-relational-distance",
+    "language": "zh-CN",
+    "task_type": "planning",
+    "refs": {
+      "input": "planning-input.md",
+      "task": "planning-task.md",
+      "project_poetics": "project-brief.md",
+      "positive_control": "planning-control.md",
+      "wrong_poetics_mutant": "planning-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立planning资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "熟悉加深而未来可行性下降；环境通过使用与位置进入关系。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "空间感知与关系距离；重复见面累积熟悉，亲近与理解可以反向运动。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "forced-event-escalation",
+        "description": "forced-event-escalation",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "diagnostic-relation-closure",
+        "description": "diagnostic-relation-closure",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "mood-adjective-substitution",
+        "description": "mood-adjective-substitution",
+        "critical": true
+      },
+      {
+        "id": "F4",
+        "intervention_class": "atmosphere-clueification",
+        "description": "atmosphere-clueification",
+        "critical": true
+      },
+      {
+        "id": "RF48",
+        "intervention_class": "force-event-escalation",
+        "description": "不得加入：忽然棚里有人拔刀，他们必须追查杀人者。",
+        "critical": true
+      },
+      {
+        "id": "RF58",
+        "intervention_class": "force-perceptual-payoff",
+        "description": "不得加入：车镜雨衣水坑都是预谋犯罪的线索。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^突然发现谋杀线索。?\\s*$"
+      },
+      {
+        "id": "R48",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^忽然棚里有人拔刀，他们必须追查杀人者。?\\s*$"
+      },
+      {
+        "id": "R58",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^车镜雨衣水坑都是预谋犯罪的线索。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "chapter": {
+    "schema_version": "1.0.0",
+    "fixture_id": "atmospheric-relational-distance",
+    "language": "zh-CN",
+    "task_type": "chapter",
+    "refs": {
+      "input": "chapter-input.md",
+      "task": "chapter-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "chapter-control.md",
+      "wrong_poetics_mutant": "chapter-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立chapter资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "熟悉加深而未来可行性下降；环境通过使用与位置进入关系。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "空间感知与关系距离；重复见面累积熟悉，亲近与理解可以反向运动。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "forced-event-escalation",
+        "description": "forced-event-escalation",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "diagnostic-relation-closure",
+        "description": "diagnostic-relation-closure",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "mood-adjective-substitution",
+        "description": "mood-adjective-substitution",
+        "critical": true
+      },
+      {
+        "id": "F4",
+        "intervention_class": "atmosphere-clueification",
+        "description": "atmosphere-clueification",
+        "critical": true
+      },
+      {
+        "id": "RF48",
+        "intervention_class": "force-event-escalation",
+        "description": "不得加入：忽然棚里有人拔刀，他们必须追查杀人者。",
+        "critical": true
+      },
+      {
+        "id": "RF58",
+        "intervention_class": "force-perceptual-payoff",
+        "description": "不得加入：车镜雨衣水坑都是预谋犯罪的线索。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^突然发现谋杀线索。?\\s*$"
+      },
+      {
+        "id": "R48",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^忽然棚里有人拔刀，他们必须追查杀人者。?\\s*$"
+      },
+      {
+        "id": "R58",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^车镜雨衣水坑都是预谋犯罪的线索。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "drafting": {
+    "schema_version": "1.0.0",
+    "fixture_id": "atmospheric-relational-distance",
+    "language": "zh-CN",
+    "task_type": "drafting",
+    "refs": {
+      "input": "drafting-input.md",
+      "task": "drafting-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "drafting-control.md",
+      "wrong_poetics_mutant": "drafting-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立drafting资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "熟悉加深而未来可行性下降；环境通过使用与位置进入关系。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "空间感知与关系距离；重复见面累积熟悉，亲近与理解可以反向运动。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "forced-event-escalation",
+        "description": "forced-event-escalation",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "diagnostic-relation-closure",
+        "description": "diagnostic-relation-closure",
+        "critical": true
+      },
+      {
+        "id": "F3",
+        "intervention_class": "mood-adjective-substitution",
+        "description": "mood-adjective-substitution",
+        "critical": true
+      },
+      {
+        "id": "F4",
+        "intervention_class": "atmosphere-clueification",
+        "description": "atmosphere-clueification",
+        "critical": true
+      },
+      {
+        "id": "RF48",
+        "intervention_class": "force-event-escalation",
+        "description": "不得加入：忽然棚里有人拔刀，他们必须追查杀人者。",
+        "critical": true
+      },
+      {
+        "id": "RF58",
+        "intervention_class": "force-perceptual-payoff",
+        "description": "不得加入：车镜雨衣水坑都是预谋犯罪的线索。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^突然发现谋杀线索。?\\s*$"
+      },
+      {
+        "id": "R48",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "忽然棚里有人拔刀，他们必须追查杀人者"
+      },
+      {
+        "id": "R58",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "车镜雨衣水坑都是预谋犯罪的线索"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  }
+}

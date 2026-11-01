@@ -1,0 +1,15 @@
+{
+  "run_id": "RUN-001",
+  "seq": 0,
+  "contract_version": "1.0.0",
+  "core_type": "decision",
+  "epoch_id": "EPOCH-main-R1",
+  "work_id": "WORK-001",
+  "disposition": "selected",
+  "admission_basis": null,
+  "dependency_kind": null,
+  "reason_tags": ["current-task-relevant"],
+  "observed_cost": null,
+  "stop_reason": null,
+  "extensions": {}
+}

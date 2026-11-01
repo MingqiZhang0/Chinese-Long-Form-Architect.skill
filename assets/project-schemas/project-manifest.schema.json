@@ -1,0 +1,529 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/project-manifest.schema.json",
+  "title": "Long-form Fiction Project Manifest",
+  "type": "object",
+  "required": [
+    "project_format_version",
+    "schema_dialect",
+    "project_id",
+    "governance_profile",
+    "current_branch",
+    "current_chapter",
+    "context_generation",
+    "enabled_subsystems",
+    "canonical_paths",
+    "migration_history"
+  ],
+  "properties": {
+    "project_format_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "schema_dialect": {
+      "const": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "governance_profile": {
+      "enum": [
+        "lean",
+        "persistent",
+        "forensic"
+      ]
+    },
+    "current_branch": {
+      "type": "string",
+      "minLength": 1
+    },
+    "current_chapter": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "last_committed_event": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "context_generation": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "enabled_subsystems": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "canonical_paths": {
+      "type": "object",
+      "required": [
+        "story_state"
+      ],
+      "properties": {
+        "project_brief": {
+          "type": "string"
+        },
+        "intake_state": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Canonical machine-readable serialization of the existing Project Brief/user-intent register; optional for legacy projects."
+        },
+        "prewriting_readiness": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Existing readiness owner record; standard bootstrap path is planning/prewriting-readiness.json."
+        },
+        "story_state": {
+          "type": "string"
+        },
+        "context_index": {
+          "type": "string"
+        },
+        "secret_registry": {
+          "type": "string"
+        },
+        "runtime_manifest": {
+          "type": "string"
+        },
+        "reader_model": {
+          "type": "string"
+        },
+        "research_index": {
+          "type": "string"
+        },
+        "chapters_dir": {
+          "type": "string"
+        },
+        "scenes_dir": {
+          "type": "string"
+        },
+        "revisions_dir": {
+          "type": "string"
+        },
+        "reconciliations_dir": {
+          "type": "string"
+        },
+        "reasoning_intensity_config": {
+          "type": "string"
+        },
+        "project_poetics": {
+          "type": "string"
+        },
+        "writer_pack_manifest": {
+          "type": "string",
+          "minLength": 1
+        },
+        "writer_request": {
+          "type": "string",
+          "minLength": 1
+        },
+        "writer_pack": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "orchestration": {
+      "type": "object",
+      "description": "Operational routing metadata; existing checkpoints retain execution evidence authority.",
+      "properties": {
+        "active_run_checkpoint": {
+          "type": "string",
+          "minLength": 1,
+          "description": "One current orchestration checkpoint, project-root relative. Absence means no registered active run."
+        }
+      },
+      "additionalProperties": true
+    },
+    "user_locked_constraints_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "migration_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "migration_id",
+          "from_version",
+          "to_version",
+          "status"
+        ],
+        "properties": {
+          "migration_id": {
+            "type": "string"
+          },
+          "from_version": {
+            "type": "string"
+          },
+          "to_version": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "applied",
+              "rolled_back"
+            ]
+          },
+          "timestamp": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "context_generation_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "generation",
+          "reason",
+          "timestamp"
+        ],
+        "properties": {
+          "generation": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "timestamp": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "humanities_analysis_policy": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "opt_in",
+            "milestone",
+            "diagnostic",
+            "custom"
+          ]
+        },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "diagnostic_triggers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "chapter_interval": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "optional_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "path",
+          "status"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "active",
+              "inactive",
+              "provisional",
+              "superseded"
+            ]
+          },
+          "scope": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "poetics_override_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "project_poetics_provenance": {
+      "type": "object",
+      "required": [
+        "provenance_version",
+        "artifact_path",
+        "established_by",
+        "established_at",
+        "source_state",
+        "creation_mode",
+        "inference_performed",
+        "template_sha256",
+        "reason"
+      ],
+      "properties": {
+        "provenance_version": {
+          "const": "1.0"
+        },
+        "artifact_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "established_by": {
+          "const": "project_ops.ensure-poetics"
+        },
+        "established_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_state": {
+          "enum": [
+            "legacy-unrepresented",
+            "canonical-artifact-missing"
+          ]
+        },
+        "creation_mode": {
+          "const": "blank-provisional-template"
+        },
+        "inference_performed": {
+          "const": false
+        },
+        "template_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "chapter_rollover": {
+      "type": "object",
+      "properties": {
+        "contract_version": {
+          "const": "1.0.0"
+        },
+        "active": {
+          "const": true
+        },
+        "chapters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "chapter_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "branch": {
+                "type": "string",
+                "minLength": 1
+              },
+              "number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "finalizations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "chapter_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "branch": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "project_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "approved_copy_path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "approved_by": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "approval_ref": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "finalization_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "final_prose_sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    },
+                    "algorithm": {
+                      "const": "sha256-exact-bytes"
+                    }
+                  },
+                  "required": [
+                    "chapter_id",
+                    "branch",
+                    "project_id",
+                    "path",
+                    "approved_copy_path",
+                    "approved_by",
+                    "approval_ref",
+                    "finalization_id",
+                    "final_prose_sha256",
+                    "algorithm"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "current_finalization_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "receipts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "reconciliation_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "receipt_path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "receipt_sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    },
+                    "state_snapshot_id": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "reconciliation_id",
+                    "receipt_path",
+                    "receipt_sha256",
+                    "state_snapshot_id"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "current_rollover": {
+                "type": "object",
+                "properties": {
+                  "reconciliation_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "receipt_path": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "receipt_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "state_snapshot_id": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "reconciliation_id",
+                  "receipt_path",
+                  "receipt_sha256",
+                  "state_snapshot_id"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "chapter_id",
+              "branch",
+              "number",
+              "finalizations",
+              "current_finalization_id",
+              "receipts"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "contract_version",
+        "active",
+        "chapters"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

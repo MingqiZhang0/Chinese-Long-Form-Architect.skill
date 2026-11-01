@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/intensity-config.schema.json",
+  "title": "Reasoning Intensity Configuration",
+  "type": "object",
+  "required": ["contract_version", "requested_intensity", "max_escalation_ceiling", "escalation_policy", "calibration_profile", "trace_mode"],
+  "properties": {
+    "contract_version": {"const": "1.0.0"},
+    "requested_intensity": {"enum": ["low", "medium", "high", "xhigh", "max"]},
+    "project_default_intensity": {"type": ["string", "null"], "enum": ["low", "medium", "high", "xhigh", "max", null]},
+    "max_escalation_ceiling": {"enum": ["low", "medium", "high", "xhigh", "max"]},
+    "escalation_policy": {"enum": ["none", "priority-concentration-first", "explicit-budget-escalation"]},
+    "calibration_profile": {"type": "string", "minLength": 1},
+    "trace_mode": {"enum": ["off", "summary", "benchmark"]},
+    "strategy_id": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

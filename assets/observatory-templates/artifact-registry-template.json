@@ -1,0 +1,12 @@
+{
+  "artifacts": [
+    {
+      "id": "CTX-0001",
+      "path": "runtime/context-packs/chapter-0001.md",
+      "class": "context-pack",
+      "status": "stale",
+      "rebuildable": true,
+      "audit_required": false
+    }
+  ]
+}

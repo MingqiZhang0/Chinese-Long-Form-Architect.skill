@@ -1,0 +1,33 @@
+{
+  "project_format_version": "1.0.0",
+  "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+  "project_id": "PROJECT-ID",
+  "governance_profile": "lean",
+  "current_branch": "main",
+  "current_chapter": 0,
+  "last_committed_event": null,
+  "context_generation": 0,
+  "enabled_subsystems": [
+    "project-state",
+    "chapter-mission",
+    "scene-state"
+  ],
+  "canonical_paths": {
+    "project_brief": "intake/project-brief.md",
+    "story_state": "state/story-state.json",
+    "chapters_dir": "chapters",
+    "scenes_dir": "scenes",
+    "project_poetics": "planning/project-poetics.md"
+  },
+  "user_locked_constraints_path": "intake/project-brief.md",
+  "migration_history": [],
+  "context_generation_history": [],
+  "humanities_analysis_policy": {
+    "mode": "opt_in",
+    "milestones": [],
+    "diagnostic_triggers": [],
+    "chapter_interval": null
+  },
+  "optional_artifacts": [],
+  "poetics_override_refs": []
+}

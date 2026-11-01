@@ -1,0 +1,69 @@
+{
+  "entries": [
+    {
+      "id": "chapter-01-writer-mission",
+      "path": "context/chapter-01-writer-mission.md",
+      "kind": "mission",
+      "priority": 100,
+      "required": false,
+      "roles": [
+        "writer"
+      ],
+      "visibility": "writer-visible",
+      "available_from_chapter": 1,
+      "available_to_chapter": 1,
+      "chapter": 1,
+      "characters": [
+        "protagonist-id"
+      ],
+      "locations": [
+        "opening-location"
+      ],
+      "threads": [],
+      "research": [],
+      "summary": "",
+      "branch": "main",
+      "tainted_by": [],
+      "derived_from": [],
+      "declassified_for": []
+    },
+    {
+      "id": "chapter-01-scoped-poetics",
+      "path": "context/chapter-01-scoped-poetics.md",
+      "kind": "poetics",
+      "priority": 95,
+      "required": false,
+      "roles": [
+        "writer"
+      ],
+      "visibility": "writer-visible",
+      "available_from_chapter": 1,
+      "available_to_chapter": 1,
+      "chapter": 1,
+      "poetics_capabilities": [],
+      "branch": "main",
+      "tainted_by": [],
+      "derived_from": [],
+      "declassified_for": []
+    },
+    {
+      "id": "chapter-01-writer-reader-brief",
+      "path": "context/chapter-01-writer-reader-brief.md",
+      "kind": "reader-state",
+      "priority": 70,
+      "required": false,
+      "roles": [
+        "writer"
+      ],
+      "visibility": "writer-visible",
+      "available_from_chapter": 1,
+      "available_to_chapter": 1,
+      "chapter": 1,
+      "threads": [],
+      "branch": "main",
+      "tainted_by": [],
+      "derived_from": [],
+      "declassified_for": []
+    }
+  ]
+}

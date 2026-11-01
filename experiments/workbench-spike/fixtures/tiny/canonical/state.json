@@ -1,0 +1,53 @@
+{
+  "characters": [
+    {
+      "id": "A"
+    },
+    {
+      "id": "B"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1"
+    },
+    {
+      "id": "F2"
+    }
+  ],
+  "knowledge_state": [
+    {
+      "id": "K-heard",
+      "actor": "A",
+      "fact": "F1",
+      "status": "heard",
+      "acquired_at": 1,
+      "retired_at": 2,
+      "source": "E-heard"
+    },
+    {
+      "id": "K1",
+      "actor": "A",
+      "fact": "F1",
+      "status": "known",
+      "acquired_at": 2,
+      "retired_at": 5,
+      "source": "E1"
+    },
+    {
+      "id": "K-untimed",
+      "actor": "A",
+      "fact": "F2",
+      "status": "known",
+      "source": "E-gap"
+    }
+  ],
+  "knowledge_uses": [
+    {
+      "actor": "B",
+      "fact": "F2",
+      "acquired": 4,
+      "used": 3
+    }
+  ]
+}

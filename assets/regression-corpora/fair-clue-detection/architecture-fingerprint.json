@@ -1,0 +1,35 @@
+{
+  "project_id": "FAIR-CLUE-DETECTION",
+  "sample_id": "adversarial-fixture",
+  "features": {
+    "project_poetics": {
+      "salience_sources": [
+        "clue",
+        "contradiction",
+        "inference",
+        "hypothesis revision"
+      ],
+      "reader_activities": [
+        "infer",
+        "test hypotheses",
+        "remember evidence"
+      ],
+      "progression_modes": [
+        "epistemic update",
+        "investigation"
+      ],
+      "active_capabilities": [
+        "epistemic-puzzle",
+        "knowledge-topology"
+      ],
+      "do_not_optimize": [
+        "hide solution-critical facts unfairly",
+        "dilute clues into atmosphere-only detail"
+      ]
+    },
+    "primary_organizing_mode": "epistemic update",
+    "secret_density": "strict-local",
+    "formal_regime": "project-specific"
+  },
+  "notes": "Diagnostic only. Preserve declared poetics; do not imitate any named author or score difference as quality."
+}

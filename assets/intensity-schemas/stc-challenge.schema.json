@@ -1,0 +1,666 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/stc-challenge.schema.json",
+  "title": "STC v0.1 Semantic-Conformance Challenge",
+  "type": "object",
+  "required": [
+    "benchmark_version",
+    "challenge_id",
+    "latent_seed",
+    "surface_seed",
+    "chapter_count",
+    "authoritative_slice",
+    "chapter_anchors",
+    "story_time_anchors",
+    "temporal_constraints",
+    "initial_state",
+    "routes",
+    "events",
+    "mission",
+    "probe_obligations",
+    "controlled_choices",
+    "witness",
+    "surface_views",
+    "continuation_certificate",
+    "certificate"
+  ],
+  "properties": {
+    "benchmark_version": {
+      "const": "0.1.1"
+    },
+    "challenge_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "latent_seed": {
+      "type": "integer"
+    },
+    "surface_seed": {
+      "type": "integer"
+    },
+    "chapter_count": {
+      "type": "integer",
+      "minimum": 10
+    },
+    "authoritative_slice": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "presence",
+          "custody",
+          "containment",
+          "reachability",
+          "route-validity",
+          "access",
+          "temporal"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "chapter_anchors": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter",
+          "story_time"
+        ],
+        "properties": {
+          "chapter": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "story_time": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "story_time_anchors": {
+      "type": "object",
+      "minProperties": 2,
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "temporal_constraints": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "min_delta",
+          "max_delta"
+        ],
+        "properties": {
+          "from": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1
+          },
+          "min_delta": {
+            "type": "integer"
+          },
+          "max_delta": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "initial_state": {
+      "type": "object",
+      "required": [
+        "actor_locations",
+        "entity_holders",
+        "containment"
+      ],
+      "properties": {
+        "actor_locations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "entity_holders": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "containment": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "from",
+          "to",
+          "min_travel_time",
+          "valid_from_time",
+          "valid_to_time",
+          "requires_entity"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "from": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1
+          },
+          "min_travel_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "valid_from_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "valid_to_time": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "requires_entity": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter",
+          "story_time",
+          "timepoint",
+          "kind"
+        ],
+        "properties": {
+          "chapter": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "story_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "timepoint": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "transfer",
+              "move-actor",
+              "route-close",
+              "route-open"
+            ]
+          },
+          "entity": {
+            "type": "string"
+          },
+          "from_holder": {
+            "type": "string"
+          },
+          "to_holder": {
+            "type": "string"
+          },
+          "actor": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "route": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "mission": {
+      "type": "object",
+      "required": [
+        "mission_id",
+        "chapter",
+        "start_time",
+        "deadline_time",
+        "actor",
+        "start_location",
+        "target_location",
+        "required_entity_at_end"
+      ],
+      "properties": {
+        "mission_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chapter": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "start_time": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deadline_time": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "actor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_entity_at_end": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "probe_obligations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "probe_id",
+          "semantic_primitives",
+          "operation",
+          "stress",
+          "source_chapter",
+          "trigger_chapter",
+          "coverage_class",
+          "lifecycle",
+          "binding"
+        ],
+        "properties": {
+          "probe_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "semantic_primitives": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "presence",
+                "custody",
+                "containment",
+                "reachability",
+                "temporal",
+                "access"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "operation": {
+            "enum": [
+              "retrieve-current",
+              "compose",
+              "choose-action",
+              "reject-replan",
+              "predict-transition"
+            ]
+          },
+          "stress": {
+            "type": "object",
+            "required": [
+              "chapter_gap",
+              "diegetic_gap_minutes",
+              "dormancy_gap",
+              "update_count",
+              "interference_count",
+              "temporal_slack",
+              "coupling"
+            ],
+            "properties": {
+              "chapter_gap": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "diegetic_gap_minutes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "dormancy_gap": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "update_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "interference_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "temporal_slack": {
+                "type": "integer"
+              },
+              "coupling": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "additionalProperties": false
+          },
+          "source_chapter": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "trigger_chapter": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "coverage_class": {
+            "enum": [
+              "required",
+              "opportunistic",
+              "diagnostic",
+              "ecological"
+            ]
+          },
+          "lifecycle": {
+            "enum": [
+              "UNBOUND",
+              "CANDIDATE",
+              "BOUND",
+              "ARMED"
+            ]
+          },
+          "binding": {
+            "type": "object",
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "deadline",
+                  "containment-propagation",
+                  "route-access"
+                ]
+              },
+              "mission": {
+                "type": "string"
+              },
+              "route": {
+                "type": "string"
+              },
+              "entity": {
+                "type": "string"
+              },
+              "container": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "controlled_choices": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "choice_id",
+          "at_time",
+          "actor",
+          "non_anticipatory",
+          "alternatives"
+        ],
+        "properties": {
+          "choice_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "at_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "actor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "non_anticipatory": {
+            "const": true
+          },
+          "alternatives": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": [
+                "alternative_id",
+                "prefix",
+                "continuation"
+              ],
+              "properties": {
+                "alternative_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "prefix": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "$ref": "#/$defs/action"
+                  }
+                },
+                "continuation": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "$ref": "#/$defs/action"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "witness": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    },
+    "surface_views": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "labels"
+        ],
+        "properties": {
+          "labels": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "continuation_certificate": {
+      "type": "object",
+      "required": [
+        "certificate_version",
+        "choice_results"
+      ],
+      "properties": {
+        "certificate_version": {
+          "const": "0.1.1"
+        },
+        "choice_results": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "choice_id",
+              "alternative_id",
+              "trajectory_hash",
+              "expected_valid",
+              "expected_elapsed_minutes",
+              "expected_required_entity_holder"
+            ],
+            "properties": {
+              "choice_id": {
+                "type": "string"
+              },
+              "alternative_id": {
+                "type": "string"
+              },
+              "trajectory_hash": {
+                "type": "string",
+                "minLength": 16
+              },
+              "expected_valid": {
+                "const": true
+              },
+              "expected_elapsed_minutes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "expected_required_entity_holder": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "certificate": {
+      "type": "object",
+      "required": [
+        "solution_policy",
+        "validator_version",
+        "oracle_isolated",
+        "latent_world_hash",
+        "challenge_hash"
+      ],
+      "properties": {
+        "solution_policy": {
+          "const": "any-valid"
+        },
+        "validator_version": {
+          "const": "0.1.1"
+        },
+        "oracle_isolated": {
+          "const": true
+        },
+        "latent_world_hash": {
+          "type": "string",
+          "minLength": 16
+        },
+        "challenge_hash": {
+          "type": "string",
+          "minLength": 16
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "action": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "move",
+            "transfer",
+            "wait"
+          ]
+        },
+        "actor": {
+          "type": "string"
+        },
+        "route": {
+          "type": "string"
+        },
+        "entity": {
+          "type": "string"
+        },
+        "from_holder": {
+          "type": "string"
+        },
+        "to_holder": {
+          "type": "string"
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

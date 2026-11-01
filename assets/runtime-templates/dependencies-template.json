@@ -1,0 +1,13 @@
+{
+  "edges": [
+    {
+      "source": "FACT-EXAMPLE",
+      "target": "SCN-EXAMPLE",
+      "kind": "causal",
+      "strength": "hard",
+      "status": "active",
+      "reason": "The scene assumes the fact remains true"
+    }
+  ],
+  "schema_version": "3.0.0"
+}

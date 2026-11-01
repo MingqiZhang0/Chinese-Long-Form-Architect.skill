@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "structural-irregularity",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“已经已经”重复；允许本章继续只跟随当前中心，不为了均衡而汇报久未出现的支线。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "允许阿泽与城南支线长时间休眠；本章的局部中心可以不均衡。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "当前港口线的注意力比例不需要被机械 subplot braid 校正。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "修复“已经已经”重复。"
+    },
+    {
+      "id": "A2",
+      "description": "为港口行动补必要的局部空间清晰度。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "subplot-equalization",
+      "description": "为了“均衡”“读者别忘了”而强制每条支线定期露面或推进。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "structure-normalization",
+      "description": "把局部不成比例的注意力重排成规则轮转结构。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "已经已经"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "七章",
+        "五章以前",
+        "六码头",
+        "十一号码头"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "为了避免支线失衡|每条线都得到推进|读者就不会忘记"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.68,
+      "max": 1.45
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

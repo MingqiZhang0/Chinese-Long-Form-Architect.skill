@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.2.0",
+  "purpose": "Chinese Narrative Behavioral Evaluation view over the canonical Skill-wide external research ledger; no bibliographic metadata is duplicated here.",
+  "canonical_ledger": "assets/external-research-ledger.json",
+  "source_ids": [
+    "zholimp-2026",
+    "contrast-sets-2020",
+    "checklist-2020",
+    "native-cgec-2022",
+    "litbench-2026",
+    "temporal-flattening-2026"
+  ]
+}

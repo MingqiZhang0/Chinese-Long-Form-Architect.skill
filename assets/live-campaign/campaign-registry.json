@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "tracks": [
+    {
+      "track_id": "realist-mystery-persistent",
+      "status": "planned",
+      "campaign_id": null,
+      "evidence_level": "L0",
+      "purpose": "Institutions, research freshness, hidden causality, and reader exposure over a real serial."
+    },
+    {
+      "track_id": "xianxia-progression-persistent",
+      "status": "planned",
+      "campaign_id": null,
+      "evidence_level": "L0",
+      "purpose": "Growth curves, resources, factions, inventories, powers, and multi-arc inheritance."
+    },
+    {
+      "track_id": "time-loop-prophecy-forensic",
+      "status": "planned",
+      "campaign_id": null,
+      "evidence_level": "L0",
+      "purpose": "Branch/counterfactual semantics, repeated situations, prophecy, and authorial unknowns."
+    }
+  ]
+}

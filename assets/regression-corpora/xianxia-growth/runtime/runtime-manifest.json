@@ -1,0 +1,10 @@
+{
+  "runtime_schema_version":"3.0.0",
+  "schema_dialect":"https://json-schema.org/draft/2020-12/schema",
+  "project_id":"XIANXIA-GROWTH-001",
+  "current_branch":"main",
+  "compatibility_policy":"backward_transitive",
+  "minimum_reader_version":"3.0.0",
+  "paths":{"events":"runtime/events.jsonl","branches":"runtime/branches.json","dependencies":"runtime/dependencies.json"},
+  "migration_history":[]
+}

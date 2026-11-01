@@ -1,0 +1,13 @@
+{
+  "question_id": "AU-0001",
+  "mode": "AUTHORIAL_UNKNOWN",
+  "question": "",
+  "viable_answers": [],
+  "compatibility_constraints": [],
+  "clues_already_emitted": [],
+  "ruled_out_answers": [],
+  "earliest_required_resolution": null,
+  "decision_owner": "user",
+  "ambiguity_value": "",
+  "status": "open"
+}

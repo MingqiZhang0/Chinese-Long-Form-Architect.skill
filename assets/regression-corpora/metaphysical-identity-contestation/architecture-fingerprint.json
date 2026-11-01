@@ -1,0 +1,24 @@
+{
+  "project_id": "metaphysical-identity-contestation",
+  "features": {
+    "organizing": "解释框架的支持与反证；身份连续性保持有界争议，不能靠巧合自动确认。",
+    "reader_activity": "材料核验关闭；身份理论保留支持与反证，并有兼容边界。",
+    "structural_form": [
+      "听到似曾相识的尾音",
+      "找到与记忆不符的转录",
+      "两份物证年代被核验",
+      "母亲记忆提供反证",
+      "预测下一处相似失败",
+      "核验工作完成但身份解释有界开放"
+    ],
+    "mediation": "restricted",
+    "closure": "材料核验关闭；身份理论保留支持与反证，并有兼容边界。",
+    "project_poetics": {
+      "active_capabilities": [
+        "ontology-auto-resolution",
+        "coincidence-confirmation",
+        "unbounded-openness"
+      ]
+    }
+  }
+}

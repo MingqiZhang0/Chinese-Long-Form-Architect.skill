@@ -1,0 +1,33 @@
+{
+  "project_id": "OBSESSIVE-INTERIORITY",
+  "sample_id": "adversarial-fixture",
+  "features": {
+    "project_poetics": {
+      "salience_sources": [
+        "obsessive attention",
+        "object-idea relation",
+        "self-interpretation"
+      ],
+      "reader_activities": [
+        "inhabit constrained consciousness",
+        "detect self-misreading"
+      ],
+      "progression_modes": [
+        "interpretive reconfiguration",
+        "obsession intensification"
+      ],
+      "active_capabilities": [
+        "obsessive-interiority",
+        "mind-opacity"
+      ],
+      "do_not_optimize": [
+        "broaden viewpoint for world balance",
+        "force polyphonic theme"
+      ]
+    },
+    "primary_organizing_mode": "interpretive reconfiguration",
+    "secret_density": "none-or-project-dependent",
+    "formal_regime": "project-specific"
+  },
+  "notes": "Diagnostic only. Preserve declared poetics; do not imitate any named author or score difference as quality."
+}

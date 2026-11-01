@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/scoped-project-poetics-envelope.schema.json",
+  "title": "Scoped Project Poetics Provenance Envelope",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "authority_ref",
+    "scope",
+    "parent_ref",
+    "hash",
+    "status",
+    "expires_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "authority_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "project_id",
+        "arc",
+        "chapter",
+        "scene",
+        "task"
+      ],
+      "properties": {
+        "project_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "arc": {
+          "type": ["string", "null"]
+        },
+        "chapter": {
+          "type": ["string", "null"]
+        },
+        "scene": {
+          "type": ["string", "null"]
+        },
+        "task": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "parent_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hash": {
+      "type": "object",
+      "required": [
+        "content_sha256",
+        "parent_sha256"
+      ],
+      "properties": {
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "parent_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "enum": [
+        "provisional",
+        "active",
+        "superseded",
+        "revoked"
+      ]
+    },
+    "expires_at": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "string", "format": "date-time"}
+      ]
+    }
+  },
+  "additionalProperties": false
+}

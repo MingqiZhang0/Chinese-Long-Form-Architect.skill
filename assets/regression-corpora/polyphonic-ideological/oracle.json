@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "polyphonic-ideological",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“承担承担”重复；保留三方立场通过生活后果互相抵触，不让叙述者给出最终裁决。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "保留许医生、周主任、秦梅三种不可被简单折叠的制度/伦理位置。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "让后果和选择承载争论，不由 narrator 宣判唯一正确答案。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "修复“承担承担”重复。"
+    },
+    {
+      "id": "A2",
+      "description": "在不抹平立场差异的前提下微调对白节奏。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "narrator-thesis-collapse",
+      "description": "由叙述者或特权角色总结哪一方代表作品的最终正确立场。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "承担承担"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "二十七个透析病人",
+        "保险已经过期",
+        "三个独居老人"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "归根结底|更值得坚持的人道立场|真正正确的一边"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.72,
+      "max": 1.4
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

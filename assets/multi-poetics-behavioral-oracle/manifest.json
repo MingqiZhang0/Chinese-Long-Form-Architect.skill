@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "suite_id": "multi-poetics-behavioral-oracle-v1",
+  "purpose": "Registered preservation fixtures plus independent planning, chapter and drafting qualification. Oracle mechanics never substitute for a live model campaign.",
+  "fixture_root": "assets/regression-corpora",
+  "fixtures": [
+    "quiet-family-seasonal",
+    "obsessive-interiority",
+    "minimal-action-omission",
+    "polyphonic-ideological",
+    "structural-irregularity",
+    "formal-heterogeneity",
+    "perceptual-encounter",
+    "fair-clue-detection",
+    "retelling-parody",
+    "self-misreading-confession",
+    "social-ambition-status",
+    "memory-associative-temporality",
+    "atmospheric-relational-distance",
+    "metaphysical-identity-contestation",
+    "open-atmospheric-causality",
+    "episodic-investigative-series",
+    "technical-procedural-clarity",
+    "causal-action-control"
+  ],
+  "candidate_filename_contract": "<candidate-dir>/<fixture-id>.md",
+  "judge_protocol": {
+    "pointwise_first": true,
+    "swapped_pairwise": true,
+    "calibration_pair": "positive-control vs wrong-poetics-mutant",
+    "target_pair": "candidate-under-test vs wrong-poetics-mutant",
+    "uncertainty_is_not_failure": true,
+    "minimum_calibrated_judges": 2,
+    "default_consensus": 0.67
+  },
+  "non_goals": [
+    "produce a universal literary-quality score",
+    "treat positive controls as unique gold prose",
+    "replace human review on disputed cases",
+    "infer literary merit from regexes alone"
+  ],
+  "qualification_fixtures": [
+    "self-misreading-confession",
+    "obsessive-interiority",
+    "fair-clue-detection",
+    "minimal-action-omission",
+    "social-ambition-status",
+    "memory-associative-temporality",
+    "atmospheric-relational-distance",
+    "metaphysical-identity-contestation",
+    "open-atmospheric-causality",
+    "episodic-investigative-series",
+    "technical-procedural-clarity",
+    "causal-action-control"
+  ],
+  "qualification_stages": [
+    "planning",
+    "chapter",
+    "drafting"
+  ]
+}

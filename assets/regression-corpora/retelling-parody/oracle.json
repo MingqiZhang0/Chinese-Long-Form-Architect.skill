@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "retelling-parody",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“敲敲了”重复；保留读者对“敲三次门”等继承童话结构的识别与反转，不把它当原创性缺陷。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "保留狼、小羊、第三次敲门等可识别的继承模式，让 intertextual contrast 成为正式资源。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "现代物业/求职语境用于重构旧故事，而不是证明旧材料需要被“原创化”清除。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "修复“敲敲了”重复。"
+    },
+    {
+      "id": "A2",
+      "description": "在继承结构不丢失的前提下调整笑点节奏或对白。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "originality-policing",
+      "description": "把继承的故事结构视为原创性失败并主动去除识别点。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "worldbuilding-expansion",
+      "description": "用百科式制度说明替代互文反差。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "敲敲了"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "第三次",
+        "狼",
+        "小羊",
+        "燃气年度安检"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "为了增强原创性|三级登记|完整的世界观设定建立作品自身的原创性"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.68,
+      "max": 1.45
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

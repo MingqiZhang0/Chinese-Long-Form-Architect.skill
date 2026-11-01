@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "atmospheric-relational-distance",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复把把，不添加跨诗学优化。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "熟悉加深而未来可行性下降；环境通过使用与位置进入关系。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "空间感知与关系距离；重复见面累积熟悉，亲近与理解可以反向运动。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "仅修复明确错字与必要指代。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "forced-event-escalation",
+      "description": "forced-event-escalation",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "diagnostic-relation-closure",
+      "description": "diagnostic-relation-closure",
+      "critical": true
+    },
+    {
+      "id": "F3",
+      "intervention_class": "mood-adjective-substitution",
+      "description": "mood-adjective-substitution",
+      "critical": true
+    },
+    {
+      "id": "F4",
+      "intervention_class": "atmosphere-clueification",
+      "description": "atmosphere-clueification",
+      "critical": true
+    },
+    {
+      "id": "RF48",
+      "intervention_class": "force-event-escalation",
+      "description": "不得加入：忽然棚里有人拔刀，他们必须追查杀人者。",
+      "critical": true
+    },
+    {
+      "id": "RF58",
+      "intervention_class": "force-perceptual-payoff",
+      "description": "不得加入：车镜雨衣水坑都是预谋犯罪的线索。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "把把"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "雨衣",
+        "乔敏",
+        "车镜"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "突然发现谋杀线索|双方其实都深爱着对方|阴森诡异神秘恐怖"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.65,
+      "max": 1.5
+    },
+    {
+      "id": "R48",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "忽然棚里有人拔刀，他们必须追查杀人者"
+    },
+    {
+      "id": "R58",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "车镜雨衣水坑都是预谋犯罪的线索"
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "task_kind": "new-long-form",
+  "intake_status": "complete",
+  "slots": [
+    {
+      "id": "category",
+      "label": "类别",
+      "required": false,
+      "status": "user_locked",
+      "value": "现实主义",
+      "source": "initial_prompt",
+      "known_before_intake": true,
+      "asked": false
+    },
+    {
+      "id": "narrative_access",
+      "label": "叙事视角",
+      "required": true,
+      "status": "delegated",
+      "value": "你看着办",
+      "source": "intake_response",
+      "known_before_intake": false,
+      "asked": true
+    },
+    {
+      "id": "romance_line",
+      "label": "爱情线",
+      "required": false,
+      "status": "absent",
+      "value": "无",
+      "source": "intake_response",
+      "known_before_intake": false,
+      "asked": true
+    }
+  ],
+  "interruption_policy": {
+    "nonessential_budget": 0,
+    "user_reserved_gates": []
+  }
+}

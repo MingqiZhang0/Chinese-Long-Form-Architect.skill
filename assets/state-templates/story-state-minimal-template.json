@@ -1,0 +1,19 @@
+{
+  "current_chapter": 0,
+  "current_day": 0,
+  "knowledge_state": [],
+  "spatial_edges": [],
+  "scene_packets": [],
+  "research_dependencies": [],
+  "threads": [],
+  "reader_state": {},
+  "dependencies": [],
+  "humanities_reports": [],
+  "active_branch": "main",
+  "authorial_unknowns": [],
+  "irreversibility": [],
+  "narrative_debt": [],
+  "bodies": {},
+  "resources": {},
+  "capacities": {}
+}

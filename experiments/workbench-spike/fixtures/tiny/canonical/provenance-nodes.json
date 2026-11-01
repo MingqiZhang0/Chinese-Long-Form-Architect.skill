@@ -1,0 +1,11 @@
+{
+  "K1": "KnowledgeState",
+  "E1": "Event",
+  "C1": "Claim",
+  "C2": "Claim",
+  "EV1": "Evidence",
+  "A1": "Anchor",
+  "SRC1": "Source",
+  "K-heard": "KnowledgeState",
+  "E-heard": "Event"
+}

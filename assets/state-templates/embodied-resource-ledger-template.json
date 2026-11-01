@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "bodies": {
+    "char-example": {
+      "sleep": "normal",
+      "fatigue": "low",
+      "pain": "none",
+      "mobility": "normal",
+      "injuries": [],
+      "treatment": [],
+      "last_update": null
+    }
+  },
+  "resources": {
+    "cash": {
+      "quantity": 0,
+      "unit": "currency-unit",
+      "holder": "char-example",
+      "location": "char-example.inventory",
+      "reserved": 0,
+      "last_update": null
+    }
+  },
+  "capacities": {}
+}

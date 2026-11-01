@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "memory-associative-temporality",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复把把，不添加跨诗学优化。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "组织过去而非补齐年表；当下经过记忆返回后改变。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "关联记忆、主观时间与社会观察；同一事实因讲述年龄而重新加权。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "仅修复明确错字与必要指代。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "chronology-normalization",
+      "description": "chronology-normalization",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "memory-deletion",
+      "description": "memory-deletion",
+      "critical": true
+    },
+    {
+      "id": "F3",
+      "intervention_class": "compulsory-memory-payoff",
+      "description": "compulsory-memory-payoff",
+      "critical": true
+    },
+    {
+      "id": "RF53",
+      "intervention_class": "force-chronology-normalization",
+      "description": "不得加入：按年份依次讲完这些往事。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "把把"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "殷禾",
+        "剪刀",
+        "门轴"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "按年份依次讲完这些往事|删掉这些与主线无关的记忆|每段记忆都是未来案件的伏笔"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.65,
+      "max": 1.5
+    },
+    {
+      "id": "R53",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "按年份依次讲完这些往事"
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "minimal-action-omission",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“手手背”错字，保持人物主要通过动作、身体负荷和省略呈现，不补心理说明。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "人物深度主要继续由动作、身体负荷、材料阻力与省略承载。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "拒绝帮助的动机保持可推断，不由叙述者解码。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "修复“手手背”错字。"
+    },
+    {
+      "id": "A2",
+      "description": "调整动作句的标点和节奏，但不替动作解释心理。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "explanatory-introspection",
+      "description": "给动作补上明确的心理原因、人格诊断或情绪翻译。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "ornamental-expansion",
+      "description": "为了“文学性”增加与身体/材料动作无关的装饰性说明。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "手手背"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "麻绳",
+        "灰痕",
+        "两粒玉米"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "隐秘的自尊|清楚地说明|进一步揭示了"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.68,
+      "max": 1.45
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

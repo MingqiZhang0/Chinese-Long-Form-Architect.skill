@@ -1,0 +1,32 @@
+{
+  "project_id": "STRUCTURAL-IRREGULARITY",
+  "sample_id": "adversarial-fixture",
+  "features": {
+    "project_poetics": {
+      "salience_sources": [
+        "local necessity",
+        "unexpected center shift",
+        "unfinished coexistence"
+      ],
+      "reader_activities": [
+        "reorient",
+        "retain partial structures"
+      ],
+      "progression_modes": [
+        "reweighting",
+        "return after absence"
+      ],
+      "active_capabilities": [
+        "multi-center-longform"
+      ],
+      "do_not_optimize": [
+        "normalize into equal subplot braid",
+        "force every thread to advance each interval"
+      ]
+    },
+    "primary_organizing_mode": "reweighting",
+    "secret_density": "none-or-project-dependent",
+    "formal_regime": "project-specific"
+  },
+  "notes": "Diagnostic only. Preserve declared poetics; do not imitate any named author or score difference as quality."
+}

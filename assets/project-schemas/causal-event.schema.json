@@ -1,0 +1,456 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/causal-event.schema.json",
+  "title": "Optional Hidden Causal Networks view of Story State",
+  "type": "object",
+  "properties": {
+    "causal_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "responsible_agent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "outcome": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "chance_basis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "high_risk": {
+            "type": "boolean"
+          },
+          "active_use": {
+            "type": "boolean"
+          },
+          "intentional": {
+            "type": "boolean"
+          },
+          "mastery_claim": {
+            "type": "boolean"
+          },
+          "bounded_chance": {
+            "type": "boolean"
+          },
+          "definite_responsibility": {
+            "type": "boolean"
+          },
+          "causal_version": {
+            "const": "1.0.0"
+          },
+          "causal_role": {
+            "enum": [
+              "PRIMARY_CAUSE",
+              "CONTRIBUTING_CAUSE",
+              "CONDITION_PROVIDER",
+              "TRIGGER",
+              "ENABLER",
+              "OMISSION_CAUSE",
+              "ACCIDENTAL_CAUSE",
+              "OVERDETERMINED_CAUSE",
+              "INCIDENTAL",
+              "NOT_CAUSALLY_RESPONSIBLE"
+            ]
+          },
+          "plan_type": {
+            "enum": [
+              "PREPLANNED",
+              "ADAPTIVE",
+              "OPPORTUNISTIC",
+              "CHANCE_DRIVEN"
+            ]
+          },
+          "closure": {
+            "enum": [
+              "CLOSED",
+              "PRESERVE_OPEN"
+            ]
+          },
+          "mechanism_class": {
+            "enum": [
+              "INFORMATIONAL_INDUCTION",
+              "ACCESS_CHANGE",
+              "CONDITION_CREATION",
+              "OPPORTUNITY_CREATION",
+              "RESOURCE_WITHHOLDING",
+              "DELIBERATE_OMISSION",
+              "ENVIRONMENTAL_TRIGGER",
+              "SOCIAL_PRESSURE",
+              "MISCLASSIFICATION_EXPLOITATION",
+              "OTHER_ABSTRACT"
+            ]
+          },
+          "responsible_action_or_omission": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "actor": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "outcome_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "provenance": {
+                "type": "string",
+                "minLength": 1
+              },
+              "intent": {
+                "type": "boolean"
+              },
+              "mechanism_awareness": {
+                "type": "boolean"
+              },
+              "capability": {
+                "type": "boolean"
+              },
+              "opportunity": {
+                "type": "boolean"
+              },
+              "risk_awareness": {
+                "type": "boolean"
+              },
+              "causal_relevance": {
+                "type": "boolean"
+              },
+              "kind": {
+                "enum": [
+                  "ACTION",
+                  "DELIBERATE_OMISSION",
+                  "ACCIDENTAL_ACTION",
+                  "PRESENCE",
+                  "ASSOCIATION",
+                  "AFTERMATH"
+                ]
+              },
+              "at": {
+                "type": [
+                  "number",
+                  "string"
+                ]
+              },
+              "knowledge_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "sets_conditions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "classification",
+                "necessity"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "fact_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "provenance": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "stability_basis": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "expectation_basis": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "controlled_by": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "control_action_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "independent_group": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "independence_basis": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "classification": {
+                  "enum": [
+                    "CONTROLLED",
+                    "KNOWN_STABLE",
+                    "REASONABLY_EXPECTED",
+                    "UNKNOWN",
+                    "RANDOM"
+                  ]
+                },
+                "necessity": {
+                  "enum": [
+                    "NECESSARY",
+                    "SUPPORTING",
+                    "INCIDENTAL",
+                    "BACKGROUND"
+                  ]
+                },
+                "causal_relevance": {
+                  "type": "boolean"
+                },
+                "resolved_at": {
+                  "type": [
+                    "number",
+                    "string"
+                  ]
+                },
+                "resolution_fact_ref": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "counterfactual_without_action": {
+            "type": "object",
+            "properties": {
+              "result": {
+                "enum": [
+                  "OUTCOME_UNLIKELY",
+                  "OUTCOME_MATERIALLY_CHANGED",
+                  "OUTCOME_STILL_LIKELY",
+                  "OUTCOME_UNCHANGED",
+                  "UNKNOWN",
+                  "OPEN",
+                  "OVERDETERMINED"
+                ]
+              },
+              "provenance": {
+                "type": "string",
+                "minLength": 1
+              },
+              "material_effect": {
+                "enum": [
+                  "RISK",
+                  "TIMING",
+                  "MECHANISM",
+                  "OPPORTUNITY"
+                ]
+              },
+              "effect_basis": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "responsibility_basis": {
+            "type": "object",
+            "properties": {
+              "action_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "outcome_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "provenance": {
+                "type": "string",
+                "minLength": 1
+              },
+              "condition_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "other_sufficient_causes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "agent": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "action_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "outcome_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "provenance": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "independent": {
+                  "type": "boolean"
+                },
+                "sufficient": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "fallbacks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "FALLBACK",
+                    "ADAPTIVE"
+                  ]
+                },
+                "provenance": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "fact_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "outcome_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "planned_at": {
+                  "type": [
+                    "number",
+                    "string"
+                  ]
+                },
+                "action": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "actor": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "description": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "outcome_ref": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "provenance": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "intent": {
+                      "type": "boolean"
+                    },
+                    "mechanism_awareness": {
+                      "type": "boolean"
+                    },
+                    "capability": {
+                      "type": "boolean"
+                    },
+                    "opportunity": {
+                      "type": "boolean"
+                    },
+                    "risk_awareness": {
+                      "type": "boolean"
+                    },
+                    "causal_relevance": {
+                      "type": "boolean"
+                    },
+                    "kind": {
+                      "enum": [
+                        "ACTION",
+                        "DELIBERATE_OMISSION",
+                        "ACCIDENTAL_ACTION",
+                        "PRESENCE",
+                        "ASSOCIATION",
+                        "AFTERMATH"
+                      ]
+                    },
+                    "at": {
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    },
+                    "knowledge_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "sets_conditions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                "covers_conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "observed_fact_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

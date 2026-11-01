@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.1.0",
+  "chapter_id": "CH-0012",
+  "branch": "main",
+  "before_hash": "",
+  "after_hash": "",
+  "changes": [
+    {
+      "change_id": "REV-CH0012-001",
+      "alignment_id": "A-0001",
+      "impact_labels": [
+        "PROSE_ONLY"
+      ],
+      "confidence": "medium",
+      "textual_anchor": "",
+      "candidate_deltas": [],
+      "affected_nodes": [],
+      "notes": ""
+    }
+  ],
+  "approval_status": "PENDING_REVIEW",
+  "project_poetics_impact": {
+    "change_declared": false,
+    "classification_status": "NOT_APPLICABLE",
+    "scope": "unknown",
+    "authority_ref": null,
+    "change_summary": "",
+    "invalidation_review_required": false,
+    "affected_artifact_classes": [],
+    "affected_nodes": [],
+    "notes": ""
+  }
+}

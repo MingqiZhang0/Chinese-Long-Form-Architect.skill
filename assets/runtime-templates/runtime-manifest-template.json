@@ -1,0 +1,18 @@
+{
+  "runtime_schema_version": "3.0.0",
+  "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+  "project_id": "PROJECT-ID",
+  "current_branch": "main",
+  "compatibility_policy": "backward_transitive",
+  "minimum_reader_version": "3.0.0",
+  "paths": {
+    "events": "runtime/events.jsonl",
+    "branches": "runtime/branches.json",
+    "dependencies": "runtime/dependencies.json",
+    "invariants": "runtime/invariants.json",
+    "narrative_debt": "runtime/narrative-debt.json",
+    "projections": "runtime/projections",
+    "snapshots": "runtime/snapshots"
+  },
+  "migration_history": []
+}

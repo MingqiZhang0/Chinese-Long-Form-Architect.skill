@@ -1,0 +1,10 @@
+{
+  "current_chapter": 12,
+  "threads": [
+    {"id": "GROW-01", "status": "active", "summary": "The protagonist must repay medicine debt before the next inner-gate examination."}
+  ],
+  "scene_packets": [],
+  "reader_state": {"chapter": 12, "foreground_questions": ["Can the protagonist recover enough to enter the examination without worsening the injury?"]},
+  "research_dependencies": [],
+  "authorial_unknowns": []
+}

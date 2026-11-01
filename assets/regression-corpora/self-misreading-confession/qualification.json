@@ -1,0 +1,308 @@
+{
+  "planning": {
+    "schema_version": "1.0.0",
+    "fixture_id": "self-misreading-confession",
+    "language": "zh-CN",
+    "task_type": "planning",
+    "refs": {
+      "input": "planning-input.md",
+      "task": "planning-task.md",
+      "project_poetics": "project-brief.md",
+      "positive_control": "planning-control.md",
+      "wrong_poetics_mutant": "planning-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立planning资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "第一人称“不是因为嫉妒”只能作为 narrator self-report，不自动升级成事实；其反面“其实就是嫉妒”也不能被编辑者擅自认证。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "保留自述、记忆限定语和杯子动作之间的可推断张力。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "self-report-canonization",
+        "description": "把叙述者对自己的解释或编辑者的反解释升级成客观心理 canon。",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "diagnostic-closure",
+        "description": "为了清楚而直接诊断真实动机，关闭读者重建空间。",
+        "critical": true
+      },
+      {
+        "id": "RF49",
+        "intervention_class": "force-character-transformation",
+        "description": "不得加入：这一天以后，我彻底改正缺点，成为了健全的人。",
+        "critical": true
+      },
+      {
+        "id": "RF50",
+        "intervention_class": "force-psychological-explanation",
+        "description": "不得加入：我的所有玩笑都源于依恋障碍，因此真实动机已经确定。",
+        "critical": true
+      },
+      {
+        "id": "RF56",
+        "intervention_class": "force-pov-broadening",
+        "description": "不得加入：此刻我准确知道周谨没有说出的每一个念头。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^其实我就是嫉妒。?\\s*$"
+      },
+      {
+        "id": "R49",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^这一天以后，我彻底改正缺点，成为了健全的人。?\\s*$"
+      },
+      {
+        "id": "R50",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^我的所有玩笑都源于依恋障碍，因此真实动机已经确定。?\\s*$"
+      },
+      {
+        "id": "R56",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^此刻我准确知道周谨没有说出的每一个念头。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "chapter": {
+    "schema_version": "1.0.0",
+    "fixture_id": "self-misreading-confession",
+    "language": "zh-CN",
+    "task_type": "chapter",
+    "refs": {
+      "input": "chapter-input.md",
+      "task": "chapter-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "chapter-control.md",
+      "wrong_poetics_mutant": "chapter-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立chapter资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "第一人称“不是因为嫉妒”只能作为 narrator self-report，不自动升级成事实；其反面“其实就是嫉妒”也不能被编辑者擅自认证。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "保留自述、记忆限定语和杯子动作之间的可推断张力。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "self-report-canonization",
+        "description": "把叙述者对自己的解释或编辑者的反解释升级成客观心理 canon。",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "diagnostic-closure",
+        "description": "为了清楚而直接诊断真实动机，关闭读者重建空间。",
+        "critical": true
+      },
+      {
+        "id": "RF49",
+        "intervention_class": "force-character-transformation",
+        "description": "不得加入：这一天以后，我彻底改正缺点，成为了健全的人。",
+        "critical": true
+      },
+      {
+        "id": "RF50",
+        "intervention_class": "force-psychological-explanation",
+        "description": "不得加入：我的所有玩笑都源于依恋障碍，因此真实动机已经确定。",
+        "critical": true
+      },
+      {
+        "id": "RF56",
+        "intervention_class": "force-pov-broadening",
+        "description": "不得加入：此刻我准确知道周谨没有说出的每一个念头。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^其实我就是嫉妒。?\\s*$"
+      },
+      {
+        "id": "R49",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^这一天以后，我彻底改正缺点，成为了健全的人。?\\s*$"
+      },
+      {
+        "id": "R50",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^我的所有玩笑都源于依恋障碍，因此真实动机已经确定。?\\s*$"
+      },
+      {
+        "id": "R56",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^此刻我准确知道周谨没有说出的每一个念头。?\\s*$"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  },
+  "drafting": {
+    "schema_version": "1.0.0",
+    "fixture_id": "self-misreading-confession",
+    "language": "zh-CN",
+    "task_type": "drafting",
+    "refs": {
+      "input": "drafting-input.md",
+      "task": "drafting-task.md",
+      "project_poetics": "project-poetics.md",
+      "positive_control": "drafting-control.md",
+      "wrong_poetics_mutant": "drafting-mutant.md"
+    },
+    "targeted_local_defect": "本任务为独立drafting资格，不评通用文学分数。",
+    "must_preserve": [
+      {
+        "id": "P1",
+        "description": "第一人称“不是因为嫉妒”只能作为 narrator self-report，不自动升级成事实；其反面“其实就是嫉妒”也不能被编辑者擅自认证。",
+        "critical": true
+      },
+      {
+        "id": "P2",
+        "description": "保留自述、记忆限定语和杯子动作之间的可推断张力。",
+        "critical": true
+      }
+    ],
+    "allowed_interventions": [
+      {
+        "id": "A1",
+        "description": "按任务生成原创规划或起草，尊重既有事实与授权的诗学。"
+      }
+    ],
+    "forbidden_interventions": [
+      {
+        "id": "F1",
+        "intervention_class": "self-report-canonization",
+        "description": "把叙述者对自己的解释或编辑者的反解释升级成客观心理 canon。",
+        "critical": true
+      },
+      {
+        "id": "F2",
+        "intervention_class": "diagnostic-closure",
+        "description": "为了清楚而直接诊断真实动机，关闭读者重建空间。",
+        "critical": true
+      },
+      {
+        "id": "RF49",
+        "intervention_class": "force-character-transformation",
+        "description": "不得加入：这一天以后，我彻底改正缺点，成为了健全的人。",
+        "critical": true
+      },
+      {
+        "id": "RF50",
+        "intervention_class": "force-psychological-explanation",
+        "description": "不得加入：我的所有玩笑都源于依恋障碍，因此真实动机已经确定。",
+        "critical": true
+      },
+      {
+        "id": "RF56",
+        "intervention_class": "force-pov-broadening",
+        "description": "不得加入：此刻我准确知道周谨没有说出的每一个念头。",
+        "critical": true
+      }
+    ],
+    "deterministic_assertions": [
+      {
+        "id": "Q1",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "^其实我就是嫉妒。?\\s*$"
+      },
+      {
+        "id": "R49",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "这一天以后，我彻底改正缺点，成为了健全的人"
+      },
+      {
+        "id": "R50",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "我的所有玩笑都源于依恋障碍，因此真实动机已经确定"
+      },
+      {
+        "id": "R56",
+        "kind": "regex_absent",
+        "critical": true,
+        "pattern": "此刻我准确知道周谨没有说出的每一个念头"
+      }
+    ],
+    "model_evaluation": {
+      "pointwise_questions": [
+        "Does the candidate execute the requested stage rather than repeat labels?",
+        "Is progression / accumulation concrete and authorized?",
+        "Are mediation, closure and temporal form kept independent?",
+        "Does each chapter inherit and contribute without compulsory escalation?",
+        "Does prose realize the declared reader task?",
+        "Are hard facts and every forbidden intervention respected?"
+      ],
+      "pairwise_question": "Which candidate better executes this task under the declared project without importing generic house style?",
+      "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+    }
+  }
+}

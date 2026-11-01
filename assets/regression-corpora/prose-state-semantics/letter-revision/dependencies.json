@@ -1,0 +1,37 @@
+{
+  "branch": "main",
+  "edges": [
+    {
+      "source": "CH8:seen-letter",
+      "target": "CH23:recognition",
+      "kind": "knowledge-source"
+    },
+    {
+      "source": "CH17:independent-sample",
+      "target": "CH23:recognition",
+      "kind": "knowledge-source"
+    },
+    {
+      "source": "CH8:seen-letter",
+      "target": "CH23:content",
+      "kind": "knowledge-source"
+    },
+    {
+      "source": "CH23:content",
+      "target": "CH23:gate-action",
+      "kind": "action-premise"
+    },
+    {
+      "source": "CH8:seen-letter",
+      "target": "experiment:recognition",
+      "kind": "knowledge-source",
+      "branch": "experiment"
+    },
+    {
+      "source": "CH8:seen-letter",
+      "target": "retired:claim",
+      "kind": "knowledge-source",
+      "status": "retired"
+    }
+  ]
+}

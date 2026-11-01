@@ -1,0 +1,624 @@
+{
+  "valid": [
+    {
+      "name": "hello-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-0",
+        "correlation_id": "golden-0",
+        "method": "hello",
+        "params": {
+          "supported_versions": [
+            "1.0.0"
+          ],
+          "client_version": "spike-1",
+          "max_frame_bytes": 8388608
+        }
+      }
+    },
+    {
+      "name": "hello-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-0",
+        "correlation_id": "golden-0",
+        "result": {
+          "kind": "Hello",
+          "selected_version": "1.0.0",
+          "compatibility": "COMPATIBLE",
+          "server_instance_id": "engine-instance",
+          "engine_version": "spike-1",
+          "supported_protocols": [
+            "1.0.0"
+          ],
+          "schema_digest": "sha256:8285e693ad46ec256ed100efa0cd52e48546db16ad7da3c31d1bc663a4c006e3",
+          "schema_capabilities": [
+            "bootstrap",
+            "spike-read"
+          ],
+          "supported_features": [
+            "state.query",
+            "trace.query",
+            "source.resolve",
+            "manuscript.page",
+            "observation.subscribe",
+            "snapshot.compare",
+            "issue.page"
+          ],
+          "health": "READY",
+          "readonly_enforcement": "UNVERIFIED",
+          "agent_available": false
+        }
+      }
+    },
+    {
+      "name": "session.open-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-2",
+        "correlation_id": "golden-2",
+        "method": "session.open",
+        "params": {
+          "project_root": "fixture-root"
+        }
+      }
+    },
+    {
+      "name": "session.open-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-2",
+        "correlation_id": "golden-2",
+        "result": {
+          "kind": "ProjectInfo",
+          "project_id": "spike-P1",
+          "display_name": "叙事观察实验",
+          "schema_version": "spike-1",
+          "manuscript": "manuscript.txt",
+          "project_token": "token",
+          "supported_features": [
+            "spike-read",
+            "native-watch"
+          ]
+        }
+      }
+    },
+    {
+      "name": "snapshot.pin-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-4",
+        "correlation_id": "golden-4",
+        "method": "snapshot.pin",
+        "params": {
+          "project_token": "token",
+          "requested_snapshot_id": null
+        }
+      }
+    },
+    {
+      "name": "snapshot.pin-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-4",
+        "correlation_id": "golden-4",
+        "result": {
+          "kind": "SnapshotLease",
+          "project_id": "spike-P1",
+          "snapshot_id": "S001",
+          "lease_id": "lease",
+          "project_revision": "sha256:1126135285945ab92d65c2368de049c013a05e049c6b77637725a395be4808fa",
+          "source_revision": "sha256:64791f9fcad67467ef2ab4e5cdc833e2fdcb462fbdf2747f63ecbbd6c5767b3d",
+          "index_revision": "sha256:1126135285945ab92d65c2368de049c013a05e049c6b77637725a395be4808fa",
+          "canonical_basis_revision": "sha256:31aa3511bccc36e99d5f654295313aacda8b014a2a75b316e8e8ef6aee540ce8",
+          "query_semantics_version": "1.0.0",
+          "lease_ttl_ms": 300000
+        }
+      }
+    },
+    {
+      "name": "state.query-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-6",
+        "correlation_id": "golden-6",
+        "method": "state.query",
+        "params": {
+          "snapshot_id": "S001",
+          "lease_id": "lease",
+          "project_token": "token",
+          "domain": "actor_epistemic",
+          "character_id": "A",
+          "fact_id": "F1",
+          "position": {
+            "axis": "story_valid",
+            "domain": "day",
+            "value": 3,
+            "boundary": "at",
+            "chapter_id": "CH3"
+          }
+        }
+      }
+    },
+    {
+      "name": "state.query-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-6",
+        "correlation_id": "golden-6",
+        "result": {
+          "kind": "KnowledgeResult",
+          "snapshot_id": "S001",
+          "completeness": "FULL",
+          "freshness": "FRESH",
+          "warnings": [],
+          "manifest": {
+            "execution_kind": "DETERMINISTIC",
+            "agent_calls": 0,
+            "owner_calls": [
+              "story_ops.knowledge_at",
+              "narrative_runtime.why_trace"
+            ],
+            "engine_version": "spike-1",
+            "query_semantics_version": "1.0.0"
+          },
+          "character_id": "A",
+          "fact_id": "F1",
+          "position": {
+            "axis": "story_valid",
+            "domain": "day",
+            "value": 3,
+            "boundary": "at",
+            "chapter_id": "CH3"
+          },
+          "epistemic_state": "KNOWN",
+          "knowledge_id": "K1",
+          "evidence_refs": [
+            "EV1"
+          ],
+          "provenance_refs": [
+            "E1",
+            "C1",
+            "C2",
+            "EV1",
+            "EV1",
+            "A1",
+            "SRC1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "trace.query-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-8",
+        "correlation_id": "golden-8",
+        "method": "trace.query",
+        "params": {
+          "snapshot_id": "S001",
+          "lease_id": "lease",
+          "project_token": "token",
+          "node_id": "K1"
+        }
+      }
+    },
+    {
+      "name": "trace.query-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-8",
+        "correlation_id": "golden-8",
+        "result": {
+          "kind": "TraceResult",
+          "snapshot_id": "S001",
+          "completeness": "FULL",
+          "freshness": "FRESH",
+          "warnings": [],
+          "manifest": {
+            "execution_kind": "DETERMINISTIC",
+            "agent_calls": 0,
+            "owner_calls": [
+              "narrative_runtime.why_trace"
+            ],
+            "engine_version": "spike-1",
+            "query_semantics_version": "1.0.0"
+          },
+          "nodes": [
+            {
+              "id": "A1",
+              "kind": "Anchor"
+            },
+            {
+              "id": "C1",
+              "kind": "Claim"
+            },
+            {
+              "id": "C2",
+              "kind": "Claim"
+            },
+            {
+              "id": "E1",
+              "kind": "Event"
+            },
+            {
+              "id": "EV1",
+              "kind": "Evidence"
+            },
+            {
+              "id": "K1",
+              "kind": "KnowledgeState"
+            },
+            {
+              "id": "SRC1",
+              "kind": "Source"
+            }
+          ],
+          "edges": [
+            {
+              "source": "E1",
+              "target": "K1",
+              "kind": "supports",
+              "depth": 1
+            },
+            {
+              "source": "C1",
+              "target": "E1",
+              "kind": "supports",
+              "depth": 2
+            },
+            {
+              "source": "C2",
+              "target": "E1",
+              "kind": "supports",
+              "depth": 2
+            },
+            {
+              "source": "EV1",
+              "target": "C1",
+              "kind": "supports",
+              "depth": 3
+            },
+            {
+              "source": "EV1",
+              "target": "C2",
+              "kind": "supports",
+              "depth": 3
+            },
+            {
+              "source": "A1",
+              "target": "EV1",
+              "kind": "supports",
+              "depth": 4
+            },
+            {
+              "source": "SRC1",
+              "target": "A1",
+              "kind": "supports",
+              "depth": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "source.resolve-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-10",
+        "correlation_id": "golden-10",
+        "method": "source.resolve",
+        "params": {
+          "snapshot_id": "S001",
+          "lease_id": "lease",
+          "project_token": "token",
+          "evidence_id": "EV1"
+        }
+      }
+    },
+    {
+      "name": "source.resolve-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-10",
+        "correlation_id": "golden-10",
+        "result": {
+          "kind": "EvidenceResult",
+          "snapshot_id": "S001",
+          "evidence_id": "EV1",
+          "anchor_id": "A1",
+          "source_revision": "sha256:64791f9fcad67467ef2ab4e5cdc833e2fdcb462fbdf2747f63ecbbd6c5767b3d",
+          "basis_source_revision": "sha256:64791f9fcad67467ef2ab4e5cdc833e2fdcb462fbdf2747f63ecbbd6c5767b3d",
+          "block_id": "proof",
+          "content_fingerprint": "sha256:cc6255cedee93d24659928237d88d1c2db95af426e36e89e46e438d88d7ba910",
+          "context_fingerprint": "sha256:999ed75b4436dc1834a1e9030f583a097263dd1297a666d0abfba4d2b087c969",
+          "span": {
+            "start": 95,
+            "end": 101,
+            "offset_unit": "unicode_scalar"
+          },
+          "display_text": "钥匙是蓝色的",
+          "health": "VALID",
+          "warnings": []
+        }
+      }
+    },
+    {
+      "name": "manuscript.page-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-12",
+        "correlation_id": "golden-12",
+        "method": "manuscript.page",
+        "params": {
+          "snapshot_id": "S001",
+          "lease_id": "lease",
+          "project_token": "token",
+          "start_block": 0,
+          "limit": 20,
+          "anchor_id": "A1"
+        }
+      }
+    },
+    {
+      "name": "manuscript.page-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-12",
+        "correlation_id": "golden-12",
+        "result": {
+          "kind": "ManuscriptPage",
+          "snapshot_id": "S001",
+          "source_revision": "sha256:64791f9fcad67467ef2ab4e5cdc833e2fdcb462fbdf2747f63ecbbd6c5767b3d",
+          "blocks": [
+            {
+              "block_id": "proof",
+              "start": 82,
+              "text": "𠮷🙂 é 薛照亲眼确认：钥匙是蓝色的。"
+            },
+            {
+              "block_id": "leak",
+              "start": 126,
+              "text": "B说：“F2，密室在东边。”他尚未获得此事。"
+            }
+          ],
+          "total_blocks": 4,
+          "start_block": 2,
+          "highlight": {
+            "start": 95,
+            "end": 101,
+            "offset_unit": "unicode_scalar"
+          }
+        }
+      }
+    },
+    {
+      "name": "snapshot.get-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-14",
+        "correlation_id": "golden-14",
+        "method": "snapshot.get",
+        "params": {
+          "snapshot_id": "S001",
+          "lease_id": "lease",
+          "project_token": "token"
+        }
+      }
+    },
+    {
+      "name": "snapshot.get-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-14",
+        "correlation_id": "golden-14",
+        "result": {
+          "kind": "SnapshotInfo",
+          "snapshot_id": "S001",
+          "source_revision": "sha256:64791f9fcad67467ef2ab4e5cdc833e2fdcb462fbdf2747f63ecbbd6c5767b3d",
+          "freshness": "FRESH",
+          "watch_status": "UP_TO_DATE",
+          "failed_candidate": "",
+          "issues": [
+            {
+              "issue_id": "I-0",
+              "code": "validation.error",
+              "message": "knowledge discontinuity: B uses F2 at 3.0 before acquiring it at 4.0"
+            }
+          ],
+          "agent_calls": 0
+        }
+      }
+    },
+    {
+      "name": "issue.page-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-16",
+        "correlation_id": "golden-16",
+        "method": "issue.page",
+        "params": {
+          "snapshot_id": "S001",
+          "lease_id": "lease",
+          "project_token": "token",
+          "offset": 0,
+          "limit": 1000,
+          "filter": ""
+        }
+      }
+    },
+    {
+      "name": "issue.page-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-16",
+        "correlation_id": "golden-16",
+        "result": {
+          "kind": "IssuePage",
+          "snapshot_id": "S001",
+          "issues": [
+            {
+              "issue_id": "I-0",
+              "code": "validation.error",
+              "message": "knowledge discontinuity: B uses F2 at 3.0 before acquiring it at 4.0"
+            }
+          ],
+          "total": 1,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "name": "service.shutdown-request",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-18",
+        "correlation_id": "golden-18",
+        "method": "service.shutdown",
+        "params": {}
+      }
+    },
+    {
+      "name": "service.shutdown-response",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-18",
+        "correlation_id": "golden-18",
+        "result": {
+          "kind": "ControlAck",
+          "accepted": true
+        }
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "unknown-epistemic-enum",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-6",
+        "correlation_id": "golden-6",
+        "result": {
+          "kind": "KnowledgeResult",
+          "snapshot_id": "S001",
+          "completeness": "FULL",
+          "freshness": "FRESH",
+          "warnings": [],
+          "manifest": {
+            "execution_kind": "DETERMINISTIC",
+            "agent_calls": 0,
+            "owner_calls": [
+              "story_ops.knowledge_at",
+              "narrative_runtime.why_trace"
+            ],
+            "engine_version": "spike-1",
+            "query_semantics_version": "1.0.0"
+          },
+          "character_id": "A",
+          "fact_id": "F1",
+          "position": {
+            "axis": "story_valid",
+            "domain": "day",
+            "value": 3,
+            "boundary": "at",
+            "chapter_id": "CH3"
+          },
+          "epistemic_state": "SUPER_KNOWN",
+          "knowledge_id": "K1",
+          "evidence_refs": [
+            "EV1"
+          ],
+          "provenance_refs": [
+            "E1",
+            "C1",
+            "C2",
+            "EV1",
+            "EV1",
+            "A1",
+            "SRC1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "agent-call-violation",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-6",
+        "correlation_id": "golden-6",
+        "result": {
+          "kind": "KnowledgeResult",
+          "snapshot_id": "S001",
+          "completeness": "FULL",
+          "freshness": "FRESH",
+          "warnings": [],
+          "manifest": {
+            "execution_kind": "DETERMINISTIC",
+            "agent_calls": 1,
+            "owner_calls": [
+              "story_ops.knowledge_at",
+              "narrative_runtime.why_trace"
+            ],
+            "engine_version": "spike-1",
+            "query_semantics_version": "1.0.0"
+          },
+          "character_id": "A",
+          "fact_id": "F1",
+          "position": {
+            "axis": "story_valid",
+            "domain": "day",
+            "value": 3,
+            "boundary": "at",
+            "chapter_id": "CH3"
+          },
+          "epistemic_state": "KNOWN",
+          "knowledge_id": "K1",
+          "evidence_refs": [
+            "EV1"
+          ],
+          "provenance_refs": [
+            "E1",
+            "C1",
+            "C2",
+            "EV1",
+            "EV1",
+            "A1",
+            "SRC1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "incorrect-offset-unit",
+      "message": {
+        "protocol_version": "1.0.0",
+        "request_id": "golden-12",
+        "correlation_id": "golden-12",
+        "result": {
+          "kind": "ManuscriptPage",
+          "snapshot_id": "S001",
+          "source_revision": "sha256:64791f9fcad67467ef2ab4e5cdc833e2fdcb462fbdf2747f63ecbbd6c5767b3d",
+          "blocks": [
+            {
+              "block_id": "proof",
+              "start": 82,
+              "text": "𠮷🙂 é 薛照亲眼确认：钥匙是蓝色的。"
+            },
+            {
+              "block_id": "leak",
+              "start": 126,
+              "text": "B说：“F2，密室在东边。”他尚未获得此事。"
+            }
+          ],
+          "total_blocks": 4,
+          "start_block": 2,
+          "highlight": {
+            "start": 95,
+            "end": 101,
+            "offset_unit": "utf16"
+          }
+        }
+      }
+    }
+  ]
+}

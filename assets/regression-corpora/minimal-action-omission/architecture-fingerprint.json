@@ -1,0 +1,35 @@
+{
+  "project_id": "MINIMAL-ACTION-OMISSION",
+  "sample_id": "adversarial-fixture",
+  "features": {
+    "project_poetics": {
+      "salience_sources": [
+        "action",
+        "body",
+        "material resistance",
+        "omission"
+      ],
+      "reader_activities": [
+        "infer",
+        "attend to action",
+        "feel duration"
+      ],
+      "progression_modes": [
+        "action consequence",
+        "endurance"
+      ],
+      "active_capabilities": [
+        "minimalist-omission",
+        "embodied-action"
+      ],
+      "do_not_optimize": [
+        "add explanatory introspection",
+        "ornament prose by default"
+      ]
+    },
+    "primary_organizing_mode": "action consequence",
+    "secret_density": "none-or-project-dependent",
+    "formal_regime": "project-specific"
+  },
+  "notes": "Diagnostic only. Preserve declared poetics; do not imitate any named author or score difference as quality."
+}

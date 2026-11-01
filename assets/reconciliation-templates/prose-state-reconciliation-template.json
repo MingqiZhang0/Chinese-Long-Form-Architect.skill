@@ -1,0 +1,79 @@
+{
+  "reconciliation_version": "1.1.0",
+  "chapter_id": "CH-001",
+  "branch": "main",
+  "prose_path": "chapters/chapter-0001.md",
+  "prose_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "status": "DRAFT",
+  "prose_candidates": [
+    {
+      "candidate_id": "PC-001",
+      "description": "A durable fact actually established by the prose.",
+      "disposition": "pending",
+      "delta_ids": [],
+      "notes": "Semantic extraction is review work; do not auto-promote merely because a model proposed it.",
+      "semantics": {
+        "mode": "assertion",
+        "layer": "world",
+        "holder": null,
+        "proposition": "Replace with the precise proposition actually established.",
+        "polarity": "affirmed",
+        "truth": "unknown",
+        "acquisition": "none",
+        "rationale": "",
+        "evidence": [
+          {
+            "path": "chapters/chapter-0001.md",
+            "start_line": 1,
+            "end_line": 1,
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        ]
+      }
+    }
+  ],
+  "state_deltas": [
+    {
+      "delta_id": "DELTA-001",
+      "description": "Example durable state change.",
+      "target": "object:EXAMPLE.holder",
+      "before": "A",
+      "after": "B",
+      "basis": "prose",
+      "basis_note": "",
+      "evidence": [
+        {
+          "path": "chapters/chapter-0001.md",
+          "start_line": 1,
+          "end_line": 1,
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "layer": "world"
+    }
+  ],
+  "template_note": "Prefer reconcile REPORT --root ROOT --prepare PROSE --state STATE to generate exhaustive pending coverage and a hash-bound state inventory. This template is DRAFT only. Review semantics before approval; hashes do not prove entailment.",
+  "semantic_review": {
+    "coverage": [
+      {
+        "evidence": {
+          "path": "chapters/chapter-0001.md",
+          "start_line": 1,
+          "end_line": 1,
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "candidate_ids": [
+          "PC-001"
+        ],
+        "status": "pending",
+        "rationale": ""
+      }
+    ],
+    "sources": [
+      {
+        "path": "chapters/chapter-0001.md",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ]
+  }
+}

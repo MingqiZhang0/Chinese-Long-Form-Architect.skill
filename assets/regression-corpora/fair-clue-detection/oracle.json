@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "fair-clue-detection",
+  "language": "zh-CN",
+  "task_type": "light-revision",
+  "refs": {
+    "input": "input.md",
+    "task": "task.md",
+    "project_poetics": "project-poetics.md",
+    "positive_control": "control-preserving.md",
+    "wrong_poetics_mutant": "wrong-poetics-mutant.md"
+  },
+  "targeted_local_defect": "修复“门门框”错字，同时保持决定性线索对读者可见，不把它稀释成纯气氛。",
+  "must_preserve": [
+    {
+      "id": "P1",
+      "description": "门框三道新鲜划痕、最低划痕约七十厘米、无撬痕、黑色橡胶屑等 solution-relevant evidence 对读者保持可访问。",
+      "critical": true
+    },
+    {
+      "id": "P2",
+      "description": "可以暂不解释证据意义，但不能靠删减/模糊关键事实制造惊讶。",
+      "critical": true
+    }
+  ],
+  "allowed_interventions": [
+    {
+      "id": "A1",
+      "description": "修复“门门框”错字。"
+    },
+    {
+      "id": "A2",
+      "description": "在不降低证据可访问性的前提下改善信息排序。"
+    }
+  ],
+  "forbidden_interventions": [
+    {
+      "id": "F1",
+      "intervention_class": "clue-obscuring",
+      "description": "删去、泛化或延迟已应公开的 solution-critical clue。",
+      "critical": true
+    },
+    {
+      "id": "F2",
+      "intervention_class": "atmosphere-dilution",
+      "description": "用气氛细节替代精确 clue，使读者无法进行同等推理。",
+      "critical": true
+    },
+    {
+      "id": "RF55",
+      "intervention_class": "force-mystery-openness",
+      "description": "不得加入：这个承诺唯一解答的案件永远不会给出答案。",
+      "critical": true
+    }
+  ],
+  "deterministic_assertions": [
+    {
+      "id": "D1",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "门门框"
+    },
+    {
+      "id": "D2",
+      "kind": "contains_all",
+      "critical": true,
+      "values": [
+        "三道新鲜划痕",
+        "七十厘米",
+        "没有撬痕",
+        "黑色橡胶屑"
+      ]
+    },
+    {
+      "id": "D3",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "暂时没有必要说得太清楚|把关键细节先融进气氛"
+    },
+    {
+      "id": "D4",
+      "kind": "char_ratio",
+      "critical": true,
+      "min": 0.72,
+      "max": 1.4
+    },
+    {
+      "id": "R55",
+      "kind": "regex_absent",
+      "critical": true,
+      "pattern": "这个承诺唯一解答的案件永远不会给出答案"
+    }
+  ],
+  "model_evaluation": {
+    "pointwise_questions": [
+      "Did the candidate fix the stated local defect without broadening the task?",
+      "Did it preserve every must-preserve property?",
+      "Did it avoid every forbidden intervention?",
+      "Did it preserve hard facts and avoid inventing new story facts?",
+      "Is any extra intervention necessary under this fixture rather than a generic house-style optimization?"
+    ],
+    "pairwise_question": "Which candidate better performs the requested light revision while preserving this fixture's Project Poetics and hard facts?",
+    "tie_policy": "Use tie only when both candidates satisfy or violate the contract to essentially the same degree; do not reward verbosity, conventional polish, explanation, or dramatic escalation by default."
+  }
+}

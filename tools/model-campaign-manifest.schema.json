@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Isolated maintenance qualification campaign manifest",
+  "type": "object",
+  "required": ["schema_version", "campaign_id", "status", "skill_hash", "task_totals", "successful_executions", "promotion", "long_horizon"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "campaign_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["PREPARING", "FROZEN", "GENERATING", "TARGET_COMPLETE", "CALIBRATING_JUDGES", "JUDGING", "RERUNNING", "AGGREGATING", "COMPLETE", "INVALID", "BLOCKED"]},
+    "skill_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "task_totals": {"type": "object", "required": ["planning", "chapter", "drafting", "revision"], "properties": {"planning": {"const": 12}, "chapter": {"const": 12}, "drafting": {"const": 12}, "revision": {"const": 18}}},
+    "successful_executions": {"type": "integer", "minimum": 0, "maximum": 54},
+    "technical_errors": {"type": "integer", "minimum": 0},
+    "promotion": {"enum": ["PROMOTED", "PROVISIONAL", "REJECTED", "INVALID"]},
+    "long_horizon": {"const": "NOT YET QUALIFIED"}
+  }
+}

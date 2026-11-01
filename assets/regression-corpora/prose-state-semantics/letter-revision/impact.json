@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.2.0",
+  "chapter_id": "CH-008",
+  "branch": "main",
+  "before_hash": "93c0538ee36f5322c2ba430df68d4c143e14094afdd587d5daa54f75407250b4",
+  "after_hash": "efc8f3e4fbb5eeb7fe8a9e1c005a58acbc9f10555e24fd01e6a1bcdf61336c14",
+  "changes": [
+    {
+      "change_id": "REV-8-1",
+      "alignment_id": "A-0001",
+      "impact_labels": [
+        "KNOWLEDGE_AFFECTING",
+        "CAUSAL_AFFECTING",
+        "PROMISE_AFFECTING"
+      ],
+      "confidence": "high",
+      "textual_anchor": "亲眼展开并读信 → 只听说存在且不知内容",
+      "candidate_deltas": [
+        {
+          "target": "陈越.密信内容知识",
+          "before": "direct-reading",
+          "after": "not-established"
+        }
+      ],
+      "affected_nodes": [
+        "CH23:content",
+        "CH23:gate-action",
+        "CH24:missing-character"
+      ]
+    }
+  ],
+  "approval_status": "APPROVED_FOR_COMMIT",
+  "dependency_review": {
+    "packet_path": "packet.json",
+    "packet_sha256": "ba32bbfeb5a80457689f7b90c45d0a8c04ca06fee007a5107d98eb7b5368871a",
+    "decisions": [
+      {
+        "review_id": "node:CH23:content",
+        "status": "affected",
+        "rationale": "旧第8章建立亲自读过开东闸的内容；新版只建立听说存在，内容和时刻均未传达。",
+        "evidence": [
+          {
+            "path": "before/ch8.md",
+            "start_line": 1,
+            "end_line": 2,
+            "sha256": "32cf5efb31c66ff8d52290d7d22db59e1f97079cdd8c2e18c99bbb220f9cf01b"
+          },
+          {
+            "path": "chapters/ch8.md",
+            "start_line": 1,
+            "end_line": 2,
+            "sha256": "04331ccea814d3e50e307c4281deecc24f2e71d777532f9bf6f56a37b1055c14"
+          },
+          {
+            "path": "chapters/ch23.md",
+            "start_line": 2,
+            "end_line": 2,
+            "sha256": "44a214907dee36713a70293ee84f87e42f6006066ee8c727e5ceaac2ac8372b2"
+          }
+        ],
+        "repairs": [
+          {
+            "description": "在第8章或第23章判断之前补上陈越实际读信且能辨认内容的场面。",
+            "tradeoff": "保留调兵结果，但要复核入场权限、时间与线索暴露。"
+          },
+          {
+            "description": "将第23章改为陈越根据另有来源的传闻或猜测调兵，并保留判断不确定性。",
+            "tradeoff": "改变角色决策风险与后续责任；传闻仍不能提供缺字细节。"
+          },
+          {
+            "description": "撤销读信内容与缺字判断，另建合法行动依据，或恢复旧版第8章。",
+            "tradeoff": "前者需要改写后续行动；后者放弃本次改动。"
+          }
+        ]
+      },
+      {
+        "review_id": "node:CH23:gate-action",
+        "status": "affected",
+        "rationale": "调兵依据是密信的具体时刻与闸口，内容认知失去来源。",
+        "evidence": [
+          {
+            "path": "chapters/ch23.md",
+            "start_line": 2,
+            "end_line": 3,
+            "sha256": "c928a36e069f350a649f2117b2a78deb73fc4142c68876e45e4f78c4db69c311"
+          }
+        ],
+        "repairs": [
+          {
+            "description": "在第8章或第23章判断之前补上陈越实际读信且能辨认内容的场面。",
+            "tradeoff": "保留调兵结果，但要复核入场权限、时间与线索暴露。"
+          },
+          {
+            "description": "将第23章改为陈越根据另有来源的传闻或猜测调兵，并保留判断不确定性。",
+            "tradeoff": "改变角色决策风险与后续责任；传闻仍不能提供缺字细节。"
+          },
+          {
+            "description": "撤销读信内容与缺字判断，另建合法行动依据，或恢复旧版第8章。",
+            "tradeoff": "前者需要改写后续行动；后者放弃本次改动。"
+          }
+        ]
+      },
+      {
+        "review_id": "node:CH23:recognition",
+        "status": "independent",
+        "rationale": "第17章练字纸和第23章并排比对独立支持笔迹识别；不能据图命中直接判定失效。",
+        "evidence": [
+          {
+            "path": "chapters/ch17.md",
+            "start_line": 1,
+            "end_line": 1,
+            "sha256": "69b249b25028407918218f8192eacec76aeabd15767ba3cf7ac77d8a991645c3"
+          },
+          {
+            "path": "chapters/ch23.md",
+            "start_line": 1,
+            "end_line": 1,
+            "sha256": "22f715ff2ff04e4577a916d97950acf3ba1688b0b2a1f148155ba0e6c4f4da1d"
+          }
+        ],
+        "repairs": []
+      },
+      {
+        "review_id": "chapter:chapters/ch17.md",
+        "status": "independent",
+        "rationale": "练字纸这一独立物证不依赖第8章目击。",
+        "evidence": [
+          {
+            "path": "chapters/ch17.md",
+            "start_line": 1,
+            "end_line": 1,
+            "sha256": "69b249b25028407918218f8192eacec76aeabd15767ba3cf7ac77d8a991645c3"
+          }
+        ],
+        "repairs": []
+      },
+      {
+        "review_id": "chapter:chapters/ch23.md",
+        "status": "affected",
+        "rationale": "笔迹判断有独立支持，信中时刻与调兵判断没有；按命题分别处理。",
+        "evidence": [
+          {
+            "path": "chapters/ch23.md",
+            "start_line": 1,
+            "end_line": 3,
+            "sha256": "3072504239eb2dd4d4c96e4b956aa404bd6ee0b652e2ff737f9fe1118df63c1a"
+          }
+        ],
+        "repairs": [
+          {
+            "description": "在第8章或第23章判断之前补上陈越实际读信且能辨认内容的场面。",
+            "tradeoff": "保留调兵结果，但要复核入场权限、时间与线索暴露。"
+          },
+          {
+            "description": "将第23章改为陈越根据另有来源的传闻或猜测调兵，并保留判断不确定性。",
+            "tradeoff": "改变角色决策风险与后续责任；传闻仍不能提供缺字细节。"
+          },
+          {
+            "description": "撤销读信内容与缺字判断，另建合法行动依据，或恢复旧版第8章。",
+            "tradeoff": "前者需要改写后续行动；后者放弃本次改动。"
+          }
+        ]
+      },
+      {
+        "review_id": "chapter:chapters/ch24.md",
+        "status": "affected",
+        "rationale": "依赖图未登记的缺字细节也要求直接读信；听说有信不足以提供。",
+        "evidence": [
+          {
+            "path": "chapters/ch24.md",
+            "start_line": 1,
+            "end_line": 1,
+            "sha256": "e048ffa6390bde55e6fbd90bd75140e985a358bb651069ad9c183500661008c5"
+          }
+        ],
+        "repairs": [
+          {
+            "description": "在第8章或第23章判断之前补上陈越实际读信且能辨认内容的场面。",
+            "tradeoff": "保留调兵结果，但要复核入场权限、时间与线索暴露。"
+          },
+          {
+            "description": "将第23章改为陈越根据另有来源的传闻或猜测调兵，并保留判断不确定性。",
+            "tradeoff": "改变角色决策风险与后续责任；传闻仍不能提供缺字细节。"
+          },
+          {
+            "description": "撤销读信内容与缺字判断，另建合法行动依据，或恢复旧版第8章。",
+            "tradeoff": "前者需要改写后续行动；后者放弃本次改动。"
+          }
+        ]
+      },
+      {
+        "review_id": "chapter:chapters/ch8.md",
+        "status": "independent",
+        "rationale": "当前章是修订源；另做reconciliation以记录听说、未目击和钥匙交付。",
+        "evidence": [
+          {
+            "path": "chapters/ch8.md",
+            "start_line": 1,
+            "end_line": 3,
+            "sha256": "42a4a26a12fdc1423317e6fea1b21be15f8a3fc5fca1f769822380c2b50c84df"
+          }
+        ],
+        "repairs": []
+      }
+    ]
+  }
+}

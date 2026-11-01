@@ -1,0 +1,11 @@
+{
+  "branches": {
+    "main": {
+      "parent": null,
+      "fork_event": null,
+      "purpose": "Canonical story line",
+      "status": "active"
+    }
+  },
+  "schema_version": "3.0.0"
+}

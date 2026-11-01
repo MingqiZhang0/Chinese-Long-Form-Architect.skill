@@ -1,0 +1,46 @@
+{
+  "edges": [
+    {
+      "source": "E1",
+      "target": "K1",
+      "kind": "supports",
+      "status": "active"
+    },
+    {
+      "source": "C1",
+      "target": "E1",
+      "kind": "supports",
+      "status": "active"
+    },
+    {
+      "source": "C2",
+      "target": "E1",
+      "kind": "supports",
+      "status": "active"
+    },
+    {
+      "source": "EV1",
+      "target": "C1",
+      "kind": "supports",
+      "status": "active"
+    },
+    {
+      "source": "EV1",
+      "target": "C2",
+      "kind": "supports",
+      "status": "active"
+    },
+    {
+      "source": "A1",
+      "target": "EV1",
+      "kind": "supports",
+      "status": "active"
+    },
+    {
+      "source": "SRC1",
+      "target": "A1",
+      "kind": "supports",
+      "status": "active"
+    }
+  ]
+}

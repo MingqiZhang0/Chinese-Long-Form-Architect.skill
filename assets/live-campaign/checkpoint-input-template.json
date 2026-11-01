@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "chapter": 1,
+  "recorded_at": "2026-10-02T09:30:00+08:00",
+  "session_id": "session-001",
+  "chapter_path": "chapters/chapter-0001.md",
+  "writer_pack_manifest_path": null,
+  "human_review": {
+    "reviewed": true,
+    "reviewer_role": "author",
+    "notes": "What still feels alive, flat, repetitive, surprising, or hard to maintain?"
+  },
+  "integrity_notes": {
+    "severe_blocker": false,
+    "notes": null
+  },
+  "maintenance": {
+    "repairs_since_previous": 0,
+    "retcons_since_previous": 0,
+    "manual_recovery_actions": 0,
+    "context_rebuilds": 0,
+    "effort_notes": null
+  },
+  "probes": [
+    {
+      "probe_id": "example-action-probe",
+      "kind": "action",
+      "status": "pass",
+      "evidence_ref": "evidence/probes/ch0001-to-current-action.json",
+      "notes": "Passing probes must point to a real project-relative evidence artifact captured at checkpoint time.",
+      "source_chapter": 1,
+      "mode": "observational"
+    }
+  ],
+  "creative_longitudinal": {
+    "architecture_fingerprint_ref": null,
+    "voice_drift_ref": null,
+    "pairwise_eval_ref": null,
+    "flattening_notes": null,
+    "project_poetics_ref": null,
+    "poetics_observatory_ref": null
+  },
+  "environment": {
+    "agent_or_model": null,
+    "skill_version_or_hash": null,
+    "cold_resume": false,
+    "model_or_agent_changed": false,
+    "hiatus_or_context_loss": false,
+    "migration_or_governance_changed": false
+  },
+  "resume_probe": {
+    "performed": false,
+    "mode": null,
+    "evidence_ref": null,
+    "loaded_artifacts": [],
+    "correct_next_action": null,
+    "asked_known_information": null,
+    "resurrected_stale_plan": null,
+    "manual_repair_actions": 0,
+    "notes": null
+  }
+}

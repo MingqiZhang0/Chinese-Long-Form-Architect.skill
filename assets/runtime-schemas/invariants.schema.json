@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/invariants.schema.json",
+  "title": "Narrative Invariant Catalog",
+  "type": "object",
+  "required": ["schema_version", "invariants"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "invariants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "severity"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["always", "event_guard", "requires_prior_event", "forbids_event_when", "monotonic", "conservation", "temporal_order"]},
+          "severity": {"enum": ["error", "warning", "advisory"]},
+          "message": {"type": "string"},
+          "branches": {"type": "array", "items": {"type": "string"}},
+          "event_types": {"type": "array", "items": {"type": "string"}},
+          "condition": {"type": "object"},
+          "precondition": {"type": "object"},
+          "postcondition": {"type": "object"},
+          "required_event_type": {"type": "string"},
+          "share_entity": {"type": "boolean"},
+          "path": {"type": "string"},
+          "direction": {"enum": ["nondecreasing", "nonincreasing"]},
+          "allow_reset_event_types": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

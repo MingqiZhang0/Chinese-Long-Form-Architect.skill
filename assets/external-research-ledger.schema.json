@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/external-research-ledger.schema.json",
+  "title": "Literary Webnovel Architect External Research Ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "ledger_id", "purpose", "sources"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "ledger_id": {"const": "lwa-external-research"},
+    "purpose": {"type": "string", "minLength": 1},
+    "sources": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/source"}
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "title", "authors", "venue", "year", "source_type",
+        "publication_status", "doi", "arxiv", "canonical_identifier",
+        "canonical_url", "verification_date", "verification_basis",
+        "claims_used_for", "used_by", "superseded_by"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "title": {"type": "string", "minLength": 1},
+        "authors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "venue": {"type": "string", "minLength": 1},
+        "year": {"type": "integer", "minimum": 1900, "maximum": 2100},
+        "source_type": {
+          "enum": ["journal-article", "conference-paper", "workshop-paper", "technical-report", "preprint", "other"]
+        },
+        "publication_status": {"enum": ["peer-reviewed", "preprint", "other"]},
+        "doi": {"type": ["string", "null"]},
+        "arxiv": {"type": ["string", "null"]},
+        "canonical_identifier": {"type": "string", "minLength": 1},
+        "canonical_url": {"type": "string", "pattern": "^https://"},
+        "verification_date": {"type": "string", "format": "date"},
+        "verification_basis": {"type": "string", "minLength": 1},
+        "claims_used_for": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "used_by": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "superseded_by": {"type": ["string", "null"]},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

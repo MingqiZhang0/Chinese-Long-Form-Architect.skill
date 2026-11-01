@@ -1,0 +1,146 @@
+{
+  "readiness_version": "1.1.0",
+  "target_chapter": 1,
+  "gate": "BLOCKED",
+  "discovery_mode": false,
+  "risk_activation": {
+    "world_model": {
+      "decision": "INACTIVE",
+      "reason": "Assess causal need explicitly before changing this."
+    },
+    "character_state": {
+      "decision": "INACTIVE",
+      "reason": "Assess durable character-state need explicitly before changing this."
+    },
+    "knowledge_topology": {
+      "decision": "INACTIVE",
+      "reason": "Assess information-asymmetry need explicitly before changing this."
+    },
+    "hidden_causal_network": {
+      "decision": "INACTIVE",
+      "reason": "Assess adaptive hidden-process need explicitly before changing this."
+    },
+    "long_horizon_architecture": {
+      "decision": "INACTIVE",
+      "reason": "Assess long-distance inheritance need explicitly before changing this."
+    },
+    "reader_model": {
+      "decision": "INACTIVE",
+      "reason": "Assess reader-memory/inference need explicitly before changing this."
+    },
+    "timeline": {
+      "decision": "INACTIVE",
+      "reason": "Assess time/order/duration need explicitly before changing this."
+    },
+    "scene_packets": {
+      "decision": "INACTIVE",
+      "reason": "Assess causal scene-transaction need explicitly before changing this."
+    }
+  },
+  "opening_anchors": {
+    "ordinary_life_baseline_required": false,
+    "livelihood_or_social_role": {
+      "status": "NOT_APPLICABLE",
+      "ref": null,
+      "reason": null
+    },
+    "current_task_or_reason_here": {
+      "status": "NOT_APPLICABLE",
+      "ref": null,
+      "reason": null
+    },
+    "relationship_anchor": {
+      "status": "NOT_APPLICABLE",
+      "ref": null,
+      "reason": null
+    },
+    "location_anchor": {
+      "status": "NOT_APPLICABLE",
+      "ref": null,
+      "reason": null
+    }
+  },
+  "long_horizon": {
+    "required": false,
+    "volume_strategy": {
+      "status": "NOT_APPLICABLE",
+      "ref": null,
+      "reason": null
+    },
+    "near_term_chapter_map": {
+      "status": "NOT_APPLICABLE",
+      "ref": null,
+      "reason": null,
+      "planned_through_chapter": null
+    },
+    "volume_evidence_ref": "planning/evidence/long_horizon_architecture.json"
+  },
+  "scene_transactions": [],
+  "writer_handoff": {
+    "context_index_ref": "context/context-index.json",
+    "request_ref": "context/writer-request.json",
+    "compiled_pack_ref": "context/writer-pack.md",
+    "compiled_pack_manifest_ref": "context/writer-pack.manifest.json",
+    "compile_status": "NOT_RUN",
+    "semantic_kernel_status": "NOT_RUN",
+    "mission_entry_id": "chapter-01-writer-mission",
+    "required_writer_entry_ids": [
+      "chapter-01-writer-mission"
+    ]
+  },
+  "blockers": [],
+  "notes": "This is thin operational readiness metadata, not a literary ontology.",
+  "draft_mode": "NORMAL",
+  "causal_risks": {
+    "world_systems": null,
+    "time_loop_or_branch": null,
+    "historical_grounding": null,
+    "secret_asymmetry": null
+  },
+  "artifacts": {
+    "project_brief": {
+      "ref": "intake/project-brief.md",
+      "evidence_ref": "planning/evidence/project_brief.json",
+      "status": "OPEN"
+    },
+    "project_poetics": {
+      "ref": "planning/project-poetics.md",
+      "evidence_ref": "planning/evidence/project_poetics.json",
+      "status": "OPEN"
+    },
+    "narrative_strategy": {
+      "ref": "planning/08-narrative-strategy.md",
+      "evidence_ref": "planning/evidence/narrative_strategy.json",
+      "status": "OPEN"
+    },
+    "author_mission": {
+      "ref": "planning/10-chapter-01-mission.md",
+      "evidence_ref": "planning/evidence/author_mission.json",
+      "status": "OPEN"
+    },
+    "writer_mission": {
+      "ref": "context/chapter-01-writer-mission.md",
+      "evidence_ref": "planning/evidence/writer_mission.json",
+      "status": "OPEN"
+    },
+    "cast": {
+      "ref": "planning/character-roster.md",
+      "evidence_ref": "planning/evidence/cast.json",
+      "status": "OPEN"
+    },
+    "world_model": {
+      "ref": "planning/02-world-model.md",
+      "evidence_ref": "planning/evidence/world_model.json",
+      "status": "OPEN"
+    },
+    "long_horizon_architecture": {
+      "ref": "planning/06-long-horizon-architecture.md",
+      "evidence_ref": "planning/evidence/long_horizon_architecture.json",
+      "status": "OPEN"
+    }
+  },
+  "campaign": {
+    "required": false,
+    "dir_ref": "campaign"
+  }
+}

@@ -1,0 +1,42 @@
+# Never commit private novel/campaign contents or raw model interactions.
+**/__pycache__/
+*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.venv/
+**/bin/
+**/obj/
+*.egg-info/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+# Private research history and generated products
+/private/
+/archives/
+/docs/model-campaign-results/
+/docs/preview-hardening/
+/docs/post-r4-upgrade/
+/docs/multi-regime-results/
+# Only these reviewed, synthetic Workbench protocol contracts may be public.
+/docs/workbench/*
+!/docs/workbench/contracts/
+/docs/workbench/contracts/*
+!/docs/workbench/contracts/workbench-wire.schema.json
+!/docs/workbench/contracts/golden-wire.json
+!/docs/workbench/contracts/spike-golden-wire.json
+/assets/post-r4-diagnostic/
+/assets/maintenance-validation.json
+/assets/regression-corpora/private-*/
+/assets/regression-corpora/real-user-*/
+/assets/regression-corpora/real-project-hardening/
+/assets/live-campaign/incidents/
+/assets/activation-evaluation/runs/
+/experiments/workbench-spike/artifacts/
+/dist/
+/build/

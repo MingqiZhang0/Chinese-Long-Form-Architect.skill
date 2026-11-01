@@ -1,0 +1,8 @@
+{
+  "role": "writer",
+  "branch": "main",
+  "target_chapter": 8,
+  "budget_tokens": 4000,
+  "strict_visibility": true,
+  "project_manifest": "project-manifest.json"
+}

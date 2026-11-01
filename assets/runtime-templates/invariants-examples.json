@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "invariants": [
+    {
+      "id": "EXAMPLE-resource-nonnegative",
+      "kind": "always",
+      "severity": "error",
+      "condition": {"path": "resources.cash.quantity", "op": "gte", "value": 0},
+      "message": "Example only: tracked cash may not become negative. Adopt only if this project models cash at that path."
+    },
+    {
+      "id": "EXAMPLE-dead-cannot-act",
+      "kind": "forbids_event_when",
+      "severity": "error",
+      "event_types": ["ActorAction"],
+      "condition": {"path": "characters.{entity}.alive", "op": "eq", "value": false},
+      "message": "Example only: a dead actor cannot perform an ordinary ActorAction. Adopt only if the project uses this alive/action contract."
+    }
+  ]
+}

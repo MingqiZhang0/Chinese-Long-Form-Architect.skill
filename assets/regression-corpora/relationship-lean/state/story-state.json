@@ -1,0 +1,10 @@
+{
+  "current_chapter": 3,
+  "threads": [
+    {"id": "REL-01", "status": "active", "summary": "Rent is due before either person is ready to discuss money directly."}
+  ],
+  "scene_packets": [],
+  "reader_state": {"chapter": 3, "foreground_questions": ["Will either admit what they are actually afraid of losing?"]},
+  "research_dependencies": [],
+  "authorial_unknowns": []
+}

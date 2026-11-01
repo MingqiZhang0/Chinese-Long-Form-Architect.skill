@@ -1,0 +1,414 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "prewriting-readiness.schema.json",
+  "type": "object",
+  "required": [
+    "readiness_version",
+    "target_chapter",
+    "gate",
+    "risk_activation",
+    "opening_anchors",
+    "long_horizon",
+    "scene_transactions",
+    "writer_handoff",
+    "blockers"
+  ],
+  "properties": {
+    "readiness_version": {
+      "enum": [
+        "1.0.0",
+        "1.1.0"
+      ]
+    },
+    "target_chapter": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "gate": {
+      "enum": [
+        "BLOCKED",
+        "REVIEW_READY",
+        "DRAFT_READY"
+      ]
+    },
+    "discovery_mode": {
+      "type": "boolean",
+      "default": false
+    },
+    "risk_activation": {
+      "type": "object",
+      "required": [
+        "world_model",
+        "character_state",
+        "knowledge_topology",
+        "hidden_causal_network",
+        "long_horizon_architecture",
+        "reader_model",
+        "timeline",
+        "scene_packets"
+      ],
+      "properties": {
+        "world_model": {
+          "$ref": "#/$defs/decision"
+        },
+        "character_state": {
+          "$ref": "#/$defs/decision"
+        },
+        "knowledge_topology": {
+          "$ref": "#/$defs/decision"
+        },
+        "hidden_causal_network": {
+          "$ref": "#/$defs/decision"
+        },
+        "long_horizon_architecture": {
+          "$ref": "#/$defs/decision"
+        },
+        "reader_model": {
+          "$ref": "#/$defs/decision"
+        },
+        "timeline": {
+          "$ref": "#/$defs/decision"
+        },
+        "scene_packets": {
+          "$ref": "#/$defs/decision"
+        }
+      },
+      "additionalProperties": false
+    },
+    "opening_anchors": {
+      "type": "object",
+      "required": [
+        "ordinary_life_baseline_required",
+        "livelihood_or_social_role",
+        "current_task_or_reason_here",
+        "relationship_anchor",
+        "location_anchor"
+      ],
+      "properties": {
+        "ordinary_life_baseline_required": {
+          "type": "boolean"
+        },
+        "livelihood_or_social_role": {
+          "$ref": "#/$defs/resolution"
+        },
+        "current_task_or_reason_here": {
+          "$ref": "#/$defs/resolution"
+        },
+        "relationship_anchor": {
+          "$ref": "#/$defs/resolution"
+        },
+        "location_anchor": {
+          "$ref": "#/$defs/resolution"
+        }
+      },
+      "additionalProperties": false
+    },
+    "long_horizon": {
+      "type": "object",
+      "required": [
+        "required",
+        "volume_strategy",
+        "near_term_chapter_map"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "volume_strategy": {
+          "$ref": "#/$defs/resolution"
+        },
+        "near_term_chapter_map": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/resolution"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "planned_through_chapter": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1
+                }
+              }
+            }
+          ]
+        },
+        "volume_evidence_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "scene_transactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "scene_id",
+          "required",
+          "status",
+          "packet_ref",
+          "open_items"
+        ],
+        "properties": {
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READY",
+              "OPEN",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "packet_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "context_entry_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "open_items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "writer_handoff": {
+      "type": "object",
+      "required": [
+        "context_index_ref",
+        "request_ref",
+        "compile_status",
+        "semantic_kernel_status"
+      ],
+      "properties": {
+        "context_index_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "request_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compiled_pack_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compiled_pack_manifest_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compile_status": {
+          "enum": [
+            "PASSED",
+            "NOT_RUN",
+            "BLOCKED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "semantic_kernel_status": {
+          "enum": [
+            "PASSED",
+            "NOT_RUN",
+            "BLOCKED",
+            "NOT_APPLICABLE"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "draft_mode": {
+      "enum": [
+        "NORMAL",
+        "FRAGMENTARY_OVERRIDE"
+      ]
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/maturity"
+      }
+    },
+    "causal_risks": {
+      "type": "object",
+      "required": [
+        "world_systems",
+        "time_loop_or_branch",
+        "historical_grounding",
+        "secret_asymmetry"
+      ],
+      "properties": {
+        "world_systems": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "time_loop_or_branch": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "historical_grounding": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "secret_asymmetry": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "decision": {
+      "type": "object",
+      "required": [
+        "decision",
+        "reason"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "ACTIVE",
+            "INACTIVE"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "resolution": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "RESOLVED",
+            "NOT_APPLICABLE",
+            "BLOCKED"
+          ]
+        },
+        "ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "maturity": {
+      "type": "object",
+      "required": [
+        "ref",
+        "evidence_ref",
+        "status"
+      ],
+      "properties": {
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "OPEN",
+            "MATURE_FOR_DRAFT"
+          ]
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "evidence_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "readiness_version": {
+            "const": "1.1.0"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "artifacts",
+          "causal_risks",
+          "draft_mode"
+        ]
+      }
+    }
+  ]
+}

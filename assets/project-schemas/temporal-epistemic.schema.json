@@ -1,0 +1,496 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openai.local/literary-webnovel-architect/temporal-epistemic.schema.json",
+  "title": "Optional temporal epistemic subset of Story State; no new truth owner",
+  "type": "object",
+  "$defs": {
+    "record": {
+      "type": "object",
+      "properties": {
+        "temporal_epistemic_version": {
+          "const": "1.0.0"
+        },
+        "precision": {
+          "type": "string",
+          "enum": [
+            "EXACT",
+            "BOUNDED",
+            "APPROXIMATE",
+            "UNKNOWN",
+            "INFERRED"
+          ]
+        },
+        "specificity": {
+          "type": "string",
+          "enum": [
+            "YEAR",
+            "MONTH",
+            "PART_MONTH",
+            "DAY",
+            "UNKNOWN"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "CONFIRMED",
+            "INFERRED",
+            "REPORTED",
+            "UNVERIFIED"
+          ]
+        },
+        "source_scope": {
+          "enum": [
+            "REAL_WORLD",
+            "STORY_WORLD"
+          ]
+        },
+        "fact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provenance": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "object",
+              "minProperties": 1
+            },
+            {
+              "type": "array",
+              "minItems": 1
+            }
+          ]
+        },
+        "truth": {
+          "type": "boolean"
+        },
+        "valid_from": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "valid_to": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "available_from": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "event_at": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acquired_at": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "used_at": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acquired": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "used": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acquisition_channel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experience_eligible_for": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "applies_to_story_window": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        },
+        "authorized": {
+          "type": "boolean"
+        },
+        "consequential": {
+          "type": "boolean"
+        },
+        "secret_sensitive": {
+          "type": "boolean"
+        },
+        "temporal_risk": {
+          "type": "boolean"
+        },
+        "research_derived": {
+          "type": "boolean"
+        },
+        "plot_critical": {
+          "type": "boolean"
+        },
+        "identity_critical": {
+          "type": "boolean"
+        },
+        "writer_visible": {
+          "type": "boolean"
+        },
+        "actor_relative": {
+          "type": "boolean"
+        },
+        "direct_experience_eligible": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "use": {
+      "type": "object",
+      "properties": {
+        "temporal_epistemic_version": {
+          "const": "1.0.0"
+        },
+        "precision": {
+          "type": "string",
+          "enum": [
+            "EXACT",
+            "BOUNDED",
+            "APPROXIMATE",
+            "UNKNOWN",
+            "INFERRED"
+          ]
+        },
+        "specificity": {
+          "type": "string",
+          "enum": [
+            "YEAR",
+            "MONTH",
+            "PART_MONTH",
+            "DAY",
+            "UNKNOWN"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "CONFIRMED",
+            "INFERRED",
+            "REPORTED",
+            "UNVERIFIED"
+          ]
+        },
+        "source_scope": {
+          "enum": [
+            "REAL_WORLD",
+            "STORY_WORLD"
+          ]
+        },
+        "fact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provenance": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "object",
+              "minProperties": 1
+            },
+            {
+              "type": "array",
+              "minItems": 1
+            }
+          ]
+        },
+        "truth": {
+          "type": "boolean"
+        },
+        "valid_from": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "valid_to": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "available_from": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "event_at": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acquired_at": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "used_at": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acquired": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "used": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acquisition_channel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experience_eligible_for": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "applies_to_story_window": {
+          "type": "boolean"
+        },
+        "completed": {
+          "type": "boolean"
+        },
+        "authorized": {
+          "type": "boolean"
+        },
+        "consequential": {
+          "type": "boolean"
+        },
+        "secret_sensitive": {
+          "type": "boolean"
+        },
+        "temporal_risk": {
+          "type": "boolean"
+        },
+        "research_derived": {
+          "type": "boolean"
+        },
+        "plot_critical": {
+          "type": "boolean"
+        },
+        "identity_critical": {
+          "type": "boolean"
+        },
+        "writer_visible": {
+          "type": "boolean"
+        },
+        "actor_relative": {
+          "type": "boolean"
+        },
+        "direct_experience_eligible": {
+          "type": "boolean"
+        },
+        "expression": {
+          "$ref": "#/$defs/record"
+        },
+        "refinement_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "properties": {
+    "facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "research_dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "knowledge_state": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "knowledge_uses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/use"
+      }
+    },
+    "writer_visible_facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/use"
+      }
+    }
+  },
+  "additionalProperties": true
+}

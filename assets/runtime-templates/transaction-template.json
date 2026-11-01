@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "transaction_id": "TX-0001",
+  "branch": "main",
+  "expected_head_event": "EV-0001",
+  "expected_effective_revision": 1,
+  "purpose": "Commit one synchronized scene delta",
+  "read_set": ["SCN-0001"],
+  "proposed_events": [
+    {
+      "event_id": "EV-0002",
+      "event_type": "ExampleChanged",
+      "event_version": "1.0.0",
+      "intent": "Describe the semantic state transition",
+      "entity_ids": ["entity-example"],
+      "effects": [
+        {"op": "set", "path": "entities.entity-example.status", "value": "changed"}
+      ],
+      "dependencies": ["SCN-0001"]
+    }
+  ],
+  "blocking_objections": [],
+  "status": "proposed"
+}

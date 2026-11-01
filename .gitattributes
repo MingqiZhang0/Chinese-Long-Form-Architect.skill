@@ -1,0 +1,4 @@
+# The restored source includes CRLF originals and intentional Markdown hard-break spaces.
+# Preserve file bytes; apply Git whitespace review to executable/data files.
+* whitespace=cr-at-eol
+*.md whitespace=cr-at-eol,-trailing-space,-blank-at-eof
