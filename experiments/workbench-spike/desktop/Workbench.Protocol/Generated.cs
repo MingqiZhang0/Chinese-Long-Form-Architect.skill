@@ -204,4 +204,4 @@ public sealed record IssuePage(
     [property: JsonPropertyName("issues")] IReadOnlyList<Issue> Issues,
     [property: JsonPropertyName("total")] int Total,
     [property: JsonPropertyName("offset")] int Offset) { [JsonExtensionData] public Dictionary<string, JsonElement>? Extensions {get;init;} }
-public static class ContractIdentity { public const string Digest = "sha256:8285e693ad46ec256ed100efa0cd52e48546db16ad7da3c31d1bc663a4c006e3"; }
+public static class ContractIdentity { public const string Digest = "sha256:1423a62270e39e6d90ecef478a2eb3957744430796b80fd9485d50c57c4bd645"; }

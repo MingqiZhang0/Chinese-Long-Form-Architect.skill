@@ -24,7 +24,8 @@ for name,s in defs.items():
             attribute=f'[property: JsonPropertyName("{p}")]'+(' [property: JsonIgnore(Condition=JsonIgnoreCondition.WhenWritingNull)]' if optional else '')
             props.append(f'{attribute} {t} {pascal(p) if pascal(p)!=name else pascal(p)+"Status"}')
         out += [f'public sealed record {name}(\n    '+',\n    '.join(props)+') { [JsonExtensionData] public Dictionary<string, JsonElement>? Extensions {get;init;} }']
-out += [f'public static class ContractIdentity {{ public const string Digest = "sha256:{hashlib.sha256(path.read_bytes()).hexdigest()}"; }}']
+# Hash the UTF-8 schema after universal newline translation; CRLF/LF must agree.
+out += [f'public static class ContractIdentity {{ public const string Digest = "sha256:{hashlib.sha256(path.read_text(encoding='utf-8').encode('utf-8')).hexdigest()}"; }}']
 target=ROOT/'experiments/workbench-spike/desktop/Workbench.Protocol/Generated.cs'
 content='\n'.join(out)+'\n'
 if '--check' in sys.argv:

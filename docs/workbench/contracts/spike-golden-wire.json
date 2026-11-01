@@ -31,7 +31,7 @@
           "supported_protocols": [
             "1.0.0"
           ],
-          "schema_digest": "sha256:8285e693ad46ec256ed100efa0cd52e48546db16ad7da3c31d1bc663a4c006e3",
+          "schema_digest": "sha256:1423a62270e39e6d90ecef478a2eb3957744430796b80fd9485d50c57c4bd645",
           "schema_capabilities": [
             "bootstrap",
             "spike-read"

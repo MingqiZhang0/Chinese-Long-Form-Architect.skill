@@ -11,6 +11,7 @@ from observation import ProjectObservation
 from framing import read_frame, encode, MAX_FRAME
 
 SCHEMA_PATH=ROOT/'docs/workbench/contracts/workbench-wire.schema.json'
+# The schema digest is over UTF-8 text with LF newlines on every platform.
 SCHEMA=json.loads(SCHEMA_PATH.read_bytes())
 def validator(name): return Draft202012Validator({'$ref':'#/$defs/'+name,'$defs':SCHEMA['$defs']})
 REQUEST=validator('Request');RESPONSE=Draft202012Validator(SCHEMA)
@@ -59,7 +60,7 @@ class Host:
         if method=='hello':
             if '1.0.0' not in p['supported_versions']:raise Fault('UNSUPPORTED_PROTOCOL','No common protocol')
             self.maximum=min(MAX_FRAME,p['max_frame_bytes']);self.negotiated=True
-            return {'kind':'Hello','selected_version':'1.0.0','compatibility':'COMPATIBLE','server_instance_id':self.instance,'server_process_id':os.getpid(),'engine_version':'spike-1','supported_protocols':['1.0.0'],'schema_digest':'sha256:'+hashlib.sha256(SCHEMA_PATH.read_bytes()).hexdigest(),'schema_capabilities':['bootstrap','spike-read'],'supported_features':['state.query','trace.query','source.resolve','manuscript.page','observation.subscribe','snapshot.compare','issue.page'],'health':'READY','readonly_enforcement':'UNVERIFIED','agent_available':False}
+            return {'kind':'Hello','selected_version':'1.0.0','compatibility':'COMPATIBLE','server_instance_id':self.instance,'server_process_id':os.getpid(),'engine_version':'spike-1','supported_protocols':['1.0.0'],'schema_digest':'sha256:'+hashlib.sha256(SCHEMA_PATH.read_text(encoding='utf-8').encode('utf-8')).hexdigest(),'schema_capabilities':['bootstrap','spike-read'],'supported_features':['state.query','trace.query','source.resolve','manuscript.page','observation.subscribe','snapshot.compare','issue.page'],'health':'READY','readonly_enforcement':'UNVERIFIED','agent_available':False}
         if not self.negotiated or r['protocol_version']!='1.0.0':raise Fault('UNSUPPORTED_PROTOCOL','Handshake required')
         if method=='health.query':return {'kind':'Health','server_instance_id':self.instance,'engine_version':'spike-1','health':'READY','agent_available':False}
         if method=='service.shutdown':self.shutdown=True;return {'kind':'ControlAck','accepted':True}

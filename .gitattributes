@@ -2,3 +2,4 @@
 # Preserve file bytes; apply Git whitespace review to executable/data files.
 * whitespace=cr-at-eol
 *.md whitespace=cr-at-eol,-trailing-space,-blank-at-eof
+docs/workbench/contracts/workbench-wire.schema.json text eol=lf

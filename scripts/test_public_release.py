@@ -6,6 +6,7 @@ contracts or imply any guarantees about actual literary quality.
 """
 from __future__ import annotations
 import json
+import hashlib
 import os
 import re
 import subprocess
@@ -119,6 +120,14 @@ def test_workbench_contracts() -> None:
     contract = ROOT / 'docs/workbench/contracts'
     schema_path = contract / 'workbench-wire.schema.json'
     assert schema_path.is_file(), 'Workbench wire schema is missing'
+    # Git may store LF even when a Windows checkout used CRLF. The digest is
+    # defined over UTF-8 with universal newlines normalized to LF.
+    raw = schema_path.read_bytes()
+    canonical = schema_path.read_text(encoding='utf-8').encode('utf-8')
+    assert canonical == raw.replace(b'\r\n', b'\n').replace(b'\r', b'\n'), 'Unexpected schema byte encoding'
+    digest_lf = hashlib.sha256(canonical).hexdigest()
+    generated = (ROOT / 'experiments/workbench-spike/desktop/Workbench.Protocol/Generated.cs').read_text(encoding='utf-8')
+    assert f'public const string Digest = "sha256:{digest_lf}"' in generated, 'Generated C# schema digest mismatch'
     schema = json.loads(schema_path.read_text(encoding='utf-8'))
     Draft202012Validator.check_schema(schema)
     validator = Draft202012Validator(schema)
@@ -126,6 +135,10 @@ def test_workbench_contracts() -> None:
         path = contract / name
         assert path.is_file(), ('Workbench golden corpus is missing', name)
         cases = json.loads(path.read_text(encoding='utf-8'))
+        if name == 'spike-golden-wire.json':
+            hello = [row['message']['result'] for row in cases['valid']
+                     if row.get('message', {}).get('result', {}).get('kind') == 'Hello']
+            assert len(hello) == 1 and hello[0]['schema_digest'] == f'sha256:{digest_lf}', 'Golden Hello schema digest mismatch'
         for group, expected in (('valid', True), ('invalid', False)):
             for row in cases[group]:
                 assert validator.is_valid(row['message']) is expected, (name, group, row['name'])
